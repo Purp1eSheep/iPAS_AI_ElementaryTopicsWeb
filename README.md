@@ -13,7 +13,7 @@
 
 一個簡單、可 fork 的靜態測驗網站。所有題目都放在 JSON 檔中，不需要後端或資料庫。
 
-**[→ Demo](https://your-username.github.io/quiz-template)**
+**[→ Demo](https://Purp1eSheep.github.io/iPAS_AI_ElementaryTopicsWeb)**
 
 ---
 
