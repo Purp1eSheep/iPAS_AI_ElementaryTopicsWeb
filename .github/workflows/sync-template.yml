@@ -1,0 +1,25 @@
+name: Sync Template
+
+on:
+    schedule:
+        - cron: "0 0 * * *" # Every day at midnight
+    workflow_dispatch: # Allow manual trigger
+
+permissions:
+    contents: write
+    pull-requests: write
+
+jobs:
+    repo-sync:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: actions-template-sync
+              uses: AndreasAugustin/actions-template-sync@v2
+              with:
+                  source_repo_path: Purp1eSheep/Quiz-Web-Template
+                  upstream_branch: main
+                  pr_labels: template-sync

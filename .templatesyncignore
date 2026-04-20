@@ -1,0 +1,10 @@
+# Files to ignore when syncing with the template
+# This works like .gitignore
+
+# Protect user data
+data/
+!data/javascript.json
+!data/datastructure.json
+
+# Protect user customizations
+manifest.json
