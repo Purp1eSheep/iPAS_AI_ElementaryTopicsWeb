@@ -1,44 +1,51 @@
 [
     {
-        "title": "No code/ Low code 概念",
-        "description": "8 題",
-        "file": "data/all_questions.json",
-        "isTopic": true
+        "subject": "科目一：人工智慧基礎概論",
+        "count": 137,
+        "full_topic": "科目一：人工智慧基礎概論",
+        "topics": [
+            {
+                "title": "人工智慧概念",
+                "count": 31,
+                "full_topic": "人工智慧概念"
+            },
+            {
+                "title": "資料處理與分析概念",
+                "count": 45,
+                "full_topic": "資料處理與分析概念"
+            },
+            {
+                "title": "機器學習概念",
+                "count": 42,
+                "full_topic": "機器學習概念"
+            },
+            {
+                "title": "鑑別式 AI 與生成式 AI",
+                "count": 19,
+                "full_topic": "鑑別式 AI 與生成式 AI"
+            }
+        ]
     },
     {
-        "title": "人工智慧概念",
-        "description": "5 題",
-        "file": "data/all_questions.json",
-        "isTopic": true
-    },
-    {
-        "title": "機器學習概念",
-        "description": "17 題",
-        "file": "data/all_questions.json",
-        "isTopic": true
-    },
-    {
-        "title": "生成式AI導入評估計畫",
-        "description": "15 題",
-        "file": "data/all_questions.json",
-        "isTopic": true
-    },
-    {
-        "title": "生成式AI應用領域與工具使用",
-        "description": "20 題",
-        "file": "data/all_questions.json",
-        "isTopic": true
-    },
-    {
-        "title": "資料處理與分析概念",
-        "description": "8 題",
-        "file": "data/all_questions.json",
-        "isTopic": true
-    },
-    {
-        "title": "鑑別式AI與生成式AI概念",
-        "description": "5 題",
-        "file": "data/all_questions.json",
-        "isTopic": true
+        "subject": "科目二：生成式AI應用與規劃",
+        "count": 141,
+        "full_topic": "科目二：生成式AI應用與規劃",
+        "topics": [
+            {
+                "title": "No code / Low code 概念",
+                "count": 67,
+                "full_topic": "No code / Low code 概念"
+            },
+            {
+                "title": "生成式 AI 應用領域與工具使用",
+                "count": 49,
+                "full_topic": "生成式 AI 應用領域與工具使用"
+            },
+            {
+                "title": "生成式 AI 導入評估規劃",
+                "count": 25,
+                "full_topic": "生成式 AI 導入評估規劃"
+            }
+        ]
     }
 ]

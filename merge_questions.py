@@ -1,5 +1,6 @@
 import json
 import os
+import hashlib
 
 def merge_questions():
     raw_dir = 'questions'
@@ -7,6 +8,25 @@ def merge_questions():
     output_file = os.path.join(output_dir, 'all_questions.json')
     manifest_path = os.path.join(output_dir, 'manifest.json')
     
+    # 定義科目名稱
+    S1 = "科目一：人工智慧基礎概論"
+    S2 = "科目二：生成式AI應用與規劃"
+
+    # 定義檔案歸屬與預設主題
+    subject_mapping = {
+        'AI_Concepts.json': S1,
+        'Data_Processing.json': S1,
+        'Machine_Learning.json': S1,
+        'Discriminative_vs_Generative_AI.json': S1,
+        'No_Code_Low_Code.json': S2,
+        'GenAI_Applications.json': S2,
+        'GenAI_Implementation.json': S2
+    }
+
+    # 定義各科目內的合法章節（依據 classification.md）
+    S1_TOPICS = ["人工智慧概念", "資料處理與分析概念", "機器學習概念", "鑑別式 AI 與生成式 AI"]
+    S2_TOPICS = ["No code / Low code 概念", "生成式 AI 應用領域與工具使用", "生成式 AI 導入評估規劃"]
+
     all_questions = []
     
     if not os.path.exists(raw_dir):
@@ -16,76 +36,112 @@ def merge_questions():
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    # 取得原始 json 檔案
-    files = [f for f in os.listdir(raw_dir) if f.endswith('.json')]
-    files.sort()
-
-    for filename in files:
+    for filename, current_subject in subject_mapping.items():
         file_path = os.path.join(raw_dir, filename)
+        if not os.path.exists(file_path):
+            print(f"警告: 找不到檔案 {filename}，跳過")
+            continue
+
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                questions_list = data if isinstance(data, list) else data.get('questions', [])
-                
-                # 取得該檔案預設的 topic (如果題目沒寫的話)
-                default_topic = filename.replace('.json', '')
+                questions_list = json.load(f)
                 
                 for q in questions_list:
-                    # 統一欄位名稱
-                    q_text = (q.get("題目") or q.get("question", "")).strip()
+                    q_text = q.get("question", "").strip()
                     if not q_text: continue
                     
-                    q_options = q.get("選項") or q.get("options")
-                    q_answer = q.get("答案") if q.get("答案") is not None else q.get("answer")
-                    q_difficulty = q.get("難易度") or q.get("difficulty") or q.get("level")
-                    q_topic = q.get("topic") or default_topic
+                    q_options = q.get("options")
+                    q_answer = q.get("answer")
+                    q_difficulty = q.get("difficulty")
                     
-                    # 建立標準化物件
+                    # 取得目前 topic
+                    raw_topic = q.get("topic", "").strip()
+                    
+                    # 移除科目首碼 (例如 "科目一：... / ")，保留後方完整內容
+                    mapped_topic = raw_topic
+                    for s in [S1, S2]:
+                        prefix = f"{s} / "
+                        if mapped_topic.startswith(prefix):
+                            mapped_topic = mapped_topic[len(prefix):].strip()
+                    
+                    # 檢查並修正章節歸屬
+                    if current_subject == S1:
+                        if mapped_topic not in S1_TOPICS:
+                            mapped_topic = S1_TOPICS[0] # 預設歸類
+                    else:
+                        if mapped_topic not in S2_TOPICS:
+                            mapped_topic = S2_TOPICS[0] # 預設歸類
+                    
+                    # 最終 topic 只保留最後項
+                    full_topic = mapped_topic
+                    
                     all_questions.append({
                         "question": q_text,
                         "options": q_options,
                         "answer": q_answer,
                         "difficulty": q_difficulty,
-                        "topic": q_topic
+                        "topic": full_topic
                     })
         except Exception as e:
-            print(f"跳過錯誤檔案 {filename}: {e}")
+            print(f"處理檔案 {filename} 時發生錯誤: {e}")
 
-    # 去重邏輯：使用題目內容作為 Key
+    # 去重
     unique_questions = {}
     for q in all_questions:
         if q['question'] not in unique_questions:
             unique_questions[q['question']] = q
     
     final_questions = list(unique_questions.values())
-
-    # 使用題目內容進行 Unicode 排序
     final_questions.sort(key=lambda x: x['question'])
 
-    # 重新分配 ID (Q001, Q002...)
-    for i, q in enumerate(final_questions, 1):
-        q['id'] = f"Q{i:03d}"
+    for q in final_questions:
+        hash_id = hashlib.sha256(q['question'].encode('utf-8')).hexdigest()[:6].upper()
+        q['id'] = f"Q{hash_id}"
 
-    # 寫入合併後的檔案
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(final_questions, f, indent=4, ensure_ascii=False)
     
-    # 更新 manifest.json 以指向合併後的檔案
-    topics = sorted(list(set(q['topic'] for q in final_questions)))
-    manifest_data = []
-    for topic in topics:
-        count = len([q for q in all_questions if q['topic'] == topic])
-        manifest_data.append({
-            "title": topic,
-            "description": f"{count} 題",
-            "file": "data/all_questions.json", # 相對於 index.html 的路徑
-            "isTopic": True
+    # 建立結構化的 manifest.json
+    manifest_structure = {
+        S1: {t: 0 for t in S1_TOPICS},
+        S2: {t: 0 for t in S2_TOPICS}
+    }
+
+    # 建立一個反向查找，從 topic 到 subject
+    topic_to_subject = {}
+    for t in S1_TOPICS: topic_to_subject[t] = S1
+    for t in S2_TOPICS: topic_to_subject[t] = S2
+
+    for q in final_questions:
+        top = q['topic']
+        if top in topic_to_subject:
+            sub = topic_to_subject[top]
+            manifest_structure[sub][top] += 1
+
+    formatted_manifest = []
+    for sub in [S1, S2]:
+        topics_list = []
+        target_topics = S1_TOPICS if sub == S1 else S2_TOPICS
+        sub_total_count = 0
+        for top in target_topics:
+            count = manifest_structure[sub][top]
+            sub_total_count += count
+            topics_list.append({
+                "title": top,
+                "count": count,
+                "full_topic": top
+            })
+        formatted_manifest.append({
+            "subject": sub,
+            "count": sub_total_count,
+            "full_topic": sub,
+            "topics": topics_list
         })
     
     with open(manifest_path, 'w', encoding='utf-8') as f:
-        json.dump(manifest_data, f, indent=4, ensure_ascii=False)
+        json.dump(formatted_manifest, f, indent=4, ensure_ascii=False)
 
-    print(f"成功合併共 {len(all_questions)} 題至 {output_file}")
+    print(f"成功合併共 {len(final_questions)} 題至 {output_file}")
     print(f"已更新 {manifest_path}")
 
 if __name__ == "__main__":

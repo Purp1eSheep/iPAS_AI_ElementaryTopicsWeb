@@ -1,7 +1,6 @@
 [
     {
         "id": 1,
-        "difficulty": "中",
         "question": "下列關於生成對抗網路(GAN)的描述正確的是哪一項?",
         "options": [
             "GAN由生成器和鑑別器組成",
@@ -10,11 +9,11 @@
             "GAN不能生成高品質的數據"
         ],
         "answer": 1,
-        "topic": "鑑別式AI與生成式AI概念"
+        "difficulty": "中",
+        "topic": "鑑別式 AI 與生成式 AI"
     },
     {
         "id": 2,
-        "difficulty": "易",
         "question": "下列哪一項技術是生成式AI的基礎?",
         "options": [
             "決策樹模型",
@@ -23,11 +22,11 @@
             "隨機森林技術"
         ],
         "answer": 3,
-        "topic": "鑑別式AI與生成式AI概念"
+        "difficulty": "易",
+        "topic": "機器學習概念"
     },
     {
         "id": 3,
-        "difficulty": "易",
         "question": "關於生成式AI的基本原理,下列敘述何者較正確?",
         "options": [
             "生成式AI通過分析大量數據來生成新數據,模擬數據分佈以創造與訓練數據相似的結果",
@@ -36,11 +35,11 @@
             "生成式AI通過自動化的方式清洗數據,提升數據分析的準確性"
         ],
         "answer": 1,
-        "topic": "鑑別式AI與生成式AI概念"
+        "difficulty": "易",
+        "topic": "鑑別式 AI 與生成式 AI"
     },
     {
         "id": 4,
-        "difficulty": "難",
         "question": "下列何者不是生成式AI核心技術?",
         "options": [
             "Variational Autoencoders (VAE)",
@@ -49,11 +48,11 @@
             "Autoregressive Models (AR Model)"
         ],
         "answer": 3,
-        "topic": "鑑別式AI與生成式AI概念"
+        "difficulty": "難",
+        "topic": "鑑別式 AI 與生成式 AI"
     },
     {
         "id": 5,
-        "difficulty": "易",
         "question": "下列模型在生成式人工智慧(Generative AI)中的角色,何者並非以「產生新資料」為主要設計目的?",
         "options": [
             "支援向量機(Support Vector Machine)",
@@ -62,6 +61,189 @@
             "擴散模型(Diffusion Model)"
         ],
         "answer": 1,
-        "topic": "鑑別式AI與生成式AI概念"
+        "difficulty": "易",
+        "topic": "鑑別式 AI 與生成式 AI"
+    },
+    {
+        "id": 6,
+        "question": "為提升生成式AI系統回應的語境一致性,常會結合哪類模型技術?",
+        "options": [
+            "決策樹分類器(Decision Tree Classifier)",
+            "條件語言模型(Conditional Language Model)",
+            "強化學習Q-learning 函數模型",
+            "基因演算法(Genetic Algorithm)"
+        ],
+        "answer": 2,
+        "difficulty": "中",
+        "topic": "鑑別式 AI 與生成式 AI"
+    },
+    {
+        "id": 7,
+        "question": "關於變分自編碼器(Variational Autoencoder,VAE)的運作流程,下列何者敘述最為正確?",
+        "options": [
+            "解碼器的任務是將低維壓縮向量分類為不同類別",
+            "編碼器將輸入資料轉換為可視化圖像以利模型學習",
+            "編碼器將資料轉換為潛在空間表示,解碼器再重建資料",
+            "編碼器利用最大邊際機率對資料進行異常點偵測"
+        ],
+        "answer": 3,
+        "difficulty": "中",
+        "topic": "鑑別式 AI 與生成式 AI"
+    },
+    {
+        "id": 8,
+        "question": "下列何者不是我國數位發展部AI產品與系統評測中心對生成式AI的評測項目?",
+        "options": [
+            "當責性",
+            "可靠性",
+            "隱私及資安",
+            "互動性"
+        ],
+        "answer": 4,
+        "difficulty": "中",
+        "topic": "鑑別式 AI 與生成式 AI"
+    },
+    {
+        "id": 9,
+        "question": "在大型 Transformer 模型的效能優化過程中,常見的方法之一是「剪枝(Pruning)」。下列哪一項最符合該方法的核心概念?",
+        "options": [
+            "將模型中所有權重按比例縮小,使其值更接近零,以降低計算量",
+            "移除模型中影響較小或冗餘的部分權重參數,以減少模型大小並提升推理效率",
+            "在訓練時僅更新部分權重而將其他權重凍結,從而減少需要調整的參數數量",
+            "根據注意力分數動態跳過處理部分輸入 Token,以減少每次前向傳播的計算"
+        ],
+        "answer": 2,
+        "difficulty": "中",
+        "topic": "鑑別式 AI 與生成式 AI"
+    },
+    {
+        "id": 10,
+        "question": "對非常長的輸入序列進行推理(Inference),Transformer 模型推理的主要計算瓶頸通常是什麼?",
+        "options": [
+            "模型輸出層產生文本的過程,因為每生成一個詞都必須重新訓練整個模型一次",
+            "詞嵌入(Embedding) 查找操作,因為其時間複雜度隨詞彙表大小指數級增長",
+            "Softmax 函數的計算,因為對每個Token都需要執行繁重的運算",
+            "自注意力層的計算和其記憶體使用,因為注意力矩陣的大小隨序列長度呈平方級增長"
+        ],
+        "answer": 4,
+        "difficulty": "中",
+        "topic": "鑑別式 AI 與生成式 AI"
+    },
+    {
+        "id": 11,
+        "question": "某銀行建立AI詐欺交易偵測模型。歷史交易資料中,詐欺樣本比例極低,導致模型訓練時偏向預測為「正常交易」。資料科學團隊評估採用SMOTE (Synthetic Minority Over-sampling Technique)改善訓練資料分佈。下列何者最符合SMOTE 技術的主要功能?",
+        "options": [
+            "透過隨機刪除部分正常交易資料,以降低類別失衡程度",
+            "依據少數類別樣本的特徵空間,合成產生新的少數類別樣本",
+            "調整模型的損失函數(Loss Function)權重,使誤判少數類別時的懲罰提高",
+            "以交叉驗證(Cross-validation)方式重新分割資料集,使各折資料類別比例一致"
+        ],
+        "answer": 2,
+        "difficulty": "中",
+        "topic": "鑑別式 AI 與生成式 AI"
+    },
+    {
+        "id": 12,
+        "question": "某影音串流平台建立神經網路模型,用於預測使用者最可能感興趣的影片類型。模型輸出層需將結果轉換為各類別的機率分佈,以便系統依機率高低推薦內容。下列哪一種函數最適合用於模型輸出層?",
+        "options": [
+            "Softmax 函數(Softmax Function)",
+            "Sigmoid函數(Sigmoid Function)",
+            "線性函數(Linear Function)",
+            "ReLU函數(Rectified Linear Unit Function)"
+        ],
+        "answer": 1,
+        "difficulty": "中",
+        "topic": "鑑別式 AI 與生成式 AI"
+    },
+    {
+        "id": 13,
+        "question": "某設計公司導入生成式AI(Generative AI)工具,用於自動產生產品概念圖與風格草圖。為了讓系統能依據既有圖像資料產生具有變化且風格一致的新圖像,模型必須具備學習資料特性並生成新樣本的能力。下列哪一種模型技術或方法最符合上述需求?",
+        "options": [
+            "隱變量自編碼器(Variational Autoencoder, VAE)",
+            "隨機森林(Random Forest)",
+            "K-近鄰演算法(K-Nearest Neighbors, KNN)",
+            "貝氏網路(Bayesian Network)"
+        ],
+        "answer": 1,
+        "difficulty": "中",
+        "topic": "鑑別式 AI 與生成式 AI"
+    },
+    {
+        "id": 14,
+        "question": "某企業導入生成式AI(Generative AI)系統自動產出會議摘要,並規劃額外建置一套AI系統,用於評估摘要內容的正確性與完整性。下列何者為此AI系統的核心目標?",
+        "options": [
+            "自動新增專業名詞與技術指標",
+            "判斷摘要是否遺漏關鍵資訊或出現語意錯誤",
+            "調整語音轉文字結果",
+            "自動標註摘要的關鍵字與主題標籤"
+        ],
+        "answer": 2,
+        "difficulty": "中",
+        "topic": "鑑別式 AI 與生成式 AI"
+    },
+    {
+        "id": 15,
+        "question": "下列何者正式ChatGPT、Gemini等對話型生成AI工具所依據的基礎模型技術?",
+        "options": [
+            "決策樹(Decision Tree)",
+            "大型語言模型(Large Language Model, LLM)",
+            "生成對抗網路(Generative Adversarial Network, GAN)",
+            "圖卷積網路(Graph Convolutional Network, GCN)"
+        ],
+        "answer": 2,
+        "difficulty": "中",
+        "topic": "鑑別式 AI 與生成式 AI"
+    },
+    {
+        "id": 16,
+        "question": "某時尚品牌導入生成式AI(Generative AI)技術,建立服裝設計輔助系統。系統需根據設計師輸入的風格條件,自動產生具有高度視覺品質、細節穩定且風格變化自然的服裝草圖。團隊特別重視生成結果的穩定性與多樣性控制能力。在此需求下,下列哪一種模型技術或方法較為適合?",
+        "options": [
+            "支援向量機(Support Machine, SVM)",
+            "生成對抗網路(Generative Adversarial Network, GAN)",
+            "決策樹(Decision Tree)",
+            "擴散模型(Diffusion Model)"
+        ],
+        "answer": 4,
+        "difficulty": "中",
+        "topic": "鑑別式 AI 與生成式 AI"
+    },
+    {
+        "id": 17,
+        "question": "某製造業工廠規劃導入AI監控系統,持續分析設備感測數據(如溫度、震動與壓力)。系統需能在缺乏完整異常標註資料的情況下,辨識與一般運作型態顯著不同的狀態,並發出預警。在此需求下,下列何種技術較為適合?",
+        "options": [
+            "使用支援向量機(Support Vector Machine, SVM)建立異常分類模型",
+            "以決策樹(Decision Tree)學習異常類型的判斷規則",
+            "採用變分自編碼器(Variational Autoencoder, VAE)學習正常資料分佈",
+            "使用生成對抗網路(Generative Adversarial Network, GAN)直接預測異常標籤"
+        ],
+        "answer": 3,
+        "difficulty": "中",
+        "topic": "鑑別式 AI 與生成式 AI"
+    },
+    {
+        "id": 18,
+        "question": "在大型語言模型(LLM)的推論服務中,常透過請求批次處理(Batching)來提升系統效能。關於批次處理(Batching)機制的影響,下列敘述何者最正確?",
+        "options": [
+            "Batching 可提升加速器資源使用效率並增加整體吞吐量(Throughput),但在部分情境下可能對單筆請求延遲造成影響",
+            "Batching 主要用於加快單筆請求回應時間",
+            "Batching 的效益主要來自降低記憶體使用量,對於吞吐量(Throughput)與延遲表現影響有限",
+            "Batching 在低併發(Concurrency)請求下,仍能明顯提升系統效能"
+        ],
+        "answer": 1,
+        "difficulty": "中",
+        "topic": "鑑別式 AI 與生成式 AI"
+    },
+    {
+        "id": 19,
+        "question": "在大型語言模型(LLM)的效能優化中,Flash Attention 常被用來改善 Transformer 注意力機制的運算效率。關於Flash Attention的主要效益,下列敘述何者最正確?",
+        "options": [
+            "透過忽略影響較小的注意力權重,減少模型需要計算的關聯數量,以降低運算成本",
+            "透過調整注意力計算與資料處理方式,減少中間結果的儲存需求,進而改善速度與資源使用效率",
+            "透過增加注意力計算的並行程度,使模型可同時處理更多注意力頭部",
+            "透過將注意力結果暫存於高速快取記憶體,以避免重複計算造成延遲"
+        ],
+        "answer": 2,
+        "difficulty": "中",
+        "topic": "鑑別式 AI 與生成式 AI"
     }
 ]
