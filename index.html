@@ -7,6 +7,7 @@
     <title>Quiz</title>
     <style>
         :root {
+            /* Default Dark Theme */
             --bg:           #0f1117;
             --surface:      #1a1d27;
             --surface2:     #23263a;
@@ -21,6 +22,39 @@
             --wrong-soft:   rgba(224,92,110,.15);
             --radius:       14px;
             --transition:   .2s ease;
+            --theme-desc-color: #ffffff;
+        }
+
+        [data-theme="light"] {
+            --bg:           #f4f5f7;
+            --surface:      #ffffff;
+            --surface2:     #eef0f5;
+            --border:       #d1d5db;
+            --accent:       #5850ec;
+            --accent-soft:  rgba(88,80,236,.1);
+            --text:         #1f2937;
+            --muted:        #6b7280;
+            --correct:      #059669;
+            --correct-soft: rgba(5,150,105,.1);
+            --wrong:        #dc2626;
+            --wrong-soft:   rgba(220,38,38,.1);
+            --theme-desc-color: #000000;
+        }
+
+        [data-theme="ocean"] {
+            --bg:           #0a192f;
+            --surface:      #112240;
+            --surface2:     #1d2d50;
+            --border:       #233554;
+            --accent:       #64ffda;
+            --accent-soft:  rgba(100,255,218,.1);
+            --text:         #ccd6f6;
+            --muted:        #8892b0;
+            --correct:      #10b981;
+            --correct-soft: rgba(16,185,129,.1);
+            --wrong:        #f43f5e;
+            --wrong-soft:   rgba(244,63,94,.1);
+            --theme-desc-color: #64ffda;
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,12 +65,80 @@
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 24px 16px;
+            transition: background var(--transition), color var(--transition);
         }
 
-        #app { width: 100%; max-width: 680px; }
+        /* Top Bar */
+        #top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: transform 0.3s ease, background var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        #top-bar.collapsed {
+            transform: translateY(-100%);
+        }
+        .top-bar-content {
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .top-bar-toggle {
+            position: absolute;
+            bottom: -30px;
+            right: 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-top: none;
+            color: var(--muted);
+            padding: 4px 12px;
+            border-radius: 0 0 8px 8px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: color var(--transition), background var(--transition);
+        }
+        .top-bar-toggle:hover { color: var(--text); }
+        .top-bar-links { display: flex; gap: 20px; align-items: center; }
+        .top-bar-link {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .top-bar-link:hover { color: var(--accent); }
+        
+        .settings-btn {
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .settings-btn:hover { color: var(--text); }
+
+        #app { width: 100%; max-width: 680px; margin-top: 40px; }
 
         .screen { display: none; }
         .screen.active { display: block; }
@@ -46,6 +148,7 @@
             border: 1px solid var(--border);
             border-radius: var(--radius);
             padding: 32px;
+            transition: background var(--transition), border var(--transition);
         }
 
         h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 6px; }
@@ -53,6 +156,35 @@
         p  { color: var(--muted); font-size: .95rem; line-height: 1.6; }
 
         #select-screen .subtitle { margin-bottom: 28px; margin-top: 6px; }
+
+        /* Settings Screen Styles */
+        .settings-group { margin-bottom: 24px; }
+        .settings-group-title { 
+            font-size: 0.85rem; 
+            color: var(--accent); 
+            font-weight: 700; 
+            margin-bottom: 12px; 
+            text-transform: uppercase;
+        }
+        .theme-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+        .theme-option {
+            padding: 12px;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all var(--transition);
+        }
+        .theme-option:hover { border-color: var(--accent); }
+        .theme-option.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+        #theme-description {
+            color: var(--theme-desc-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color var(--transition);
+        }
 
         .quiz-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
         .list-section { 
@@ -329,11 +461,30 @@
     </style>
 </head>
 <body>
+
+<!-- Top Bar -->
+<div id="top-bar">
+    <div class="top-bar-content">
+        <div class="top-bar-links">
+            <a href="https://github.com/Purp1eSheep/iPAS_AI_ElementaryTopicsWeb" target="_blank" class="top-bar-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub Repo
+            </a>
+        </div>
+        <div class="top-bar-links">
+            <button id="settings-btn" class="settings-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                設定
+            </button>
+        </div>
+    </div>
+    <button id="top-bar-toggle" class="top-bar-toggle">▲</button>
+</div>
+
 <div id="app">
 
     <!-- ① 選擇題目集 -->
     <div id="select-screen" class="screen card">
-        <!-- ✏️ 改這裡換掉主標題與副標題 -->
         <h1>📝 Quiz</h1>
         <p class="subtitle">選擇題目集，然後開始作答</p>
         <div id="quiz-list" class="quiz-list">
@@ -386,6 +537,31 @@
         </div>
     </div>
 
+    <!-- ④ 設定 -->
+    <div id="settings-screen" class="screen card">
+        <h1>⚙️ 設定</h1>
+        <div class="settings-group" style="margin-top: 20px;">
+            <div class="settings-group-title">主題選擇</div>
+            <div class="theme-grid">
+                <div class="theme-option" data-theme="dark">深色</div>
+                <div class="theme-option" data-theme="light">淺色</div>
+                <div class="theme-option" data-theme="ocean">深海</div>
+            </div>
+            <p id="theme-description" style="margin-top: 12px; font-weight: 500; font-size: 0.95rem; transition: color var(--transition);"></p>
+        </div>
+        <div class="settings-group">
+            <div class="settings-group-title">資料管理</div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <button id="clear-history-btn" class="btn btn-ghost" style="width: 100%; color: var(--wrong);">❌ 清除錯題紀錄</button>
+                <button id="clear-all-btn" class="btn btn-ghost" style="width: 100%; color: var(--wrong); border-color: var(--wrong);">🔥 清除所有資料</button>
+            </div>
+            <p style="margin-top: 12px; font-size: 0.8rem; text-align: center; color: var(--muted);">「清除所有資料」將包含主題設定與所有紀錄</p>
+        </div>
+        <div class="btn-row" style="margin-top: 32px;">
+            <button id="settings-back-btn" class="btn btn-primary">返回</button>
+        </div>
+    </div>
+
 </div>
 <script>
 /* =============================================================
@@ -403,6 +579,7 @@ let answers   = [];
 let selected  = new Set();
 let isComprehensive = false;
 let redirectTimer = null;
+let previousScreen = 'select';
 
 /* 錯題管理 */
 const WRONG_QS_KEY = 'quiz_wrong_questions';
@@ -424,17 +601,95 @@ function removeWrongQuestion(id) {
         localStorage.setItem(WRONG_QS_KEY, JSON.stringify(wrong));
     }
 }
+function clearWrongQuestions() {
+    localStorage.removeItem(WRONG_QS_KEY);
+    alert('錯題紀錄已清除');
+    location.reload();
+}
+function clearAllData() {
+    localStorage.clear();
+    alert('所有資料已清除');
+    location.reload();
+}
+
+/* 主題管理 */
+const THEME_KEY = 'quiz_theme';
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem(THEME_KEY, theme);
+    updateThemeUI(theme);
+}
+function updateThemeUI(theme) {
+    document.querySelectorAll('.theme-option').forEach(opt => {
+        opt.classList.toggle('active', opt.dataset.theme === theme);
+    });
+    
+    const themeDesc = document.getElementById('theme-description');
+    if (theme === 'dark') {
+        themeDesc.textContent = '探索深邃的暗夜脈動，專注於智慧的閃光。';
+    } else if (theme === 'ocean') {
+        themeDesc.textContent = '徜徉在無垠的湛藍深處，探索知識的邊際。';
+    } else if (theme === 'light') {
+        themeDesc.textContent = '你有病';
+    }
+}
+// 初始化主題
+const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
+setTheme(savedTheme);
+
+/* Top Bar Toggle */
+const topBar = document.getElementById('top-bar');
+const topBarToggle = document.getElementById('top-bar-toggle');
+topBarToggle.onclick = () => {
+    topBar.classList.toggle('collapsed');
+    topBarToggle.textContent = topBar.classList.contains('collapsed') ? '▼' : '▲';
+};
 
 /* 畫面切換 */
 const screens = {
     select: document.getElementById('select-screen'),
     quiz:   document.getElementById('quiz-screen'),
     result: document.getElementById('result-screen'),
+    settings: document.getElementById('settings-screen'),
 };
 function showScreen(name) {
     Object.values(screens).forEach(s => s.classList.remove('active'));
     screens[name].classList.add('active');
+    // 如果進入設定頁，隱藏頂部欄收摺按鈕，避免干擾
+    topBarToggle.style.display = name === 'settings' ? 'none' : 'block';
 }
+
+/* Settings Logic */
+document.getElementById('settings-btn').onclick = () => {
+    // 記錄目前在在哪個畫面，以便返回 (避免重複記錄 settings)
+    for (const [name, el] of Object.entries(screens)) {
+        if (el.classList.contains('active') && name !== 'settings') {
+            previousScreen = name;
+            break;
+        }
+    }
+    showScreen('settings');
+};
+
+document.getElementById('settings-back-btn').onclick = () => {
+    showScreen(previousScreen);
+};
+
+document.querySelectorAll('.theme-option').forEach(opt => {
+    opt.onclick = () => setTheme(opt.dataset.theme);
+});
+
+document.getElementById('clear-history-btn').onclick = () => {
+    if (confirm('是否要清除所有錯題紀錄？')) {
+        clearWrongQuestions();
+    }
+};
+
+document.getElementById('clear-all-btn').onclick = () => {
+    if (confirm('確定要清除「所有」應用程式資料嗎？這將包含您的主題設定與所有練習紀錄。')) {
+        clearAllData();
+    }
+};
 
 /* 初始化：載入 manifest 與所有題目 */
 async function init() {
@@ -753,7 +1008,7 @@ function showResult() {
                 clearTimeout(redirectTimer);
                 redirectTimer = null;
                 cancelBtn.style.display = 'none';
-                msgEl.textContent = '算你識相';
+                msgEl.textContent = '你選擇了勇敢面對挑戰！';
             };
         }
     }
