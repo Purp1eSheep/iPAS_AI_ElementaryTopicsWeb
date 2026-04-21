@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "difficulty": "中",
+        "question": "下列關於生成對抗網路(GAN)的描述正確的是哪一項?",
+        "options": [
+            "GAN由生成器和鑑別器組成",
+            "GAN僅用於分類問題",
+            "GAN的結果始終高度可解釋",
+            "GAN不能生成高品質的數據"
+        ],
+        "answer": 1,
+        "topic": "鑑別式AI與生成式AI概念"
+    },
+    {
+        "id": 2,
+        "difficulty": "易",
+        "question": "下列哪一項技術是生成式AI的基礎?",
+        "options": [
+            "決策樹模型",
+            "聚類演算法",
+            "生成對抗網路",
+            "隨機森林技術"
+        ],
+        "answer": 3,
+        "topic": "鑑別式AI與生成式AI概念"
+    },
+    {
+        "id": 3,
+        "difficulty": "易",
+        "question": "關於生成式AI的基本原理,下列敘述何者較正確?",
+        "options": [
+            "生成式AI通過分析大量數據來生成新數據,模擬數據分佈以創造與訓練數據相似的結果",
+            "生成式AI主要通過預定義的規則來進行數據處理和分類",
+            "生成式AI專注於數據分類和迴歸預測,幫助識別已知數據中的模式",
+            "生成式AI通過自動化的方式清洗數據,提升數據分析的準確性"
+        ],
+        "answer": 1,
+        "topic": "鑑別式AI與生成式AI概念"
+    },
+    {
+        "id": 4,
+        "difficulty": "難",
+        "question": "下列何者不是生成式AI核心技術?",
+        "options": [
+            "Variational Autoencoders (VAE)",
+            "Generative Adversarial Networks (GAN)",
+            "Visual Geometry Group (VGG)",
+            "Autoregressive Models (AR Model)"
+        ],
+        "answer": 3,
+        "topic": "鑑別式AI與生成式AI概念"
+    },
+    {
+        "id": 5,
+        "difficulty": "易",
+        "question": "下列模型在生成式人工智慧(Generative AI)中的角色,何者並非以「產生新資料」為主要設計目的?",
+        "options": [
+            "支援向量機(Support Vector Machine)",
+            "變分自編碼器(Variational Autoencoder)",
+            "自迴歸模型(Autoregressive Model)",
+            "擴散模型(Diffusion Model)"
+        ],
+        "answer": 1,
+        "topic": "鑑別式AI與生成式AI概念"
+    }
+]

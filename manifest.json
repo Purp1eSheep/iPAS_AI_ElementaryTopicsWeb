@@ -1,17 +1,37 @@
 [
   {
-    "title": "AI1",
-    "description": "30 題",
-    "file": "data/AI1.json"
+    "title": "AI_Concepts",
+    "description": "5 題",
+    "file": "data/AI_Concepts.json"
   },
   {
-    "title": "AI2",
-    "description": "50 題",
-    "file": "data/AI2.json"
+    "title": "Data_Processing",
+    "description": "8 題",
+    "file": "data/Data_Processing.json"
   },
   {
-    "title": "AI3",
-    "description": "70 題",
-    "file": "data/AI3.json"
+    "title": "Discriminative_vs_Generative_AI",
+    "description": "5 題",
+    "file": "data/Discriminative_vs_Generative_AI.json"
+  },
+  {
+    "title": "GenAI_Applications",
+    "description": "20 題",
+    "file": "data/GenAI_Applications.json"
+  },
+  {
+    "title": "GenAI_Implementation",
+    "description": "15 題",
+    "file": "data/GenAI_Implementation.json"
+  },
+  {
+    "title": "Machine_Learning",
+    "description": "17 題",
+    "file": "data/Machine_Learning.json"
+  },
+  {
+    "title": "No_Code_Low_Code",
+    "description": "8 題",
+    "file": "data/No_Code_Low_Code.json"
   }
 ]

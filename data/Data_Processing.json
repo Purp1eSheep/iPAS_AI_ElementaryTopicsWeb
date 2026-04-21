@@ -1,0 +1,106 @@
+[
+    {
+        "id": 1,
+        "difficulty": "易",
+        "question": "下列何者非大數據時代資料的特性?",
+        "options": [
+            "資料量大",
+            "資料變動速度快",
+            "資料多樣性",
+            "資料存儲位置固定"
+        ],
+        "answer": 4,
+        "topic": "資料處理與分析概念"
+    },
+    {
+        "id": 2,
+        "difficulty": "易",
+        "question": "在品質管理中,若一產品的生產過程中標準差顯著偏大,通常意味著什麼?",
+        "options": [
+            "資料點高度集中,產品質量穩定",
+            "生產過程波動大,產品品質不穩定",
+            "資料無法反映產品實際狀況",
+            "中位數數值高,品質良率較高"
+        ],
+        "answer": 2,
+        "topic": "資料處理與分析概念"
+    },
+    {
+        "id": 3,
+        "difficulty": "易",
+        "question": "下列哪一種資料類型不屬於非結構化資料?",
+        "options": [
+            "X光醫學影像",
+            "監控錄影畫面",
+            "客服電話錄音",
+            "組織內部的關係型資料庫記錄"
+        ],
+        "answer": 4,
+        "topic": "資料處理與分析概念"
+    },
+    {
+        "id": 4,
+        "difficulty": "易",
+        "question": "下列資料型態,何者最常用來儲存員工年齡、員工年資、貨品銷售量等資料?",
+        "options": [
+            "文字型(Text)",
+            "數值型(Numeric)",
+            "日期型(Date)",
+            "布林型(Boolean)"
+        ],
+        "answer": 2,
+        "topic": "資料處理與分析概念"
+    },
+    {
+        "id": 5,
+        "difficulty": "易",
+        "question": "在檢視資料品質時,可參考資料的變異程度及資料的集中趨勢。下列何者不屬於資料集中趨勢衡量的方法?",
+        "options": [
+            "平均數(Mean)",
+            "中位數(Median)",
+            "眾數(Mode)",
+            "標準差(Standard Deviation)"
+        ],
+        "answer": 4,
+        "topic": "資料處理與分析概念"
+    },
+    {
+        "id": 6,
+        "difficulty": "中",
+        "question": "公司在整合資料時,發現同一客戶的姓名在不同系統中拼寫不一致(例如「陳大文」與「陳大文先生」),導致資料無法正確對應。請問此類資料品質問題應該在ETL哪一個流程步驟中進行處理?",
+        "options": [
+            "資料轉換(Data Transformation)",
+            "資料擷取(Data Extraction)",
+            "資料載入(Data Loading)",
+            "型態轉換(Type Conversion)"
+        ],
+        "answer": 1,
+        "topic": "資料處理與分析概念"
+    },
+    {
+        "id": 7,
+        "difficulty": "中",
+        "question": "某份資料中出現多個欄位(如score1、score2、score3)儲存相同的成績資訊,造成資料結構重複與使用混淆,此種情形屬於下列哪一種資料品質問題?",
+        "options": [
+            "重複資料(Duplicate Data)",
+            "冗餘資料(Redundant Data)",
+            "格式錯誤資料(Malformed Data)",
+            "缺失資料(Missing Data)"
+        ],
+        "answer": 2,
+        "topic": "資料處理與分析概念"
+    },
+    {
+        "id": 8,
+        "difficulty": "中",
+        "question": "某製造業團隊建立瑕疵偵測模型時,使用單張約20MB的高解析度工業影像作為訓練資料,並將所有影像儲存於NAS(Network Attached Storage)中。訓練時透過PyTorch搭配CNN模型於GPU上進行,工程師觀察到GPU使用率僅約20%至30%,整體訓練時間耗費數日。根據上述情境,造成GPU利用率偏低的最可能原因為何?",
+        "options": [
+            "模型架構過於複雜,導致反向傳播時間過長",
+            "訓練資料品質不穩定,造成模型難以收斂",
+            "高解析影像從 NAS 載入產生 I/O (Input/Output)瓶頸,導致 GPU 等待",
+            "批次大小(Batch Size) 設定不當,導致GPU長時間閒置"
+        ],
+        "answer": 3,
+        "topic": "資料處理與分析概念"
+    }
+]

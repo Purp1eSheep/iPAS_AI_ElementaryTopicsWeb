@@ -128,6 +128,17 @@
             margin-bottom: 16px;
             display: inline-block;
         }
+        .topic-badge {
+            font-size: .72rem;
+            padding: 3px 10px;
+            border-radius: 99px;
+            background: var(--surface2);
+            color: var(--muted);
+            font-weight: 600;
+            margin-bottom: 16px;
+            margin-left: 8px;
+            display: inline-block;
+        }
 
         .options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
 
@@ -169,6 +180,24 @@
         .score-number { font-size: 3.5rem; font-weight: 800; line-height: 1; }
         .score-label  { color: var(--muted); font-size: .9rem; }
 
+        /* 弱點分析 */
+        .weakness-card {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 28px;
+        }
+        .weakness-title { font-weight: 700; font-size: 1rem; margin-bottom: 12px; color: var(--accent); }
+        .weakness-item {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 8px; font-size: .85rem;
+        }
+        .weakness-bar-bg { flex: 1; height: 4px; background: var(--border); margin: 0 12px; border-radius: 2px; position: relative; }
+        .weakness-bar-fg { height: 100%; background: var(--accent); border-radius: 2px; }
+        .weakness-name { width: 140px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .weakness-score { width: 40px; text-align: right; font-weight: 600; }
+
         .result-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
         .result-item {
             background: var(--surface2);
@@ -179,7 +208,8 @@
         }
         .result-item.ok   { border-color: var(--correct); }
         .result-item.fail { border-color: var(--wrong); }
-        .result-item .ri-q { color: var(--muted); font-size: .82rem; margin-bottom: 4px; }
+        .result-item .ri-q { color: var(--muted); font-size: .82rem; margin-bottom: 4px; display: flex; justify-content: space-between; }
+        .result-item .ri-topic { font-size: .75rem; color: var(--accent); opacity: 0.8; }
         .result-item .ri-status { font-weight: 600; font-size: .82rem; margin-top: 6px; }
         .result-item.ok   .ri-status { color: var(--correct); }
         .result-item.fail .ri-status { color: var(--wrong); }
@@ -219,7 +249,10 @@
                 </div>
                 <span id="q-counter" class="q-counter">0 / 0</span>
             </div>
-            <span id="type-badge" class="type-badge"></span>
+            <div style="display: flex; align-items: baseline;">
+                <span id="type-badge" class="type-badge"></span>
+                <span id="topic-badge" class="topic-badge"></span>
+            </div>
             <h2 id="question-text"></h2>
             <div id="options" class="options"></div>
             <div class="quiz-actions">
@@ -235,6 +268,10 @@
         <div class="score-ring">
             <div id="score-number" class="score-number">—</div>
             <div class="score-label">答對題數</div>
+        </div>
+        <div id="weakness-analysis" class="weakness-card" style="display:none">
+            <div class="weakness-title">📊 弱點分析</div>
+            <div id="weakness-list"></div>
         </div>
         <div id="result-list" class="result-list"></div>
         <div class="btn-row">
@@ -257,6 +294,7 @@ let questions = [];
 let current   = 0;
 let answers   = [];
 let selected  = new Set();
+let isComprehensive = false;
 
 /* 畫面切換 */
 const screens = {
@@ -289,70 +327,104 @@ function renderQuizList() {
     const startBtn = document.getElementById('start-btn');
     let chosen = null;
 
-    listEl.innerHTML = quizSets.map((q, i) => `
+    let listHtml = quizSets.map((q, i) => `
         <div class="quiz-card" data-i="${i}">
             <div class="name">${q.title}</div>
             <div class="meta">${q.description ?? ''}</div>
         </div>
     `).join('');
 
+    // 插入「綜合測驗」選項
+    listHtml += `
+        <div class="quiz-card comprehensive" data-i="comp">
+            <div class="name">🔥 全題目綜合測驗</div>
+            <div class="meta">從所有章節隨機出題，無壓力模式</div>
+        </div>
+    `;
+
+    listEl.innerHTML = listHtml;
+
     listEl.querySelectorAll('.quiz-card').forEach(card => {
         card.addEventListener('click', () => {
             listEl.querySelectorAll('.quiz-card').forEach(c => c.classList.remove('selected'));
             card.classList.add('selected');
-            chosen = parseInt(card.dataset.i);
+            chosen = card.dataset.i;
             startBtn.disabled = false;
         });
     });
 
     startBtn.onclick = async () => {
         if (chosen === null) return;
-        await loadQuiz(quizSets[chosen].file);
+        if (chosen === 'comp') {
+            isComprehensive = true;
+            await loadComprehensiveQuiz();
+        } else {
+            isComprehensive = false;
+            await loadQuiz(quizSets[parseInt(chosen)].file);
+        }
     };
 }
 
-/* 載入題目 JSON 並開始作答 */
+/* 綜合測驗：載入所有 JSON */
+async function loadComprehensiveQuiz() {
+    try {
+        const allQuestions = [];
+        for (const set of quizSets) {
+            const res = await fetch(set.file);
+            const data = await res.json();
+            const raw = Array.isArray(data) ? data : (data.questions || []);
+            allQuestions.push(...raw);
+        }
+        processAndStart(allQuestions);
+    } catch (e) {
+        alert(`載入綜合題目失敗: ${e.message}`);
+    }
+}
+
+/* 載入單一題目 JSON */
 async function loadQuiz(file) {
     try {
         const res = await fetch(file);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const rawData = await res.json();
-        
-        // 支援 oneShot 的純陣列格式與舊有物件格式
         const rawQuestions = Array.isArray(rawData) ? rawData : (rawData.questions || []);
-        
-        questions = rawQuestions.map(q => {
-            // 映射欄位：支援中文與英文鍵值
-            const questionText = q["題目"] || q.question;
-            const options = q["選項"] || q.options;
-            let ans = q["答案"] !== undefined ? q["答案"] : q.answer;
-            const id = q["題號"] || q.id || "";
-            const level = q["難易度"] || q.difficulty || q.level || "";
-            
-            // 統一將 1-based 答案轉為 0-based 索引
-            if (typeof ans === 'number') {
-                ans = ans - 1;
-            } else if (Array.isArray(ans)) {
-                ans = ans.map(a => typeof a === 'number' ? a - 1 : a);
-            }
-
-            return {
-                question: questionText,
-                options: options,
-                answer: ans,
-                id: id,
-                level: level
-            };
-        });
-
-        questions = shuffle(questions);
-        current = 0;
-        answers = [];
-        showScreen('quiz');
-        renderQuestion();
+        processAndStart(rawQuestions);
     } catch (e) {
         alert(`載入題目失敗: ${e.message}`);
     }
+}
+
+/* 處理題目資料並開始 */
+function processAndStart(raw) {
+    questions = raw.map(q => {
+        const questionText = q["題目"] || q.question;
+        const options = q["選項"] || q.options;
+        let ans = q["答案"] !== undefined ? q["答案"] : q.answer;
+        const id = q["題號"] || q.id || "";
+        const level = q["難易度"] || q.difficulty || q.level || "";
+        const topic = q["topic"] || "";
+        
+        if (typeof ans === 'number') {
+            ans = ans - 1;
+        } else if (Array.isArray(ans)) {
+            ans = ans.map(a => typeof a === 'number' ? a - 1 : a);
+        }
+
+        return {
+            question: questionText,
+            options: options,
+            answer: ans,
+            id: id,
+            level: level,
+            topic: topic
+        };
+    });
+
+    questions = shuffle(questions);
+    current = 0;
+    answers = [];
+    showScreen('quiz');
+    renderQuestion();
 }
 
 /* 渲染題目 */
@@ -363,11 +435,15 @@ function renderQuestion() {
     selected = new Set();
 
     document.getElementById('progress-bar').style.width = `${(current / total) * 100}%`;
-    document.getElementById('q-counter').textContent    = `${current + 1} / ${total}`;
     
-    // 組合 Meta 資訊（題號、難易度等）
+    // 綜合模式不顯示總題數，減輕壓力
+    document.getElementById('q-counter').textContent = isComprehensive 
+        ? `第 ${current + 1} 題` 
+        : `${current + 1} / ${total}`;
+    
     const meta = [q.id, q.level].filter(Boolean).join(' | ');
     document.getElementById('type-badge').textContent   = (meta ? meta + ' · ' : '') + (isMulti ? '多選題' : '單選題');
+    document.getElementById('topic-badge').textContent  = q.topic || "";
     document.getElementById('question-text').textContent = q.question;
 
     const optEl   = document.getElementById('options');
@@ -384,7 +460,6 @@ function renderQuestion() {
         </div>
     `).join('');
 
-    // 綁定退出按鈕
     exitBtn.onclick = () => {
         if (confirm('確定要退出並查看目前的結果嗎？')) {
             showResult();
@@ -431,6 +506,7 @@ function submitAnswer(q, isMulti) {
         options:  q.options,
         selected: [...selected],
         correct:  [...correct],
+        topic:    q.topic,
         isCorrect,
     });
 
@@ -451,9 +527,39 @@ function showResult() {
 
     document.getElementById('score-number').textContent = `${correctCount} / ${answeredCount}`;
 
+    // 弱點分析
+    const stats = {};
+    answers.forEach(a => {
+        if (!a.topic) return;
+        if (!stats[a.topic]) stats[a.topic] = { total: 0, ok: 0 };
+        stats[a.topic].total++;
+        if (a.isCorrect) stats[a.topic].ok++;
+    });
+
+    const topicList = Object.keys(stats);
+    if (topicList.length > 0) {
+        document.getElementById('weakness-analysis').style.display = 'block';
+        document.getElementById('weakness-list').innerHTML = topicList.map(name => {
+            const s = stats[name];
+            const rate = Math.round((s.ok / s.total) * 100);
+            return `
+                <div class="weakness-item">
+                    <div class="weakness-name">${name}</div>
+                    <div class="weakness-bar-bg"><div class="weakness-bar-fg" style="width:${rate}%"></div></div>
+                    <div class="weakness-score">${rate}%</div>
+                </div>
+            `;
+        }).join('');
+    } else {
+        document.getElementById('weakness-analysis').style.display = 'none';
+    }
+
     let resultHtml = answers.map((a, i) => `
         <div class="result-item ${a.isCorrect ? 'ok' : 'fail'}">
-            <div class="ri-q">第 ${i+1} 題</div>
+            <div class="ri-q">
+                <span>第 ${i+1} 題</span>
+                <span class="ri-topic">${a.topic || ''}</span>
+            </div>
             <div>${a.question}</div>
             <div class="ri-status">
                 ${a.isCorrect

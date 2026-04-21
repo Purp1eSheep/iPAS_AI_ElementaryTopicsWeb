@@ -1,0 +1,106 @@
+[
+    {
+        "id": 1,
+        "difficulty": "易",
+        "question": "下列何者最能表達 No Code/Low Code 平台的主要特色?",
+        "options": [
+            "需要撰寫大量程式碼",
+            "運用模板快速建立應用程式",
+            "僅供專業開發人員使用",
+            "只能製作靜態網站"
+        ],
+        "answer": 2,
+        "topic": "No code/ Low code 概念"
+    },
+    {
+        "id": 2,
+        "difficulty": "易",
+        "question": "關於No-Code AI工具,下列敘述何者最為準確?",
+        "options": [
+            "已經完全取代傳統的AI開發模式",
+            "只適用於大型企業",
+            "是一種降低AI技術複雜性和開發成本的新興方法",
+            "工具都具有完全相同的功能和性能"
+        ],
+        "answer": 3,
+        "topic": "No code/ Low code 概念"
+    },
+    {
+        "id": 3,
+        "difficulty": "易",
+        "question": "在選擇 No Code / Low Code 平台時,下列何者為考慮功能與擴展性時最重要因素?",
+        "options": [
+            "平台的購買成本",
+            "平台的技術整合能力和自訂性",
+            "使用者的程式設計能力",
+            "平台的市場評價"
+        ],
+        "answer": 2,
+        "topic": "No code/ Low code 概念"
+    },
+    {
+        "id": 4,
+        "difficulty": "中",
+        "question": "關於生成式 AI 與 No Code / Low Code 平台的應用,下列何者最不適合?",
+        "options": [
+            "自動生成程式碼",
+            "自動化生成行銷文案",
+            "快速開發個人化 App",
+            "自動化生成法律判決"
+        ],
+        "answer": 4,
+        "topic": "No code/ Low code 概念"
+    },
+    {
+        "id": 5,
+        "difficulty": "中",
+        "question": "關於 No Code / Low Code 平台,下列敘述何者較正確?",
+        "options": [
+            "兩者完全相同",
+            "Low Code 平台不需要任何程式設計知識",
+            "Low Code 平台更適合開發靈活且可擴展的解決方案",
+            "No Code 平台可以無限客製化"
+        ],
+        "answer": 3,
+        "topic": "No code/ Low code 概念"
+    },
+    {
+        "id": 6,
+        "difficulty": "中",
+        "question": "下列哪種情況,選擇Low Code 平台可能比 No Code 平台更為適合?",
+        "options": [
+            "需要非技術人員快速進行開發與應用",
+            "應用需求簡單,無需自訂功能",
+            "需要較複雜的業務邏輯並使用自整合功能",
+            "預算和時間極度有限"
+        ],
+        "answer": 3,
+        "topic": "No code/ Low code 概念"
+    },
+    {
+        "id": 7,
+        "difficulty": "中",
+        "question": "使用 Low-Code 平台進行開發時,企業應特別留意下列哪一項潛在風險?",
+        "options": [
+            "可能造成企業內部敏感資料的洩露",
+            "難以進行大規模的應用擴展和維護",
+            "開發成本將大幅增加",
+            "可能有未經IT部門管理的應用程式擴散"
+        ],
+        "answer": 4,
+        "topic": "No code/ Low code 概念"
+    },
+    {
+        "id": 8,
+        "difficulty": "中",
+        "question": "在企業級數據管道(ETL)中,No Code / Low Code 平台的主要角色為何?",
+        "options": [
+            "可作為前端數據可視化工具,協助展示與分析結果",
+            "取代部分傳統ETL解決方案,但可能無法處理過於客製化的邏輯",
+            "僅適用於小型數據應用,對大型數據處理的效率較低",
+            "無法應用於任何數據處理場景,因整合難度過高"
+        ],
+        "answer": 2,
+        "topic": "No code/ Low code 概念"
+    }
+]
