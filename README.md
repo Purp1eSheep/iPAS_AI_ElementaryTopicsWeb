@@ -1,4 +1,5 @@
-# Quiz-Web-Template
+題目皆來自經濟部 iPAS 網頁
+https://ipd.nat.gov.tw/ipas/certification/AIAP/downloads
 
 我是 Vibe Coder 我對不起老爹跟老爹的學費錢，我是 Gen Z 腦萎縮資工學生，阿公676767。
 

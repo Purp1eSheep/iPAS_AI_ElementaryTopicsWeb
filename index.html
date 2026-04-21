@@ -322,26 +322,26 @@ async function loadQuiz(file) {
         const rawQuestions = Array.isArray(rawData) ? rawData : (rawData.questions || []);
         
         questions = rawQuestions.map(q => {
-            // 映射新格式欄位並處理 1-based 轉 0-based 索引
+            // 映射欄位：支援中文與英文鍵值
             const questionText = q["題目"] || q.question;
             const options = q["選項"] || q.options;
             let ans = q["答案"] !== undefined ? q["答案"] : q.answer;
+            const id = q["題號"] || q.id || "";
+            const level = q["難易度"] || q.difficulty || q.level || "";
             
-            // 若為 oneShot 格式（有「答案」且為數字），則為 1-based，轉為 0-based
-            if (q["答案"] !== undefined) {
-                if (typeof ans === 'number') {
-                    ans = ans - 1;
-                } else if (Array.isArray(ans)) {
-                    ans = ans.map(a => typeof a === 'number' ? a - 1 : a);
-                }
+            // 統一將 1-based 答案轉為 0-based 索引
+            if (typeof ans === 'number') {
+                ans = ans - 1;
+            } else if (Array.isArray(ans)) {
+                ans = ans.map(a => typeof a === 'number' ? a - 1 : a);
             }
 
             return {
                 question: questionText,
                 options: options,
                 answer: ans,
-                id: q["題號"] || "",
-                level: q["難易度"] || ""
+                id: id,
+                level: level
             };
         });
 

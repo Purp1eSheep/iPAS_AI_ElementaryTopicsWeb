@@ -1,12 +1,17 @@
 [
   {
-    "title": "datastructure",
-    "description": "6 題",
-    "file": "data/datastructure.json"
+    "title": "AI1",
+    "description": "30 題",
+    "file": "data/AI1.json"
   },
   {
-    "title": "javascript",
-    "description": "8 題",
-    "file": "data/javascript.json"
+    "title": "AI2",
+    "description": "50 題",
+    "file": "data/AI2.json"
+  },
+  {
+    "title": "AI3",
+    "description": "70 題",
+    "file": "data/AI3.json"
   }
 ]
