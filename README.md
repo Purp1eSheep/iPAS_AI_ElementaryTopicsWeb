@@ -1,31 +1,12 @@
-# iPAS AI Elementary Topics Web
+# Quiz-Web-Template
 
-這是一個簡單的網頁應用程式，用於練習 iPAS AI 相關題目。
+我是 Vibe Coder 我對不起老爹跟老爹的學費錢，我是 Gen Z 腦萎縮資工學生，阿公676767。
 
-## 專案結構
+工作分配：
+- 我: 逼事沒幹下指令
+- Claude: New Version, yes Daddy.
+- Gemini: 被我放棄, trash. 因為 Claude 額度用完所以負責 Debug
 
-- `questions/`: 放置您的題目 JSON 檔案（來源）。
-- `data/`: **自動生成**的資料夾，存放合併後的題目與清單（請勿手動修改）。
-- `index.html`: 主網頁程式。
-- `merge_questions.py`: 合併題目並更新清單的工具。
-
-## 使用方式
-
-1.  將您的題目 JSON 檔案放入 `questions` 資料夾中。
-2.  執行合併腳本：
-    ```bash
-    python merge_questions.py
-    ```
-3.  直接開啟 `index.html` 即可開始練習！
-
-## 題目格式範例
-
-```json
-{
-  "題目": "您的問題內容",
-  "選項": ["選項A", "選項B", "選項C", "選項D"],
-  "答案": 1,
-  "難易度": "易",
-  "topic": "章節名稱"
-}
-```
+特別感謝：
+- NTUT: 謝學校提供網路
+- 謝教授： 謝教授提供證照考試

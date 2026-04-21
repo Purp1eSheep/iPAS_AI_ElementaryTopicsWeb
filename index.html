@@ -93,8 +93,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 680px;
-            margin: 0 auto;
             width: 100%;
         }
         .settings-dropdown {
@@ -128,6 +126,7 @@
             font-size: 0.8rem;
             transition: color var(--transition), background var(--transition);
         }
+        .settings-open .top-bar-toggle { display: none; }
         .top-bar-toggle:hover { color: var(--text); }
         .top-bar-links { display: flex; gap: 20px; align-items: center; }
         .top-bar-link {
