@@ -2,15 +2,19 @@ import json
 import os
 
 def merge_questions():
-    raw_dir = 'data/src'
-    output_file = 'data/all_questions.json'
-    manifest_path = 'manifest.json'
+    raw_dir = 'questions'
+    output_dir = 'data'
+    output_file = os.path.join(output_dir, 'all_questions.json')
+    manifest_path = os.path.join(output_dir, 'manifest.json')
     
     all_questions = []
     
     if not os.path.exists(raw_dir):
         print(f"找不到 {raw_dir} 資料夾")
         return
+    
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
     # 取得原始 json 檔案
     files = [f for f in os.listdir(raw_dir) if f.endswith('.json')]
@@ -21,12 +25,12 @@ def merge_questions():
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-                questions = data if isinstance(data, list) else data.get('questions', [])
+                questions_list = data if isinstance(data, list) else data.get('questions', [])
                 
                 # 取得該檔案預設的 topic (如果題目沒寫的話)
                 default_topic = filename.replace('.json', '')
                 
-                for q in questions:
+                for q in questions_list:
                     # 統一欄位名稱
                     q_text = (q.get("題目") or q.get("question", "")).strip()
                     if not q_text: continue
@@ -64,7 +68,7 @@ def merge_questions():
 
     # 寫入合併後的檔案
     with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(final_questions, f, indent=2, ensure_ascii=False)
+        json.dump(final_questions, f, indent=4, ensure_ascii=False)
     
     # 更新 manifest.json 以指向合併後的檔案
     topics = sorted(list(set(q['topic'] for q in final_questions)))
@@ -74,14 +78,15 @@ def merge_questions():
         manifest_data.append({
             "title": topic,
             "description": f"{count} 題",
-            "file": "data/all_questions.json", # 全部都指向同一個檔案
+            "file": "data/all_questions.json", # 相對於 index.html 的路徑
             "isTopic": True
         })
     
     with open(manifest_path, 'w', encoding='utf-8') as f:
-        json.dump(manifest_data, f, indent=2, ensure_ascii=False)
+        json.dump(manifest_data, f, indent=4, ensure_ascii=False)
 
     print(f"成功合併共 {len(all_questions)} 題至 {output_file}")
+    print(f"已更新 {manifest_path}")
 
 if __name__ == "__main__":
     merge_questions()

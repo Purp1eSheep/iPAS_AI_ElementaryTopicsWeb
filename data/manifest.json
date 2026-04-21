@@ -1,0 +1,44 @@
+[
+    {
+        "title": "No code/ Low code 概念",
+        "description": "8 題",
+        "file": "data/all_questions.json",
+        "isTopic": true
+    },
+    {
+        "title": "人工智慧概念",
+        "description": "5 題",
+        "file": "data/all_questions.json",
+        "isTopic": true
+    },
+    {
+        "title": "機器學習概念",
+        "description": "17 題",
+        "file": "data/all_questions.json",
+        "isTopic": true
+    },
+    {
+        "title": "生成式AI導入評估計畫",
+        "description": "15 題",
+        "file": "data/all_questions.json",
+        "isTopic": true
+    },
+    {
+        "title": "生成式AI應用領域與工具使用",
+        "description": "20 題",
+        "file": "data/all_questions.json",
+        "isTopic": true
+    },
+    {
+        "title": "資料處理與分析概念",
+        "description": "8 題",
+        "file": "data/all_questions.json",
+        "isTopic": true
+    },
+    {
+        "title": "鑑別式AI與生成式AI概念",
+        "description": "5 題",
+        "file": "data/all_questions.json",
+        "isTopic": true
+    }
+]
