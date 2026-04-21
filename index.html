@@ -54,21 +54,67 @@
 
         #select-screen .subtitle { margin-bottom: 28px; margin-top: 6px; }
 
-        .quiz-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+        .quiz-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+        .list-section { 
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        .list-section-header { 
+            background: var(--surface2);
+            padding: 14px 20px;
+            font-size: 0.9rem; 
+            color: var(--text); 
+            font-weight: 700; 
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background var(--transition);
+        }
+        .list-section-header:hover { background: var(--border); }
+        .list-section-header::after {
+            content: '▼';
+            font-size: 0.7rem;
+            color: var(--muted);
+            transition: transform 0.3s;
+        }
+        .list-section.active .list-section-header::after { transform: rotate(180deg); }
+        
+        .list-section-content { 
+            display: none; 
+            padding: 10px;
+            flex-direction: column;
+            gap: 8px;
+            background: rgba(0,0,0,0.1);
+        }
+        .list-section.active .list-section-content { display: flex; }
 
         .quiz-card {
-            background: var(--surface2);
-            border: 2px solid var(--border);
-            border-radius: var(--radius);
-            padding: 16px 20px;
+            background: var(--surface);
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 18px;
             cursor: pointer;
-            transition: border-color var(--transition), background var(--transition);
+            transition: all var(--transition);
             user-select: none;
         }
-        .quiz-card:hover { border-color: var(--accent); }
+        .quiz-card:hover { border-color: var(--accent); transform: translateX(4px); }
         .quiz-card.selected { border-color: var(--accent); background: var(--accent-soft); }
-        .quiz-card .name { font-weight: 600; font-size: 1rem; }
-        .quiz-card .meta { font-size: .82rem; color: var(--muted); margin-top: 3px; }
+        .quiz-card .name { font-weight: 600; font-size: 0.95rem; }
+        .quiz-card .meta { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+
+        /* 挑戰區塊不需要收摺，維持原樣 */
+        .challenge-section { margin-bottom: 16px; }
+        .challenge-title { 
+            font-size: 0.85rem; 
+            color: var(--accent); 
+            font-weight: 700; 
+            margin-bottom: 8px;
+            padding-left: 4px;
+            text-transform: uppercase;
+        }
 
         .btn {
             display: inline-flex;
@@ -180,6 +226,28 @@
         .score-number { font-size: 3.5rem; font-weight: 800; line-height: 1; }
         .score-label  { color: var(--muted); font-size: .9rem; }
 
+        #result-message {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--wrong);
+        }
+        #redirect-control {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        #cancel-redirect-btn {
+            background: var(--wrong);
+            color: white;
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            display: none;
+        }
+
         /* 弱點分析 */
         .weakness-card {
             background: var(--surface2);
@@ -213,6 +281,40 @@
         .result-item .ri-status { font-weight: 600; font-size: .82rem; margin-top: 6px; }
         .result-item.ok   .ri-status { color: var(--correct); }
         .result-item.fail .ri-status { color: var(--wrong); }
+
+        /* 正確題目收摺 */
+        .correct-answers-section {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .correct-answers-header {
+            background: var(--surface2);
+            padding: 14px 20px;
+            font-size: 0.9rem;
+            color: var(--correct);
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .correct-answers-header::after {
+            content: '▼';
+            font-size: 0.7rem;
+            color: var(--muted);
+            transition: transform 0.3s;
+        }
+        .correct-answers-section.active .correct-answers-header::after { transform: rotate(180deg); }
+        .correct-answers-content {
+            display: none;
+            padding: 10px;
+            flex-direction: column;
+            gap: 10px;
+            background: rgba(0,0,0,0.1);
+        }
+        .correct-answers-section.active .correct-answers-content { display: flex; }
 
         /* 調整按鈕列，讓退出按鈕較短 */
         .quiz-actions { display: flex; gap: 10px; }
@@ -269,6 +371,10 @@
             <div id="score-number" class="score-number">—</div>
             <div class="score-label">答對題數</div>
         </div>
+        <div id="result-message"></div>
+        <div id="redirect-control">
+            <button id="cancel-redirect-btn">我不要當兵</button>
+        </div>
         <div id="weakness-analysis" class="weakness-card" style="display:none">
             <div class="weakness-title">📊 弱點分析</div>
             <div id="weakness-list"></div>
@@ -290,11 +396,34 @@ const MANIFEST_PATH = 'manifest.json';
 
 /* 狀態 */
 let quizSets  = [];
+let globalQuestions = []; // 快取所有題目
 let questions = [];
 let current   = 0;
 let answers   = [];
 let selected  = new Set();
 let isComprehensive = false;
+let redirectTimer = null;
+
+/* 錯題管理 */
+const WRONG_QS_KEY = 'quiz_wrong_questions';
+function getWrongQuestions() {
+    return JSON.parse(localStorage.getItem(WRONG_QS_KEY) || '[]');
+}
+function saveWrongQuestion(id) {
+    let wrong = getWrongQuestions();
+    if (!wrong.includes(id)) {
+        wrong.push(id);
+        localStorage.setItem(WRONG_QS_KEY, JSON.stringify(wrong));
+    }
+}
+function removeWrongQuestion(id) {
+    let wrong = getWrongQuestions();
+    const index = wrong.indexOf(id);
+    if (index > -1) {
+        wrong.splice(index, 1);
+        localStorage.setItem(WRONG_QS_KEY, JSON.stringify(wrong));
+    }
+}
 
 /* 畫面切換 */
 const screens = {
@@ -307,17 +436,26 @@ function showScreen(name) {
     screens[name].classList.add('active');
 }
 
-/* 初始化：載入 manifest */
+/* 初始化：載入 manifest 與所有題目 */
 async function init() {
+    if (redirectTimer) {
+        clearTimeout(redirectTimer);
+        redirectTimer = null;
+    }
     showScreen('select');
     const listEl = document.getElementById('quiz-list');
     try {
         const res = await fetch(MANIFEST_PATH);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         quizSets = await res.json();
+        
+        // 預先載入所有題目
+        const qRes = await fetch('data/all_questions.json');
+        globalQuestions = await qRes.json();
+        
         renderQuizList();
     } catch (e) {
-        listEl.innerHTML = `<p class="toast error">⚠ 無法載入 manifest.json<br><small>${e.message}</small></p>`;
+        listEl.innerHTML = `<p class="toast error">⚠ 無法載入資料<br><small>${e.message}</small></p>`;
     }
 }
 
@@ -327,84 +465,121 @@ function renderQuizList() {
     const startBtn = document.getElementById('start-btn');
     let chosen = null;
 
-    let listHtml = quizSets.map((q, i) => `
-        <div class="quiz-card" data-i="${i}">
-            <div class="name">${q.title}</div>
-            <div class="meta">${q.description ?? ''}</div>
-        </div>
-    `).join('');
+    const wrongIds = getWrongQuestions();
 
-    // 插入「綜合測驗」選項
+    // 1. 挑戰區 (不收摺)
+    let listHtml = `
+        <div class="challenge-section">
+            <div class="challenge-title">挑戰</div>
+            <div class="quiz-card" data-type="comp">
+                <div class="name">🔥 全題目綜合測驗</div>
+                <div class="meta">從所有章節隨機出題，無壓力模式</div>
+            </div>
+            ${wrongIds.length > 0 ? `
+            <div class="quiz-card" data-type="wrong" style="margin-top: 8px; border-color: var(--wrong-soft); background: var(--wrong-soft);">
+                <div class="name">❌ 錯題強化練習</div>
+                <div class="meta">針對你曾答錯的 ${wrongIds.length} 題進行複習</div>
+            </div>
+            ` : ''}
+        </div>
+    `;
+
+    // 2. 按章節選 (收摺)
     listHtml += `
-        <div class="quiz-card comprehensive" data-i="comp">
-            <div class="name">🔥 全題目綜合測驗</div>
-            <div class="meta">從所有章節隨機出題，無壓力模式</div>
+        <div class="list-section">
+            <div class="list-section-header">按章節練習</div>
+            <div class="list-section-content">
+                ${quizSets.map((q, i) => `
+                    <div class="quiz-card" data-type="topic" data-value="${q.title}">
+                        <div class="name">${q.title}</div>
+                        <div class="meta">${q.description ?? ''}</div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+
+    // 3. 按難易度選 (收摺)
+    const difficulties = ["易", "中", "難"];
+    listHtml += `
+        <div class="list-section">
+            <div class="list-section-header">按難易度篩選</div>
+            <div class="list-section-content">
+                ${difficulties.map(d => {
+                    const count = globalQuestions.filter(q => q.difficulty === d).length;
+                    if (count === 0) return '';
+                    return `
+                        <div class="quiz-card" data-type="level" data-value="${d}">
+                            <div class="name">${d}</div>
+                            <div class="meta">共 ${count} 題</div>
+                        </div>
+                    `;
+                }).join('')}
+            </div>
         </div>
     `;
 
     listEl.innerHTML = listHtml;
 
+    // 收摺功能事件
+    listEl.querySelectorAll('.list-section-header').forEach(header => {
+        header.addEventListener('click', () => {
+            header.parentElement.classList.toggle('active');
+        });
+    });
+
+    // 選擇題庫事件
     listEl.querySelectorAll('.quiz-card').forEach(card => {
-        card.addEventListener('click', () => {
+        card.addEventListener('click', (e) => {
+            e.stopPropagation(); // 防止觸發收摺
             listEl.querySelectorAll('.quiz-card').forEach(c => c.classList.remove('selected'));
             card.classList.add('selected');
-            chosen = card.dataset.i;
+            chosen = { 
+                type: card.dataset.type, 
+                value: card.dataset.value 
+            };
             startBtn.disabled = false;
         });
     });
 
-    startBtn.onclick = async () => {
-        if (chosen === null) return;
-        if (chosen === 'comp') {
+    startBtn.onclick = () => {
+        if (!chosen) return;
+        
+        let filtered = [];
+        if (chosen.type === 'comp') {
             isComprehensive = true;
-            await loadComprehensiveQuiz();
-        } else {
+            filtered = globalQuestions;
+        } else if (chosen.type === 'topic') {
             isComprehensive = false;
-            await loadQuiz(quizSets[parseInt(chosen)].file);
+            filtered = globalQuestions.filter(q => q.topic === chosen.value);
+        } else if (chosen.type === 'level') {
+            isComprehensive = false;
+            filtered = globalQuestions.filter(q => q.difficulty === chosen.value);
+        } else if (chosen.type === 'wrong') {
+            isComprehensive = false;
+            const currentWrongIds = getWrongQuestions();
+            filtered = globalQuestions.filter(q => currentWrongIds.includes(q.id));
         }
+        
+        processAndStart(filtered);
     };
-}
-
-/* 綜合測驗：載入所有 JSON */
-async function loadComprehensiveQuiz() {
-    try {
-        const allQuestions = [];
-        for (const set of quizSets) {
-            const res = await fetch(set.file);
-            const data = await res.json();
-            const raw = Array.isArray(data) ? data : (data.questions || []);
-            allQuestions.push(...raw);
-        }
-        processAndStart(allQuestions);
-    } catch (e) {
-        alert(`載入綜合題目失敗: ${e.message}`);
-    }
-}
-
-/* 載入單一題目 JSON */
-async function loadQuiz(file) {
-    try {
-        const res = await fetch(file);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const rawData = await res.json();
-        const rawQuestions = Array.isArray(rawData) ? rawData : (rawData.questions || []);
-        processAndStart(rawQuestions);
-    } catch (e) {
-        alert(`載入題目失敗: ${e.message}`);
-    }
 }
 
 /* 處理題目資料並開始 */
 function processAndStart(raw) {
     questions = raw.map(q => {
-        const questionText = q["題目"] || q.question;
-        const options = q["選項"] || q.options;
-        let ans = q["答案"] !== undefined ? q["答案"] : q.answer;
-        const id = q["題號"] || q.id || "";
-        const level = q["難易度"] || q.difficulty || q.level || "";
-        const topic = q["topic"] || "";
+        const questionText = q.question;
+        const options = q.options;
+        let ans = q.answer;
+        const id = q.id || "";
+        const level = q.difficulty || "";
+        const topic = q.topic || "";
         
+        // 確保答案索引是 0 為基底
         if (typeof ans === 'number') {
+            // 如果來源資料是 1-based (例如舊格式)，此處可能需要調整
+            // 但在 merge_questions.py 中我們應該已經保留了原始值
+            // 這裡假設新的 all_questions.json 遵循 1-based (符合 index.html 原本邏輯)
             ans = ans - 1;
         } else if (Array.isArray(ans)) {
             ans = ans.map(a => typeof a === 'number' ? a - 1 : a);
@@ -442,7 +617,10 @@ function renderQuestion() {
         : `${current + 1} / ${total}`;
     
     const meta = [q.id, q.level].filter(Boolean).join(' | ');
-    document.getElementById('type-badge').textContent   = (meta ? meta + ' · ' : '') + (isMulti ? '多選題' : '單選題');
+    const typeBadge = document.getElementById('type-badge');
+    typeBadge.textContent = meta;
+    typeBadge.style.display = meta ? 'inline-block' : 'none';
+    
     document.getElementById('topic-badge').textContent  = q.topic || "";
     document.getElementById('question-text').textContent = q.question;
 
@@ -451,6 +629,7 @@ function renderQuestion() {
     const exitBtn = document.getElementById('exit-btn');
     const keys    = ['A','B','C','D','E','F'];
     nextBtn.disabled = true;
+    exitBtn.disabled = false;
     nextBtn.textContent = current === total - 1 ? '查看結果 →' : '下一題 →';
 
     optEl.innerHTML = q.options.map((opt, i) => `
@@ -487,6 +666,11 @@ function renderQuestion() {
 
 /* 提交答案 */
 function submitAnswer(q, isMulti) {
+    const nextBtn = document.getElementById('next-btn');
+    const exitBtn = document.getElementById('exit-btn');
+    nextBtn.disabled = true;
+    exitBtn.disabled = true;
+
     const optEls = document.querySelectorAll('.option');
     const correct = isMulti ? new Set(q.answer) : new Set([q.answer]);
 
@@ -501,6 +685,12 @@ function submitAnswer(q, isMulti) {
         ? [...selected].sort().toString() === [...correct].sort().toString()
         : selected.has([...correct][0]);
 
+    if (isCorrect) {
+        removeWrongQuestion(q.id);
+    } else {
+        saveWrongQuestion(q.id);
+    }
+
     answers.push({
         question: q.question,
         options:  q.options,
@@ -508,6 +698,7 @@ function submitAnswer(q, isMulti) {
         correct:  [...correct],
         topic:    q.topic,
         isCorrect,
+        originalIndex: current,
     });
 
     setTimeout(() => {
@@ -526,6 +717,46 @@ function showResult() {
     const correctCount = answers.filter(a => a.isCorrect).length;
 
     document.getElementById('score-number').textContent = `${correctCount} / ${answeredCount}`;
+
+    // 處理結果訊息
+    const msgEl = document.getElementById('result-message');
+    const cancelBtn = document.getElementById('cancel-redirect-btn');
+    msgEl.textContent = '';
+    cancelBtn.style.display = 'none';
+    if (redirectTimer) {
+        clearTimeout(redirectTimer);
+        redirectTimer = null;
+    }
+
+    if (answeredCount === 0) {
+        msgEl.textContent = '後悔了嗎？';
+    } else {
+        const accuracy = correctCount / answeredCount;
+        if (accuracy < 0.5) {
+            msgEl.textContent = '你還是去當兵吧';
+            cancelBtn.style.display = 'inline-block';
+            let secondsLeft = 5;
+            cancelBtn.textContent = `我不要當兵 (${secondsLeft}s)`;
+            
+            const countdown = () => {
+                secondsLeft--;
+                if (secondsLeft > 0) {
+                    cancelBtn.textContent = `我不要當兵 (${secondsLeft}s)`;
+                    redirectTimer = setTimeout(countdown, 1000);
+                } else {
+                    window.location.href = "https://www.mnd.gov.tw/";
+                }
+            };
+            redirectTimer = setTimeout(countdown, 1000);
+            
+            cancelBtn.onclick = () => {
+                clearTimeout(redirectTimer);
+                redirectTimer = null;
+                cancelBtn.style.display = 'none';
+                msgEl.textContent = '算你識相';
+            };
+        }
+    }
 
     // 弱點分析
     const stats = {};
@@ -554,10 +785,13 @@ function showResult() {
         document.getElementById('weakness-analysis').style.display = 'none';
     }
 
-    let resultHtml = answers.map((a, i) => `
+    const wrongAnswers = answers.filter(a => !a.isCorrect);
+    const correctAnswers = answers.filter(a => a.isCorrect);
+
+    const renderItem = (a) => `
         <div class="result-item ${a.isCorrect ? 'ok' : 'fail'}">
             <div class="ri-q">
-                <span>第 ${i+1} 題</span>
+                <span>第 ${a.originalIndex + 1} 題</span>
                 <span class="ri-topic">${a.topic || ''}</span>
             </div>
             <div>${a.question}</div>
@@ -568,15 +802,43 @@ function showResult() {
                 }
             </div>
         </div>
-    `).join('');
+    `;
+
+    let resultHtml = wrongAnswers.map(renderItem).join('');
+
+    if (correctAnswers.length > 0) {
+        resultHtml += `
+            <div class="correct-answers-section" id="correct-answers-section">
+                <div class="correct-answers-header" id="correct-answers-header">
+                    <span>顯示答對題目 (${correctAnswers.length})</span>
+                </div>
+                <div class="correct-answers-content">
+                    ${correctAnswers.map(renderItem).join('')}
+                </div>
+            </div>
+        `;
+    }
 
     if (answeredCount < totalQuestions) {
         resultHtml += `<p class="toast">（提前退出，未完成其餘 ${totalQuestions - answeredCount} 題）</p>`;
     }
 
-    document.getElementById('result-list').innerHTML = resultHtml;
+    const resultListEl = document.getElementById('result-list');
+    resultListEl.innerHTML = resultHtml;
+
+    // 绑定收摺事件
+    const correctHeader = document.getElementById('correct-answers-header');
+    if (correctHeader) {
+        correctHeader.onclick = () => {
+            document.getElementById('correct-answers-section').classList.toggle('active');
+        };
+    }
 
     document.getElementById('retry-btn').onclick = () => {
+        if (redirectTimer) {
+            clearTimeout(redirectTimer);
+            redirectTimer = null;
+        }
         questions = shuffle(questions);
         current = 0; answers = [];
         showScreen('quiz');

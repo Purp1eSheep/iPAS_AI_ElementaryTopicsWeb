@@ -1,37 +1,44 @@
 [
   {
-    "title": "AI_Concepts",
-    "description": "5 題",
-    "file": "data/AI_Concepts.json"
-  },
-  {
-    "title": "Data_Processing",
+    "title": "No code/ Low code 概念",
     "description": "8 題",
-    "file": "data/Data_Processing.json"
+    "file": "data/all_questions.json",
+    "isTopic": true
   },
   {
-    "title": "Discriminative_vs_Generative_AI",
+    "title": "人工智慧概念",
     "description": "5 題",
-    "file": "data/Discriminative_vs_Generative_AI.json"
+    "file": "data/all_questions.json",
+    "isTopic": true
   },
   {
-    "title": "GenAI_Applications",
-    "description": "20 題",
-    "file": "data/GenAI_Applications.json"
-  },
-  {
-    "title": "GenAI_Implementation",
-    "description": "15 題",
-    "file": "data/GenAI_Implementation.json"
-  },
-  {
-    "title": "Machine_Learning",
+    "title": "機器學習概念",
     "description": "17 題",
-    "file": "data/Machine_Learning.json"
+    "file": "data/all_questions.json",
+    "isTopic": true
   },
   {
-    "title": "No_Code_Low_Code",
+    "title": "生成式AI導入評估計畫",
+    "description": "15 題",
+    "file": "data/all_questions.json",
+    "isTopic": true
+  },
+  {
+    "title": "生成式AI應用領域與工具使用",
+    "description": "20 題",
+    "file": "data/all_questions.json",
+    "isTopic": true
+  },
+  {
+    "title": "資料處理與分析概念",
     "description": "8 題",
-    "file": "data/No_Code_Low_Code.json"
+    "file": "data/all_questions.json",
+    "isTopic": true
+  },
+  {
+    "title": "鑑別式AI與生成式AI概念",
+    "description": "5 題",
+    "file": "data/all_questions.json",
+    "isTopic": true
   }
 ]
