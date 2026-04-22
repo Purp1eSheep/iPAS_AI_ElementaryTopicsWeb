@@ -757,6 +757,13 @@
                 <p id="theme-description" style="margin-top: 12px; font-weight: 500; font-size: 0.95rem; transition: color var(--transition);"></p>
             </div>
             <div class="settings-group">
+                <div class="settings-group-title">功能設定</div>
+                <div id="audio-toggle-card" class="quiz-card" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 18px;">
+                    <div class="name">🔊 答錯播放音效</div>
+                    <div id="audio-status" class="meta" style="margin-top: 0;">已關閉</div>
+                </div>
+            </div>
+            <div class="settings-group">
                 <div class="settings-group-title">資料管理</div>
                 <div style="display: flex; flex-direction: column; gap: 10px;">
                     <button id="clear-stats-btn" class="btn btn-ghost" style="width: 100%; color: var(--wrong); border: 2px solid var(--wrong);">📊 清除統計數據</button>
@@ -984,6 +991,24 @@ let isComprehensive = false;
 let redirectTimer = null;
 let previousScreen = 'select';
 let isSettingsOpen = false;
+
+/* 音效設定 (New Feature) */
+const AUDIO_SETTING_KEY = 'quiz_audio_wrong';
+let audioEnabled = localStorage.getItem(AUDIO_SETTING_KEY) === 'true';
+
+function updateAudioUI() {
+    const statusEl = document.getElementById('audio-status');
+    const cardEl = document.getElementById('audio-toggle-card');
+    if (statusEl) statusEl.textContent = audioEnabled ? '已開啟' : '已關閉';
+    if (cardEl) cardEl.classList.toggle('selected', audioEnabled);
+}
+
+document.getElementById('audio-toggle-card').onclick = () => {
+    audioEnabled = !audioEnabled;
+    localStorage.setItem(AUDIO_SETTING_KEY, audioEnabled);
+    updateAudioUI();
+};
+updateAudioUI();
 
 /* 收藏管理 (New Feature) */
 const BOOKMARKS_KEY = 'quiz_bookmarks';
@@ -1855,6 +1880,13 @@ function submitAnswer(q, isMulti) {
         removeWrongQuestion(q.id);
     } else {
         saveWrongQuestion(q.id);
+        
+        // 播放答錯音效
+        if (audioEnabled) {
+            const audio = new Audio('data/fah.mp3');
+            audio.play().catch(e => console.log('Audio playback failed:', e));
+        }
+
         // 動態顯示詳解按鈕
         const answeredData = { selected: [...selected], isCorrect: false };
         showExplanationButton(q, answeredData, expContainer);
