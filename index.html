@@ -1769,12 +1769,12 @@ function renderQuestion() {
     // 更新按鈕文字的輔助函數
     const updateNextBtnUI = () => {
         if (answers[current] !== null) {
-            nextBtn.textContent = current === total - 1 ? '完成作答' : '下一題 →';
+            nextBtn.textContent = current === total - 1 ? '完成作答' : '下一題';
         } else {
             if (selected.size === 0) {
                 nextBtn.textContent = '跳過';
             } else {
-                nextBtn.textContent = current === total - 1 ? '完成作答' : '下一題 →';
+                nextBtn.textContent = current === total - 1 ? '完成作答' : '下一題';
             }
         }
     };
