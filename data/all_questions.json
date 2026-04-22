@@ -10,7 +10,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QF76A60"
+        "id": "Q001"
     },
     {
         "question": "A企業想要實現客服自動化,希望透過AI理解客戶發送的文本訊息,並根據文本內容調用相對應的圖片和影片進行回覆,A企業應該選擇哪一種模型?",
@@ -23,7 +23,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QDC478D"
+        "id": "Q002"
     },
     {
         "question": "OpenAI已為 Sora生成的影片提供多種出處證明機制,以降低誤導性或欺騙性內容帶來的風險。下列何者不屬於目前OpenAI官方為Sora內容提供的出處證明工具?",
@@ -36,7 +36,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q3B802C"
+        "id": "Q003"
     },
     {
         "question": "SHAP (SHapley Additive exPlanations)值常用於分析機器學習模型的輸出行為,下列何者最符合SHAP值所提供的資訊?",
@@ -49,7 +49,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q818A27"
+        "id": "Q004"
     },
     {
         "question": "一位資料分析師希望減少輸入特徵的維度,以提升模型運算效率,並觀察變數間潛在的整體結構關係。若欲保留最大資訊量、同時減少特徵數量,下列哪一項方法最適合?",
@@ -62,7 +62,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q549604"
+        "id": "Q005"
     },
     {
         "question": "一家旅遊平台希望建立模型,預測顧客下次是否會再次透過該平台訂房。資料包含:顧客ID、年齡、旅遊次數、平均花費金額、主要交通方式(火車/飛機/自駕/公車)、會員等級(普通/進階/白金)、是否為海外旅遊等。下列哪一種特徵工程方法最適合處理「主要交通方式」欄位?",
@@ -75,7 +75,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "QB570B9"
+        "id": "Q006"
     },
     {
         "question": "一家智慧工廠使用機器學習分類模型預測關鍵設備是否會異常停機。完成模型訓練後,團隊希望全面評估模型在不同面向的表現。請問下列哪項指標最適合用來衡量模型在偵測異常停機時的「漏報率」(即未能正確偵測出異常事件的比例)?",
@@ -88,7 +88,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q56D566"
+        "id": "Q007"
     },
     {
         "question": "一家跨國企業計劃在財務部門導入生成式AI,並結合自動化系統進行報告產出。導入此系統後,最有可能實現的效益為何?",
@@ -101,7 +101,7 @@
         "answer": 2,
         "difficulty": "易",
         "topic": "No code / Low code 概念",
-        "id": "Q9EFD48"
+        "id": "Q008"
     },
     {
         "question": "一家跨國醫療研究機構希望利用各地醫院的病患資料,建立一個能夠預測疾病早期風險的機器學習模型。由於各國法規限制,病患的原始資料無法集中到單一伺服器。在此情境下,下列哪一種方法最能同時滿足「各醫院保留資料不外流」與「模型仍能跨院學習」的需求?",
@@ -114,7 +114,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "QEEF2B8"
+        "id": "Q009"
     },
     {
         "question": "一家顧問公司使用生成式AI協助撰寫數據分析報告。雖然模型在測試中表現優異,但其生成的報告多半僅遵循固定段落結構,替換數值或關鍵詞即可完成,卻未能展現針對不同專案的多樣化推理與分析。下列何者為造成這種現象的最合理解釋?",
@@ -127,7 +127,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q209DC1"
+        "id": "Q010"
     },
     {
         "question": "一間金融科技公司設計一款智慧投資系統,該系統會根據市場變化自動決定「買進」、「持有」或「賣出」的行動,並根據每次交易後的盈虧結果,逐步優化下一次的投資策略。整個過程中,系統不依賴事先標記的資料,而是根據歷次行動獲得的獎勵進行調整。請問此系統最可能採用哪一種學習方法?",
@@ -140,7 +140,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "QF5DA22"
+        "id": "Q011"
     },
     {
         "question": "下列何者不屬於資料整合(Data Integration)的主要目的?",
@@ -153,7 +153,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q30A6B6"
+        "id": "Q012"
     },
     {
         "question": "下列何者不是我國數位發展部AI產品與系統評測中心對生成式AI的評測項目?",
@@ -166,7 +166,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "QC273C1"
+        "id": "Q013"
     },
     {
         "question": "下列何者不是推理模型(Reasoning Model)的主要特點?",
@@ -179,7 +179,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q0CB323"
+        "id": "Q014"
     },
     {
         "question": "下列何者不是生成式AI核心技術?",
@@ -192,7 +192,7 @@
         "answer": 3,
         "difficulty": "難",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "Q100620"
+        "id": "Q015"
     },
     {
         "question": "下列何者不符合非監督式學習(Unsupervised Learning)的典型特徵?",
@@ -205,7 +205,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "QCDA8C7"
+        "id": "Q016"
     },
     {
         "question": "下列何者並非我國數位發展部 AI 產品與評測中心在評估大型語言模型安全性時,所指出的常見使用指標?",
@@ -218,7 +218,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "QAA1589"
+        "id": "Q017"
     },
     {
         "question": "下列何者最能正確說明 Model Context Protocol (MCP)與檢索增強生成(Retrieval-Augmented Generation, RAG)在功能定位上的主要差異?",
@@ -231,7 +231,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q5B1A96"
+        "id": "Q018"
     },
     {
         "question": "下列何者最能表達 No Code/Low Code 平台的主要特色?",
@@ -244,7 +244,7 @@
         "answer": 2,
         "difficulty": "易",
         "topic": "No code / Low code 概念",
-        "id": "Q7F251C"
+        "id": "Q019"
     },
     {
         "question": "下列何者最適合訓練電腦下圍棋、自動駕駛等動態重複地互動的問題?",
@@ -257,7 +257,7 @@
         "answer": 4,
         "difficulty": "易",
         "topic": "機器學習概念",
-        "id": "QF94254"
+        "id": "Q020"
     },
     {
         "question": "下列何者正式ChatGPT、Gemini等對話型生成AI工具所依據的基礎模型技術?",
@@ -270,7 +270,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "QD5DBED"
+        "id": "Q021"
     },
     {
         "question": "下列何者為專門用於評估大型語言模型(LLM)在「台灣本土特有知識」方面表現的基準測試資料集?",
@@ -283,7 +283,7 @@
         "answer": 4,
         "difficulty": "難",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QF790BB"
+        "id": "Q022"
     },
     {
         "question": "下列何者非大數據時代資料的特性?",
@@ -296,7 +296,7 @@
         "answer": 4,
         "difficulty": "易",
         "topic": "資料處理與分析概念",
-        "id": "Q030618"
+        "id": "Q023"
     },
     {
         "question": "下列哪一個資料集專門設計用於測試大型語言模型在多領域、多任務語言理解中,涵蓋人文、科學與社會科學等領域,而非專門用於數學推理或中文專業知識?",
@@ -309,7 +309,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QAC3BCB"
+        "id": "Q024"
     },
     {
         "question": "下列哪一種圖表最適合用來呈現並分析「兩個數值型變數」之間的關係,例如觀察身高與體重的相關性?",
@@ -322,7 +322,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q5E3274"
+        "id": "Q025"
     },
     {
         "question": "下列哪一種情境最能展現提示工程(Prompt Engineering)的價值?",
@@ -335,7 +335,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q57579D"
+        "id": "Q026"
     },
     {
         "question": "下列哪一種技術方案適用於改善客戶體驗?",
@@ -348,7 +348,7 @@
         "answer": 4,
         "difficulty": "易",
         "topic": "No code / Low code 概念",
-        "id": "Q5A0E79"
+        "id": "Q027"
     },
     {
         "question": "下列哪一種特徵工程技巧,最適合將「星期幾」和「24小時制時間」兩個欄位結合,以預測通勤時間?",
@@ -361,7 +361,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q9CBC32"
+        "id": "Q028"
     },
     {
         "question": "下列哪一種資料類型不屬於非結構化資料?",
@@ -374,7 +374,7 @@
         "answer": 4,
         "difficulty": "易",
         "topic": "資料處理與分析概念",
-        "id": "QF2E420"
+        "id": "Q029"
     },
     {
         "question": "下列哪一項「AI技術應用與產業領域」的對應最為恰當?",
@@ -387,7 +387,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "QF503DD"
+        "id": "Q030"
     },
     {
         "question": "下列哪一項不是生成式AI工具在使用體驗方面的優化方向?",
@@ -400,7 +400,7 @@
         "answer": 4,
         "difficulty": "易",
         "topic": "No code / Low code 概念",
-        "id": "Q93E965"
+        "id": "Q031"
     },
     {
         "question": "下列哪一項應用情境與機器學習類型搭配正確?",
@@ -413,7 +413,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q7AD002"
+        "id": "Q032"
     },
     {
         "question": "下列哪一項技術是生成式AI的基礎?",
@@ -426,7 +426,7 @@
         "answer": 3,
         "difficulty": "易",
         "topic": "機器學習概念",
-        "id": "Q165B9B"
+        "id": "Q033"
     },
     {
         "question": "下列哪一項敘述符合AI治理的核心原則?",
@@ -439,7 +439,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q8621FB"
+        "id": "Q034"
     },
     {
         "question": "下列哪一類問題最適合使用非監督式學習(Unsupervised Learning)來處理?",
@@ -452,7 +452,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q9257FB"
+        "id": "Q035"
     },
     {
         "question": "下列哪種情況,選擇Low Code 平台可能比 No Code 平台更為適合?",
@@ -465,7 +465,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q579776"
+        "id": "Q036"
     },
     {
         "question": "下列哪項是生成式AI支援鑑別式AI的典型案例?",
@@ -478,7 +478,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q6F5A41"
+        "id": "Q037"
     },
     {
         "question": "下列敘述何者最能反映生成式AI在圖像生成領域的發展趨勢?",
@@ -491,7 +491,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q7AB245"
+        "id": "Q038"
     },
     {
         "question": "下列模型在生成式人工智慧(Generative AI)中的角色,何者並非以「產生新資料」為主要設計目的?",
@@ -504,7 +504,7 @@
         "answer": 1,
         "difficulty": "易",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "Q003AFE"
+        "id": "Q039"
     },
     {
         "question": "下列資料型態,何者最常用來儲存員工年齡、員工年資、貨品銷售量等資料?",
@@ -517,7 +517,7 @@
         "answer": 2,
         "difficulty": "易",
         "topic": "資料處理與分析概念",
-        "id": "Q12D530"
+        "id": "Q040"
     },
     {
         "question": "下列關於生成對抗網路(GAN)的描述正確的是哪一項?",
@@ -530,7 +530,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "Q78DBD3"
+        "id": "Q041"
     },
     {
         "question": "交叉驗證的主要目的是什麼?",
@@ -543,7 +543,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "QA9932D"
+        "id": "Q042"
     },
     {
         "question": "以下哪一項屬於企業在評估導入生成式 AI時需識別的問題領域?",
@@ -556,7 +556,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QA304D1"
+        "id": "Q043"
     },
     {
         "question": "企業在導入生成式AI平台時,往往需要利用分散於不同部門或機構中的大量敏感文本資料。若希望在確保隱私的前提下,仍能讓模型持續優化並降低資料外洩風險,下列哪一種方法最適合?",
@@ -569,7 +569,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q3B692F"
+        "id": "Q044"
     },
     {
         "question": "企業若要有效支援生成式AI的運行,內部IT環境最需要具備下列何種條件?",
@@ -582,7 +582,7 @@
         "answer": 3,
         "difficulty": "易",
         "topic": "No code / Low code 概念",
-        "id": "Q2F3966"
+        "id": "Q045"
     },
     {
         "question": "使用 Low-Code 平台進行開發時,企業應特別留意下列哪一項潛在風險?",
@@ -595,7 +595,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "QBC33D9"
+        "id": "Q046"
     },
     {
         "question": "使用生成式 AI技術或工具生成內容時,應採取下列哪一項措施以確保內容品質?",
@@ -608,7 +608,7 @@
         "answer": 2,
         "difficulty": "易",
         "topic": "No code / Low code 概念",
-        "id": "Q8B2AFD"
+        "id": "Q047"
     },
     {
         "question": "使用生成式AI協助撰寫一份有關產業碳排政策的分析報告,AI提供的內容看起來語句通順且用詞專業,但經查證發現其中提到的法規條文與企業名稱並不存在。請問造成此現象最可能的原因為下列何者?",
@@ -621,7 +621,7 @@
         "answer": 4,
         "difficulty": "易",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q4E41E7"
+        "id": "Q048"
     },
     {
         "question": "使用生成式AI產出需要邏輯清晰、高度準確性與一致性的文本時,下列哪一種溫度(Temperature)設定最能有助於降低回答的不確定性並提升一致性?",
@@ -634,7 +634,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QCAD4F5"
+        "id": "Q049"
     },
     {
         "question": "假設某國正在考慮使用AI技術來進行社會信用評分,並根據年齡、缺陷、種族等特徵來評定個人的信用;同時,該國計劃在公眾場所使用遠程生物辨識系統進行執法,目的在於提高社會秩序和安全。上述AI應用可能會引發對隱私和個人權利的重大關注,根據歐盟《人工智慧法》(Artificial Intelligence Act, AIA)的風險分級,這類應用屬於哪一風險等級?",
@@ -647,7 +647,7 @@
         "answer": 1,
         "difficulty": "難",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q9DFB24"
+        "id": "Q050"
     },
     {
         "question": "公司在整合資料時,發現同一客戶的姓名在不同系統中拼寫不一致(例如「陳大文」與「陳大文先生」),導致資料無法正確對應。請問此類資料品質問題應該在ETL哪一個流程步驟中進行處理?",
@@ -660,7 +660,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "QB1C5B3"
+        "id": "Q051"
     },
     {
         "question": "哪一種情境最能展現提示工程(Prompt Engineering)的價值?",
@@ -673,7 +673,7 @@
         "answer": 3,
         "difficulty": "易",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QA724AD"
+        "id": "Q052"
     },
     {
         "question": "在AI應用設計中,Model Context Protocol (MCP)與檢索增強生成(RAG)都能擴展模型的能力,但兩者的核心差異主要為下列何者?",
@@ -686,7 +686,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QA3205D"
+        "id": "Q053"
     },
     {
         "question": "在AI推論服務架構設計中,「批次推論(Batch Inference)」與「即時推論(Real-time Inference)」常依任務特性選擇不同機制。下列關於兩者特性的敘述何者最正確?",
@@ -699,7 +699,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q737EF2"
+        "id": "Q054"
     },
     {
         "question": "在AI治理中,下列何者是國際合作的重要性?",
@@ -712,7 +712,7 @@
         "answer": 4,
         "difficulty": "易",
         "topic": "人工智慧概念",
-        "id": "Q605D7E"
+        "id": "Q055"
     },
     {
         "question": "在Agent-to-Agent (A2A)架構中,不同代理人之間會分工合作。一般而言,下列敘述何者最符合Client Agent 與Remote Agent 的互動流程?",
@@ -725,7 +725,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QF56D21"
+        "id": "Q056"
     },
     {
         "question": "在Agentic AI 的架構中,解決方案圖譜(Solution Graph)常被用來輔助代理的任務執行,其主要作用為何?",
@@ -738,7 +738,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q51B2A9"
+        "id": "Q057"
     },
     {
         "question": "在Lasso 模型中,L1正則化(Regularization)導致參數收斂為零的原因為何?",
@@ -751,7 +751,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q5883A3"
+        "id": "Q058"
     },
     {
         "question": "在Low Code 平台的開發應用設計中,關於「模型(Model)」,下列敘述何者最符合實際情況?",
@@ -764,7 +764,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QFC1376"
+        "id": "Q059"
     },
     {
         "question": "在「可解釋人工智慧(Explainable AI, XAI)」領域中,LIME (Local Interpretable Model-agnostic Explanations)方法最核心的應用目的是什麼?",
@@ -777,7 +777,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q3E92AC"
+        "id": "Q060"
     },
     {
         "question": "在下列哪一種應用領域中,生成式AI最有可能被使用來創建新的圖像或影片內容?",
@@ -790,7 +790,7 @@
         "answer": 4,
         "difficulty": "易",
         "topic": "No code / Low code 概念",
-        "id": "Q344173"
+        "id": "Q061"
     },
     {
         "question": "在人工智慧系統的決策流程中,下列哪一種情境最符合「人在迴圈上(Human-over-the-loop)」所強調的監督機制?",
@@ -803,7 +803,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "QF35BA0"
+        "id": "Q062"
     },
     {
         "question": "在企業導入AI的實施/營運階段,為持續發揮導入AI的價值,下列步驟的正確排序應為何? A.AI價值擴散 B.上線部署 C.模型監控與優化",
@@ -816,7 +816,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q188504"
+        "id": "Q063"
     },
     {
         "question": "在企業導入MLOps (Machine Learning Operations)的過程中,除了模型部署與維運挑戰外,仍可能面臨其他推動上的困難。下列何者為 No Code 平台最能有效解決的挑戰?",
@@ -829,7 +829,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q061DFE"
+        "id": "Q064"
     },
     {
         "question": "在企業級數據管道(ETL)中,No Code / Low Code 平台的主要角色為何?",
@@ -842,7 +842,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QD2AC52"
+        "id": "Q065"
     },
     {
         "question": "在使用生成式AI模型解決數學或邏輯問題時,若希望引導模型逐步推理以提升答案的準確性與可解釋性,應設計具備思維鏈(Chain-of-Thought)推理特性的提示語。下列哪一組提示語最能有效啟用模型的Chain-of-Thought推理能力?",
@@ -855,7 +855,7 @@
         "answer": 3,
         "difficulty": "易",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QD287C1"
+        "id": "Q066"
     },
     {
         "question": "在保持GPT-OSS模型架構不變的前提下,如果將模型參數量從20億提升至120億,並假設有足夠的訓練資料支撐,下列敘述何者最正確?",
@@ -868,7 +868,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q2D80CD"
+        "id": "Q067"
     },
     {
         "question": "在公司財務資料中,發現某筆支出金額達1,000,000元,若希望合理判斷該筆資料是否為異常值,下列哪一種處理方式最為合適?",
@@ -881,7 +881,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q79707B"
+        "id": "Q068"
     },
     {
         "question": "在即時客服系統的效能測試中,若針對延遲測試(Latency Testing)進行評估,下列哪一項指標最能反映系統是否符合用戶即時互動需求?",
@@ -894,7 +894,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q4C7EA6"
+        "id": "Q069"
     },
     {
         "question": "在可解釋 AI(Explainable AI, XAI)的分類架構中,LIME(Local Interpretable Model-agnostic Explanations)屬於哪一類解釋技術?",
@@ -907,7 +907,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "QB84BE1"
+        "id": "Q070"
     },
     {
         "question": "在品質管理中,若一產品的生產過程中標準差顯著偏大,通常意味著什麼?",
@@ -920,7 +920,7 @@
         "answer": 2,
         "difficulty": "易",
         "topic": "資料處理與分析概念",
-        "id": "Q5E1162"
+        "id": "Q071"
     },
     {
         "question": "在大型 Transformer 模型的效能優化過程中,常見的方法之一是「剪枝(Pruning)」。下列哪一項最符合該方法的核心概念?",
@@ -933,7 +933,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "Q1EE6EE"
+        "id": "Q072"
     },
     {
         "question": "在大型語言模型(LLM)的推論服務中,常透過請求批次處理(Batching)來提升系統效能。關於批次處理(Batching)機制的影響,下列敘述何者最正確?",
@@ -946,7 +946,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "Q398842"
+        "id": "Q073"
     },
     {
         "question": "在大型語言模型(LLM)的效能優化中,Flash Attention 常被用來改善 Transformer 注意力機制的運算效率。關於Flash Attention的主要效益,下列敘述何者最正確?",
@@ -959,7 +959,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "QEB9C37"
+        "id": "Q074"
     },
     {
         "question": "在導入生成式AI的應用規劃中,上下文工程(Context Engineering)的核心目的為何?",
@@ -972,7 +972,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QA09976"
+        "id": "Q075"
     },
     {
         "question": "在少樣本提示(Few-shot Prompting)僅能提供1-2個範例的情況下,若遇到領域偏移(Domain Shift),下列何者為模型最可能面臨的核心挑戰?",
@@ -985,7 +985,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q44D380"
+        "id": "Q076"
     },
     {
         "question": "在工業物聯網架構中,進行設備預測性維護(Predictive Maintenance)時,若面對異常事件發生頻率極低、樣本高度不平衡的時間序列資料,下列哪一種方法最能兼顧模型穩定性與異常偵測效能?",
@@ -998,7 +998,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q205F11"
+        "id": "Q077"
     },
     {
         "question": "在建置多代理大型語言模型(Multi-agent LLMs)系統時,如果沒有清楚定義每個代理的任務啟動條件和角色分工,最可能出現什麼問題?",
@@ -1011,7 +1011,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q86BC52"
+        "id": "Q078"
     },
     {
         "question": "在應用零樣本提示(Zero-Shot Prompting)時,下列哪一種情境最可能因缺乏示範而失敗,出現語意錯誤或結構錯誤的輸出?",
@@ -1024,7 +1024,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QA08DCB"
+        "id": "Q079"
     },
     {
         "question": "在提示工程(Prompt Engineering)的應用中,Chain-of-Thought(CoT)與 Tree of Thoughts (ToT)各適用於不同的推理情境,請問以下兩個情境,分別最適合採用哪一種方法?\n情境一:電商公司開發客服助理,用來協助客戶查詢退款流程與相關規範\n情境二:活動策劃團隊使用AI協助規劃多場跨部門行銷活動,需要同時考量預算、場地、時程與人力資源,並比較不同方案的可行性",
@@ -1037,7 +1037,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q367BFF"
+        "id": "Q080"
     },
     {
         "question": "在機器學習中,「偏差與變異權衡(Bias-Variance Tradeoff)」主要用來解決下列哪一類型的問題?",
@@ -1050,7 +1050,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q7EC1AE"
+        "id": "Q081"
     },
     {
         "question": "在機器學習中,「叢集(Clustering)」方法最典型的應用情境是下列何者?",
@@ -1063,7 +1063,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q705612"
+        "id": "Q082"
     },
     {
         "question": "在機器學習模型的實務應用中,常會出現數據漂移(Data Drift)的情況。此現象主要是指下列哪一種情況?",
@@ -1076,7 +1076,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QACE5BD"
+        "id": "Q083"
     },
     {
         "question": "在檢視資料品質時,可參考資料的變異程度及資料的集中趨勢。下列何者不屬於資料集中趨勢衡量的方法?",
@@ -1089,7 +1089,7 @@
         "answer": 4,
         "difficulty": "易",
         "topic": "資料處理與分析概念",
-        "id": "Q0A2EA9"
+        "id": "Q084"
     },
     {
         "question": "在深度學習模型的分析與驗證過程中,研究人員有時會利用「顯著性圖(Saliency Map)」來輔助理解模型行為。下列何者最符合此技術的主要用途?",
@@ -1102,7 +1102,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q4D3F83"
+        "id": "Q085"
     },
     {
         "question": "在深度學習模型的微調(Fine-tuning)過程中,可能出現所謂的「災難性遺忘(Catastrophic Forgetting)」。此現象最可能造成哪種情況?",
@@ -1115,7 +1115,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q3B8F61"
+        "id": "Q086"
     },
     {
         "question": "在生成式 AI的風險管理中,下列哪一項屬於倫理風險?",
@@ -1128,7 +1128,7 @@
         "answer": 1,
         "difficulty": "易",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q47AC0B"
+        "id": "Q087"
     },
     {
         "question": "在生成式AI導入過程中,資料安全與隱私保護的哪一方面是最重要的考量?",
@@ -1141,7 +1141,7 @@
         "answer": 4,
         "difficulty": "易",
         "topic": "No code / Low code 概念",
-        "id": "QC612BF"
+        "id": "Q088"
     },
     {
         "question": "在生成式AI應用設計中,情境感知代理(Context-aware Agent)的核心特性為何?",
@@ -1154,7 +1154,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q163AC2"
+        "id": "Q089"
     },
     {
         "question": "在生成式AI文字生成模型設計中,Encoder-Decoder 與 Decoder-only為常見架構。下列何者最能正確說明兩者在資訊處理與生成機制上的核心差異?",
@@ -1167,7 +1167,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QB89E17"
+        "id": "Q090"
     },
     {
         "question": "在生成式AI的提示工程中,Graph Prompting 在處理複雜關係資料時,為何通常比 Chain-of-Thought (CoT)更有效?",
@@ -1180,7 +1180,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QBDDFF5"
+        "id": "Q091"
     },
     {
         "question": "在管理生成式AI系統的隱私風險時,下列哪一種技術最能確保數據使用的安全性?",
@@ -1193,7 +1193,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q04CEB9"
+        "id": "Q092"
     },
     {
         "question": "在統計推論中,若樣本來自母體但呈現明顯偏態分布,且樣本數有限,下列哪一項策略最能減少推估母體參數的偏誤?",
@@ -1206,7 +1206,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q66A557"
+        "id": "Q093"
     },
     {
         "question": "在自然語言處理任務中,為了減少訓練語料中偏見對模型的影響,下列哪種資料處理策略屬於常見的「資料去偏(Data Debiasing)」做法?",
@@ -1219,7 +1219,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "QD953EB"
+        "id": "Q094"
     },
     {
         "question": "在規劃生成式AI解決方案時,下列何種應用場景最適合採用GPT-Realtime 類型模型?",
@@ -1232,7 +1232,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QEA65FF"
+        "id": "Q095"
     },
     {
         "question": "在訓練機器學習模型時,若任務為預測房價,應選用下列哪一種損失函數(Loss Function)來衡量預測誤差?",
@@ -1245,7 +1245,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q7EFF7D"
+        "id": "Q096"
     },
     {
         "question": "在訓練神經網路時,為了提升模型收斂速度與穩定性,避免梯度消失或梯度爆炸,下列哪一種做法最常被使用?",
@@ -1258,7 +1258,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "QCB9B39"
+        "id": "Q097"
     },
     {
         "question": "在評估 AI決策模型是否存在資料分布偏差時,下列何者最屬於偏見檢測(Bias Detection)而非偏見緩解(Bias Mitigation)措施?",
@@ -1271,7 +1271,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "QE3678C"
+        "id": "Q098"
     },
     {
         "question": "在評估大型語言模型,例如7B、13B、175B參數規模時,模型規模對基準測試(Benchmark)結果的影響,下列哪一種說法最為恰當?",
@@ -1284,7 +1284,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q3AC93F"
+        "id": "Q099"
     },
     {
         "question": "在資料處理中,下列何者屬於「結構化數據」的例子?",
@@ -1297,7 +1297,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q04BA45"
+        "id": "Q100"
     },
     {
         "question": "在超長上下文任務中使用自動提示工程(Automatic Prompt Engineer, APE)時,可能面臨的最大限制是什麼?",
@@ -1310,7 +1310,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q2574A8"
+        "id": "Q101"
     },
     {
         "question": "在進行大型語言模型(LLM)企業專屬知識的Fine-tuning時,若內部GPU運算資源與記憶體嚴重受限,下列哪一種參數高效微調(PEFT, Parameter Efficient Fine-Tuning)技術最能在維持模型效能的前提下,顯著降低需更新的參數數量?",
@@ -1323,7 +1323,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QAF60CD"
+        "id": "Q102"
     },
     {
         "question": "在選擇 No Code / Low Code 平台時,下列何者為考慮功能與擴展性時最重要因素?",
@@ -1336,7 +1336,7 @@
         "answer": 2,
         "difficulty": "易",
         "topic": "No code / Low code 概念",
-        "id": "QEC3C49"
+        "id": "Q103"
     },
     {
         "question": "在醫療診斷決策支援系統等高風險領域中,「可解釋人工智慧(Explainable AI, XAI)」的核心價值最主要呈現在哪個面向?",
@@ -1349,7 +1349,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "QC270FB"
+        "id": "Q104"
     },
     {
         "question": "在金融業導入AI模型與可解釋性技術時,反事實解釋(Counterfactual Explanation)最符合下列哪一種應用?",
@@ -1362,7 +1362,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q77A69D"
+        "id": "Q105"
     },
     {
         "question": "在金融科技公司的信貸決策系統中,導入反事實解釋(Counterfactual Explanation)時,實際部署往往伴隨技術與監管挑戰。下列哪一項最符合該情境下的核心挑戰?",
@@ -1375,7 +1375,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "QCCFF66"
+        "id": "Q106"
     },
     {
         "question": "在零售業進行客戶行為分析時,資料倉儲中發現多個欄位儲存相同的購買金額資訊(例如:amount_usd, total_price、transaction_value),但其單位、命名慣例及格式不一致,進而導致特徵工程階段混淆模型輸入。針對此種跨欄位語義重疊與結構冗餘問題,下列哪一種資料處理策略最合適且具實務可行性?",
@@ -1388,7 +1388,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q9359DF"
+        "id": "Q107"
     },
     {
         "question": "在驗證生成式 AI應用的概念驗證(Proof of Concept, POC)時,若企業希望確保模型生成的公平性,最適合採用哪種評估策略?",
@@ -1401,7 +1401,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q924C76"
+        "id": "Q108"
     },
     {
         "question": "學校教師如何引導學生正確使用生成式AI工具?",
@@ -1414,7 +1414,7 @@
         "answer": 3,
         "difficulty": "易",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q1AA1CF"
+        "id": "Q109"
     },
     {
         "question": "對非常長的輸入序列進行推理(Inference),Transformer 模型推理的主要計算瓶頸通常是什麼?",
@@ -1427,7 +1427,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "Q7AD929"
+        "id": "Q110"
     },
     {
         "question": "小明想開發一個部落格寫作工具,讓用戶輸入文章開頭後,系統自動幫忙寫出後續內容,例如輸入「今天去了台北木柵動物園...」,系統就能續寫。若要實現這樣的功能,最適合選擇下列哪一類任務?",
@@ -1440,7 +1440,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QCD152C"
+        "id": "Q111"
     },
     {
         "question": "小莉老師準備使用生成式AI製作個人化學習系統,以下為她設計系統時可能採取的操作步驟: a.根據學生學習歷程與成績,輸入學生特徵; b.根據教材主題,指示AI生成適合的練習題與即時回饋; c.生成適應性學習計畫,讓每位學生依進度與弱點調整練習方式; d.匯入課綱與教學單元內容,建立知識結構圖。請問下列何者為較合理的順序?",
@@ -1453,7 +1453,7 @@
         "answer": 3,
         "difficulty": "難",
         "topic": "No code / Low code 概念",
-        "id": "Q5A250E"
+        "id": "Q112"
     },
     {
         "question": "所有在 Gemini應用程式透過Veo生成的影片,皆採用何種技術措施來協助企業用戶應對AI生成內容可能帶來的不實資訊風險?",
@@ -1466,7 +1466,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q484C18"
+        "id": "Q113"
     },
     {
         "question": "某AI團隊在分析一組連續型數據時,發現部分紀錄的數值明顯高於其他資料點。若專案目標是識別高價值客戶的行為模式,下列哪一種處理方式最為合適?",
@@ -1479,7 +1479,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q834B97"
+        "id": "Q114"
     },
     {
         "question": "某AI科技公司在工業缺陷檢測領域已有成熟的辨識產品經驗。現欲與新客戶合作開發一項類似產品的表面瑕疵檢測系統,但因新產品量產不久,標註樣本極為稀少且專家標註成本高昂。在不大幅增加標註預算的前提下,下列哪一種做法最能利用該公司既有的技術優勢來提升模型表現?",
@@ -1492,7 +1492,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q520179"
+        "id": "Q115"
     },
     {
         "question": "某中型零售企業打算導入AI客服系統來提升顧客諮詢效率。根據AI導入的一般流程規劃,下列哪一個步驟最適合作為接下來的第一階段任務?",
@@ -1505,7 +1505,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q4566BA"
+        "id": "Q116"
     },
     {
         "question": "某份資料中出現多個欄位(如score1、score2、score3)儲存相同的成績資訊,造成資料結構重複與使用混淆,此種情形屬於下列哪一種資料品質問題?",
@@ -1518,7 +1518,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "QD461E8"
+        "id": "Q117"
     },
     {
         "question": "某企業使用 Low-Code平台建置內部營運系統,系統需整合財務、庫存與第三方物流服務。團隊希望確保系統在跨部門流程與外部服務整合下,具高可靠性與可測試性。下列哪一項作法最能達成目標?",
@@ -1531,7 +1531,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QE3E8EF"
+        "id": "Q118"
     },
     {
         "question": "某企業使用生成式AI進行文字分類,初期僅根據既有業務資料設計少量樣本提示(Few-shot Prompting)。當模型應用至新市場資料時,團隊發現分類結果明顯不穩定,且原先提供的範例並未涵蓋新市場常見的表達方式。依此情境判斷,下列何者最可能為主要原因?",
@@ -1544,7 +1544,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QF2356B"
+        "id": "Q119"
     },
     {
         "question": "某企業分析團隊正在處理一組近兩年的營運與銷售數據,共有四個部門提出了各自的分析需求,請判斷哪一個最接近「預測性分析(Predictive Analysis)」的特性?",
@@ -1557,7 +1557,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "QD78534"
+        "id": "Q120"
     },
     {
         "question": "某企業利用 No Code/Low Code平台開發內部營運系統。為確保系統在跨部門流程與外部服務整合下仍具良好的可測試性(Testability),下列哪一項作法最為合適?",
@@ -1570,7 +1570,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q6FDE8F"
+        "id": "Q121"
     },
     {
         "question": "某企業將機器學習模型部署於線上推薦系統。模型在測試階段表現良好,但上線數月後,點擊率與預測準確度逐漸下降。經分析發現,近期使用者行為模式與模型訓練期間的資料特徵出現顯著變化。此現象最可能屬於下列何者?",
@@ -1583,7 +1583,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q44D17E"
+        "id": "Q122"
     },
     {
         "question": "某企業導入 No-Code/Low-Code 平台開放各部門自行開發應用。半年後發現:出現多個功能相近系統、資料欄位定義不一致,且部分應用未經審核即上線,並伴隨權限與維運管理混亂。下列何者最可能為根本問題?",
@@ -1596,7 +1596,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q4C89AC"
+        "id": "Q123"
     },
     {
         "question": "某企業導入 No-Code/Low-Code平台,讓各部門能自行建立資料分析與流程應用。隨著使用範圍擴大,管理層開始關注資料權限、存取紀錄與合規要求。依資料治理觀點,下列何者最合理描述此類平台對企業治理機制的典型影響?",
@@ -1609,7 +1609,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q8D97B0"
+        "id": "Q124"
     },
     {
         "question": "某企業導入大型語言模型(LLM)分析內部報表,使用者經常提供 Excel 匯出的表格資料(如銷售數據與統計表)。測試時發現,模型對原始表格解析效果不穩定。為提升模型理解與回應品質,下列哪一種上下文工程(Context Engineering)作法較為適當?",
@@ -1622,7 +1622,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q7D6453"
+        "id": "Q125"
     },
     {
         "question": "某企業導入大型語言模型(LLM)進行客服自動化,並已透過Fine-Tuning 學習企業標準問答範例,但在實務運作中仍出現回應策略未符合服務優先順序及語氣與品牌風格不一致的情況,因此技術團隊建議再導入 Reinforcement Fine-tuning (RFT)機制進行優化,其主要目的為何?",
@@ -1635,7 +1635,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "QCBEBFA"
+        "id": "Q126"
     },
     {
         "question": "某企業導入大型語言模型作為客服助理。模型已具備穩定語言能力,但在回覆偏好一致性與組織規範遵循方面仍需優化,團隊因此規劃導入人類反饋強化學習(RLHF)流程,下列何者最不屬於RLHF階段的典型技術活動?",
@@ -1648,7 +1648,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q6C27ED"
+        "id": "Q127"
     },
     {
         "question": "某企業導入生成式AI(Generative AI)系統自動產出會議摘要,並規劃額外建置一套AI系統,用於評估摘要內容的正確性與完整性。下列何者為此AI系統的核心目標?",
@@ -1661,7 +1661,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "QE98B6B"
+        "id": "Q128"
     },
     {
         "question": "某企業導入生成式AI助理,協助內部人員撰寫專案建議與分析報告。團隊希望透過思維鏈(Chain of Thought, CoT)提示設計提升模型輸出的邏輯性與推理透明度,下列何者最符合該提示策略?",
@@ -1674,7 +1674,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q2BCE00"
+        "id": "Q129"
     },
     {
         "question": "某企業導入生成式AI客服系統後發現,系統整體運作穩定,且在單位時間內可處理大量對話請求。部分使用者仍反映在互動過程中回覆出現卡頓感,經初步排除網路連線與前端介面效能問題後,若專案團隊希望針對此現象進行效能測試,下列何者最符合測試重點?",
@@ -1687,7 +1687,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q9C4803"
+        "id": "Q130"
     },
     {
         "question": "某企業導入生成式AI系統,希望自動產出客服回覆與內部文件摘要。系統需能理解使用者輸入的完整語句內容,並在回覆中維持語意連貫,即使對話內容較長仍能保持上下文一致性。基於上述需求,下列何種模型架構最為適合?",
@@ -1700,7 +1700,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QE6230E"
+        "id": "Q131"
     },
     {
         "question": "某企業已建置 AI語音記錄系統,並希望整合生成式AI進行「會議即時摘要」功能,下列哪一種策略最能提升摘要的語意品質與使用價值?",
@@ -1713,7 +1713,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q841A56"
+        "id": "Q132"
     },
     {
         "question": "某企業希望利用含敏感資訊的資料進行AI模型訓練,但政策要求原始資料不得外洩,且資料可集中於安全環境中處理。同時,企業希望在資料使用過程中,即使資料處於加密狀態,仍能完成模型計算。在此需求下,下列哪一種技術最為適合?",
@@ -1726,7 +1726,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q3F217F"
+        "id": "Q133"
     },
     {
         "question": "某企業建置 Agentic AI系統處理跨部門複雜任務,團隊以解決方案圖譜(Solution Graph)作為規劃框架。下列何者為Solution Graph 的主要功能?",
@@ -1739,7 +1739,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q10B3C5"
+        "id": "Q134"
     },
     {
         "question": "某企業建置基於檢索增強生成(RAG)的法遵知識輔助系統,用於整合法規條文、內控制度與歷史函釋文件。系統運行後發現,每當法規更新或新增解釋文件時,需重新建立完整索引,導致更新期間系統暫停服務,且部分回應偶有引用舊版內容的情形。若希望在兼顧查詢效率的同時提升知識更新彈性與系統穩定性,下列何者最適合?",
@@ -1752,7 +1752,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q82D1E8"
+        "id": "Q135"
     },
     {
         "question": "某企業建置文件型知識查詢系統,將大量長篇內部文件轉換為可供生成式AI使用的知識來源。在測試過程中,團隊發現若直接以整份文件進行檢索,模型回覆常包含無關內容,且引用段落不夠精準。團隊評估後,決定導入Chunking機制的主要目的為何?",
@@ -1765,7 +1765,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QC4C9FE"
+        "id": "Q136"
     },
     {
         "question": "某企業建置檢索增強生成(Retrieval-augmented generation, RAG)系統支援內部知識查詢。隨著使用量提升,團隊發現模型回覆品質穩定,但推論延遲與運算成本逐漸增加。專案規劃在維持回覆品質前提下進行效能優化。在此情境下,若採用知識蒸餾(Knowledge Distillation),下列敘述何者最為合理?",
@@ -1778,7 +1778,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QD84F47"
+        "id": "Q137"
     },
     {
         "question": "某企業提供大型語言模型(LLM)API服務,需支援高併發請求與流量波動,同時要求服務不中斷並具備故障容忍能力。若以高可用性與可擴展性為主要設計原則,下列哪一種部署方式較為適當?",
@@ -1791,7 +1791,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q56FAA3"
+        "id": "Q138"
     },
     {
         "question": "某企業考慮將開源大型語言模型(GPT-OSS)自行部署在本地伺服器,以取代雲端服務。下列何者最能代表本地部署對企業的實際好處?",
@@ -1804,7 +1804,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QF24EB3"
+        "id": "Q139"
     },
     {
         "question": "某企業規劃導入AI技術支援多項資料分析任務中,下列何種屬於結構化預測(Structured Prediction)問題?",
@@ -1817,7 +1817,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q11ED1D"
+        "id": "Q140"
     },
     {
         "question": "某企業規劃導入生成式 AI 客服系統,需處理顧客查詢並引用歷史交易資料。法遵部門在風險評估中指出,系統若不當處理顧客個人資料,可能引發合規與法律責任。若專案初期希望從資料層面降低敏感資訊暴露風險,下列敘述何者最為合理?",
@@ -1830,7 +1830,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q19920D"
+        "id": "Q141"
     },
     {
         "question": "某企業規劃導入生成式AI助理,在正式全面部署前進行概念驗證(PoC),下列何者最不適合作為此階段的主要工作?",
@@ -1843,7 +1843,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QD278B9"
+        "id": "Q142"
     },
     {
         "question": "某企業規劃透過Low-Code平台建置可視化儀表板,以支援營運數據的即時監控與分析判讀。若企業特別關注儀表板顯示結果的穩定性與分析可信度,下列何者最應優先確認?",
@@ -1856,7 +1856,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QA26B94"
+        "id": "Q143"
     },
     {
         "question": "某企業評估於不同業務場景導入機器學習技術。下列哪一項應用情境與機器學習類型的搭配最為適當?",
@@ -1869,7 +1869,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "QE092E8"
+        "id": "Q144"
     },
     {
         "question": "某企業資料分析人員需針對不同型態的數據選擇合適的視覺化工具。下列哪一種情境最適合使用直方圖(Histogram) ?",
@@ -1882,7 +1882,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q6D682B"
+        "id": "Q145"
     },
     {
         "question": "某保險公司建立AI理賠金額預測模型。歷史理賠資料經檢定後呈近似常態分佈,但仍存在少數極端高額案件。資料科學團隊在不破壞整體分佈特性的前提下,規劃進行離群值處理。下列何者最不適當?",
@@ -1895,7 +1895,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "QC97BA7"
+        "id": "Q146"
     },
     {
         "question": "某保險公司想建立智慧理賠系統,包含兩個功能:(1)自動判斷理賠案件是否為詐欺案件(2)自動生成理賠調查報告。請問這兩個功能分別屬於哪種AI技術類型?",
@@ -1908,7 +1908,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QEA5433"
+        "id": "Q147"
     },
     {
         "question": "某保險公司每月處理約50萬筆理賠申請,希望建立AI系統自動識別可疑的詐欺案件。由於公司內部缺乏AI專業人員,且需要快速上線驗證效果,IT資訊主管正在評估不同的AI平台解決方案。在去識別化個人隱私資料後,下列哪一種平台類型最適合該公司的需求?",
@@ -1921,7 +1921,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q1E7953"
+        "id": "Q148"
     },
     {
         "question": "某保險公司計畫導入生成式AI的內部合約查詢系統,協助業務員與法務部門快速解讀保單條款與理賠規範。高層特別強調客戶資料隱私與合規風險控管,即使需要投入較多資源,也必須確保資料不會外洩。在此情況下,下列哪一種策略最符合公司的資料安全與合規優先考量?",
@@ -1934,7 +1934,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q980363"
+        "id": "Q149"
     },
     {
         "question": "某公司在導入生成式AI協助撰寫內部報告時,測試人員刻意在輸入的上下文中放入互相矛盾的資訊(例如:同一位員工在不同段落被描述為「入職三年」與「入職五年」)。在這種情況下,最常見的模型行為會是什麼?",
@@ -1947,7 +1947,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q3C73D1"
+        "id": "Q150"
     },
     {
         "question": "某公司建置基於檢索增強生成(RAG)的知識查詢系統,需同時兼顧查詢效能與資料的即時更新。近期發現回應內容偶爾過時,且每次更新文件都需完整重建索引,導致系統在更新期間無法服務。若要解決此問題並提升整體穩健性,下列哪項做法最適合?",
@@ -1960,7 +1960,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q10BEEA"
+        "id": "Q151"
     },
     {
         "question": "某公司擬將客戶個人資料傳輸至國外進行雲端儲存,依據《個人資料保護法》規定,下列哪一種情況下,中央目的事業主管機關有權對該國際資料傳輸行為進行限制?",
@@ -1973,7 +1973,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q558ACA"
+        "id": "Q152"
     },
     {
         "question": "某公司欲建立員工離職風險預測模型,資料集中包含「年度績效分數」、「平均每月加班時數」、「年齡」等數值型特徵。由於各特徵的數值範圍差異極大(例如績效分數1-5、加班時數0-80、年齡20-65),若直接輸入至使用梯度下降的邏輯迴歸(Logistic Regression)模型,可能導致模型收斂緩慢或權重偏斜。為提升模型訓練效率與準確度,下列哪一種特徵工程方法最適合應用於這些數值特徵?",
@@ -1986,7 +1986,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q4628C6"
+        "id": "Q153"
     },
     {
         "question": "某公司正在開發一個智慧客服系統,負責回覆顧客關於退換貨、優惠活動與商品建議等問題。研發團隊嘗試使用不同的提示設計方式來提升模型效能。下列哪一個提示最符合「少樣本提示(Few-Shot Prompting)」的設計原則?",
@@ -1999,7 +1999,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QEC9682"
+        "id": "Q154"
     },
     {
         "question": "某公司部署結合 Fine-tuning 與檢索增強生成(RAG)的語言模型系統作為內部文件助理。系統需同時確保回覆語氣一致、能即時查詢每日新增文件、維持效能穩定,並避免頻繁重新訓練。在長期維護與效能平衡下,下列哪一種策略最合適?",
@@ -2012,7 +2012,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q4B84F4"
+        "id": "Q155"
     },
     {
         "question": "某公司開發的智慧車載語音助理,可透過語音辨識(ASR)辨識駕駛語音,再由LLM生成回答並查詢車載 API。測試中發現:ASR 對汽車專業術語辨識錯誤率高;LLM的回覆常不精確;系統回覆延遲雖存在但仍可接受。若目標是「優先提升準確性與回答品質」,下列改進步驟的最合理執行順序為何?\n1. 擴充並標註汽車領域語音資料,微調 ASR 模型\n2. 微調 LLM 並加入檢索增強(RAG)\n3. 優化系統架構,引入批次推論降低延遲\n4. 動態調整生成溫度,平衡準確度與多樣性",
@@ -2025,7 +2025,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QE34BB7"
+        "id": "Q156"
     },
     {
         "question": "某公車系統想預測各站點的到站時間,需要考慮歷史班次資料、即時路況、天氣等因素。由於路況變化複雜,傳統循環神經網路(Recurrent Neural Network, RNN)在建模時可能難以保留較早期的重要資訊。下列哪種架構最能解決這個問題?",
@@ -2038,7 +2038,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q0688FB"
+        "id": "Q157"
     },
     {
         "question": "某商業銀行想建立洗錢行為檢測系統,擁有過去5年的交易記錄,其中包含已確認的洗錢案例(標記為「異常」)和正常交易(標記為「正常」)。銀行希望系統能自動識別新交易是否為洗錢行為,請問使用下列哪一種機器學習方法最為適合?",
@@ -2051,7 +2051,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q3020FA"
+        "id": "Q158"
     },
     {
         "question": "某國際銀行導入生成式AI,用於彙整不同國家金融監管機構的合規規範,建立跨國合規知識庫。由於各國條文表述方式不同,且監管要求具有高度專業性與隱含邏輯,若要確保知識庫在後續查詢與生成報告時能維持正確性與一致性,下列哪一項AI能力最為關鍵?",
@@ -2064,7 +2064,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q7AE042"
+        "id": "Q159"
     },
     {
         "question": "某團隊希望讓 AI自動查詢GitHub上的程式碼庫,並生成摘要給使用者參考。開發者決定透過Model Context Protocol (MCP)來實現,AI需先發出請求,再經由MCP 架構逐步完成查詢與回傳。在此情境下,MCP運作流程的正確順序為何?",
@@ -2077,7 +2077,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q81ACCF"
+        "id": "Q160"
     },
     {
         "question": "某團隊想採用循環神經網路(Recurrent Neural Network, RNN)建構長期氣候數據的預測模型,以下哪一項敘述最符合使用 RNN 可能會遇到的挑戰?",
@@ -2090,7 +2090,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q9A89D6"
+        "id": "Q161"
     },
     {
         "question": "某團隊訓練影像分類模型,發現模型在訓練資料上的準確率達98%,但在測試資料上僅有72%。若團隊希望提升模型對新資料的適應能力,並增加訓練資料的多樣性,下列何者最適合?",
@@ -2103,7 +2103,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q40F40F"
+        "id": "Q162"
     },
     {
         "question": "某團隊訓練深層神經網路模型時,發現訓練誤差長時間幾乎未下降,模型參數更新幅度極小,呈現學習停滯現象。若研判問題與梯度傳遞效率有關,下列何者最適合的改善策略?",
@@ -2116,7 +2116,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q28C1DB"
+        "id": "Q163"
     },
     {
         "question": "某大型物流公司計畫導入AI系統,以改善客服與配送作業的效率。專案團隊規劃了以下四個步驟,請問正確的執行順序為何?\n1. 建立符合公司服務流程的AI對話邏輯與應答範本,確保顧客體驗一致\n2. 明確定義導入AI的目標並設定關鍵績效指標(KPI)\n3. 蒐集與清理過往客服紀錄與配送相關資料,作為模型訓練素材\n4. 評估並選擇合適的AI技術供應商或開源方案,確立技術方向與架構",
@@ -2129,7 +2129,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q78FD25"
+        "id": "Q164"
     },
     {
         "question": "某大型製造工廠導入生成式AI系統來優化能源消耗,每日需處理約10萬筆設備數據並生成能源優化建議。系統每月API調用成本約15萬元,內部維護人力成本8萬元,基礎設施成本5萬元。該工廠評估導入效益時,下列哪一項總體擁有成本(Total Cost of Ownership, TCO)分析最完整?",
@@ -2142,7 +2142,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QE3A03F"
+        "id": "Q165"
     },
     {
         "question": "某大型零售企業準備將商品推薦模型上線,專案團隊在檢視訓練資料時,發現部分商品類別(例如高價商品)樣本數量極少,而多數樣本集中於低價商品。若此不平衡問題未妥善處理,下列何種狀況最可能在實際推薦結果中發生?",
@@ -2155,7 +2155,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q044897"
+        "id": "Q166"
     },
     {
         "question": "某客服系統在回覆「訂單取消政策」時,即使生成溫度固定為0.6,回覆品質仍常出現差異。調查顯示,檢索到的政策內容有時是最新版本,有時則是過時文件,此外Prompt約束不足,微調語料也有模糊描述。若要優先改善品質波動,應先解決下列哪一項問題?",
@@ -2168,7 +2168,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q15328B"
+        "id": "Q167"
     },
     {
         "question": "某客服自動回應系統希望根據不同客戶群體調整回覆風格。在兼顧即時性與效果的前提下,下列哪一種方案最適合?",
@@ -2181,7 +2181,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QA76258"
+        "id": "Q168"
     },
     {
         "question": "某市政府交通局計劃導入生成式AI技術來自動生成公車到站時間預測的文字報告,每日需處理約50萬筆交通資料並生成1000份報告。在評估導入成本時,團隊希望進行 Token Economics 分析(指模型推理與生成過程中,Token使用量及其費用)。下列何者不屬於Token Economics的考量範圍?",
@@ -2194,7 +2194,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QE3937C"
+        "id": "Q169"
     },
     {
         "question": "某市政府建置城市治理資料平台,需整合交通車流偵測資料、路口監視器影像,以及民眾透過陳情系統提交的文字通報。由於各類資料格式、儲存方式與資料型態差異甚大,導致資料清理與整合成本顯著增加。就大數據特性而言,此專案最主要面臨下列哪一項挑戰?",
@@ -2207,7 +2207,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q9DE658"
+        "id": "Q170"
     },
     {
         "question": "某市政府環保局想建立一個垃圾分類查詢系統,讓民眾輸入物品名稱後自動判斷分類。由於垃圾種類繁多,但每種分類的訓練範例有限,工程師決定採用少樣本學習(Few-shot Learning)技術。下列何者為少樣本學習(Few-shot Learning)的主要特徵?",
@@ -2220,7 +2220,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q7CFA35"
+        "id": "Q171"
     },
     {
         "question": "某市政府規劃釋出市民用電資料供學術研究使用,資料內容包含用電紀錄與部分人口統計欄位。考量資料可能涉及可識別個人之資訊,且須符合個人資料保護相關規範,下列哪一種資料處理方式最為適當?",
@@ -2233,7 +2233,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q91FD54"
+        "id": "Q172"
     },
     {
         "question": "某影音串流平台建立神經網路模型,用於預測使用者最可能感興趣的影片類型。模型輸出層需將結果轉換為各類別的機率分佈,以便系統依機率高低推薦內容。下列哪一種函數最適合用於模型輸出層?",
@@ -2246,7 +2246,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "Q3C7D17"
+        "id": "Q173"
     },
     {
         "question": "某投資公司導入生成式AI,用於即時分析股市波動並提供市場背景資訊。若希望AI能兼顧「即時性」與「可靠性」。下列哪一項設計最能有效提升AI在即時股市分析上的表現?",
@@ -2259,7 +2259,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q09D65C"
+        "id": "Q174"
     },
     {
         "question": "某招聘公司使用生成式AI生成面試問題與候選人評估建議。團隊發現模型可能對性別或年齡產生的資料分布偏差。下列哪一種策略最能有效降低生成偏差輸出的風險?",
@@ -2272,7 +2272,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q82043F"
+        "id": "Q175"
     },
     {
         "question": "某支付平台為了強化洗錢行為檢測,計劃導入生成式AI技術來輔助分析可疑交易模式。該平台擁有大量歷史交易記錄和已知洗錢案例資料,希望AI能自動生成可疑交易的特徵描述報告。下列哪一種生成式AI技術最適合此需求?",
@@ -2285,7 +2285,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q927946"
+        "id": "Q176"
     },
     {
         "question": "某新創公司採用MVP(Minimum Viable Product)策略,導入Vibe Coding 以加速開發,雖然初期能快速產出可運作功能,但技術主管提醒,在正式上線前仍可能存在程式碼品質與安全風險。下列哪一項措施最合理,以降低品質與安全問題?",
@@ -2298,7 +2298,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q53C65F"
+        "id": "Q177"
     },
     {
         "question": "某新創公司開發一套圖像描述生成系統,能根據輸入的照片自動產生說明文字。為了讓產生的描述文字能與圖片資訊精準對應,下列哪一種設計思路最關鍵?",
@@ -2311,7 +2311,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q834ACE"
+        "id": "Q178"
     },
     {
         "question": "某時尚品牌導入生成式AI(Generative AI)技術,建立服裝設計輔助系統。系統需根據設計師輸入的風格條件,自動產生具有高度視覺品質、細節穩定且風格變化自然的服裝草圖。團隊特別重視生成結果的穩定性與多樣性控制能力。在此需求下,下列哪一種模型技術或方法較為適合?",
@@ -2324,7 +2324,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "Q548ADB"
+        "id": "Q179"
     },
     {
         "question": "某智慧城市專案導入AI技術,以優化垃圾收集路線調度並即時監測空氣品質變化。系統需持續蒐集環境數據(如PM2.5、氣體濃度)與設備狀態(如垃圾桶滿溢度)。下列何種技術最直接支援上述需求?",
@@ -2337,7 +2337,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "QA331BD"
+        "id": "Q180"
     },
     {
         "question": "某智慧工廠導入生成式AI,協助產線工程師即時產生維修指引與操作建議。下列哪一項並非團隊在系統設計中加入Guardrails(防護機制)的主要目的?",
@@ -2350,7 +2350,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QF24087"
+        "id": "Q181"
     },
     {
         "question": "某智慧製造廠導入語音互動AI助理,作業人員可透過語音查詢設備狀態與操作指引。系統流程包含語音轉文字、語言模型生成回覆,以及即時查詢內部系統資料。測試結果顯示:語音轉文字在專業設備術語上錯誤率偏高;語言模型回覆偶有內容不夠精準;系統整體回應速度略慢但仍在可接受範圍。若專案目標為優先確保正確執行指令,下列改進措施的執行順序何者最合理?",
@@ -2363,7 +2363,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QF917CC"
+        "id": "Q182"
     },
     {
         "question": "某有機農場累積了十年的病蟲害防治紀錄文件,包含不同作物的病害症狀描述、防治方法和效果評估。農場主人希望建立一個AI助手,能根據農民描述的作物症狀,快速提供相關的防治建議和歷史案例。下列哪一種技術最適合解決這個需求?",
@@ -2376,7 +2376,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QD766B8"
+        "id": "Q183"
     },
     {
         "question": "某果園管理公司計畫導入AI系統協助農民判斷蘋果成熟度,透過分析果實特徵資訊,評估成熟狀態並自動判斷採收時機。根據AI應用領域的分類,這個系統主要屬於哪一個應用領域?",
@@ -2389,7 +2389,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "QD7ABE7"
+        "id": "Q184"
     },
     {
         "question": "某模型使用 K-近鄰演算法(KNN)進行分類,K設為3。一筆新的測試資料輸入後,與其最接近的3筆資料的類別如下:鄰近樣本1:類別A;鄰近樣本2:類別B;鄰近樣本3:類別A。請問模型會將這筆資料預測為哪一類別?",
@@ -2402,7 +2402,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q09C803"
+        "id": "Q185"
     },
     {
         "question": "某機構計畫導入生成式AI旅遊資訊服務對話系統自動生成多語言對話。目前每月需人工翻譯600則訊息,每則成本50元;若改用 ChatGPT API,每則訊息需2000 Tokens,而Token成本0.8元/1000 Tokens,但需額外投入系統整合費用20萬元。關於投資報酬率(Return on Investment, ROI)評估,下列何者最為正確?",
@@ -2415,7 +2415,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q368DE8"
+        "id": "Q186"
     },
     {
         "question": "某物流公司導入強化式學習(Reinforcement Learning)優化車隊調度。模型在系統運行過程中,會依據不同配送狀態動態調整行動選擇方式,使決策結果逐步朝較佳績效收斂。上述模型在學習過程中的調整行為,最符合下列哪一項強化式學習核心機制?",
@@ -2428,7 +2428,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "QC70299"
+        "id": "Q187"
     },
     {
         "question": "某物流公司想導入AI以提升營運效率,評估不同資料型態與模型架構。下列哪一種應用情境最適合採用卷積神經網路(Convolutional Neural Network, CNN)作為主要模型架構?",
@@ -2441,7 +2441,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q5E8FD4"
+        "id": "Q188"
     },
     {
         "question": "某環保局想建立AI系統監測空氣品質,透過分析監測站攝影機拍攝的影像來識別煙霧。系統需要在影像中找出煙霧區域並標示其位置和範圍。這個應用主要屬於電腦視覺的哪個技術領域?",
@@ -2454,7 +2454,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "QBFFCB4"
+        "id": "Q189"
     },
     {
         "question": "某生成式AI模型接收一段語音輸入:「一隻戴著太空帽的企鵝正在火星上跳舞」,並根據該語音內容產生一張圖像呈現相對應的場景。此類模型最符合下列哪一種生成任務分類?",
@@ -2467,7 +2467,7 @@
         "answer": 1,
         "difficulty": "易",
         "topic": "No code / Low code 概念",
-        "id": "Q9D0EDF"
+        "id": "Q190"
     },
     {
         "question": "某社交平台嘗試結合自動提示工程(Automatic Prompt Engineer, APE)與圖提示(Graph Prompting),讓AI協助分析使用者之間的互動關係。在這個過程中,下列何者為最可能遇到的挑戰?",
@@ -2480,7 +2480,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q314BC7"
+        "id": "Q191"
     },
     {
         "question": "某紡織公司希望建立自動化品質檢測流程,既有的AI系統檢測到布料瑕疵時,需自動拍照存檔、發送通知給品管人員。該公司具有一定開發人力,希望快速建置此工作流程,並保有彈性調整空間,下列哪一種解決方案最適合?",
@@ -2493,7 +2493,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q118C21"
+        "id": "Q192"
     },
     {
         "question": "某紡織製造公司導入AI系統進行布料瑕疵檢測,每天需處理來自30條產線的影像資料,包括高解析度照片、感測器數值、生產參數記錄等多種格式。該公司收集的資料量從每日2GB增長至50GB,且需在布料離開產線前的3秒內完成瑕疵判定。近期團隊發現系統在尖峰時段容易出現判定延遲,影響製程節奏。若要優先改善此問題,下列哪一種做法最適合?",
@@ -2506,7 +2506,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q9526F3"
+        "id": "Q193"
     },
     {
         "question": "某航空公司導入生成式AI聲控客服,提供航班與票務查詢。有人員透過惡意提示,試圖讓系統洩漏內部安檢流程。在此情境中,下列何者為降低提示攻擊(Prompt Injection)風險的最佳策略?",
@@ -2519,7 +2519,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q76EC39"
+        "id": "Q194"
     },
     {
         "question": "某行銷公司欲針對新客戶進行「行銷活動推播」,目前擁有資料包含:客戶基本資料(尚未有購買紀錄)、客戶過往點擊行為(未標記是否完成購買)、類似客戶是否曾購買過(已標記「有/無購買」標籤)。若該公司希望預測新的單一客戶是否可能完成購買行為,下列哪一種學習方式與資料搭配最合適?",
@@ -2532,7 +2532,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q2C5540"
+        "id": "Q195"
     },
     {
         "question": "某製造企業規劃導入生成式AI協助產線異常紀錄分析,系統將根據設備回報與維修紀錄自動產出問題摘要與建議處置說明。在試行測試階段,為降低營運與決策風險,下列何者最應優先驗證?",
@@ -2545,7 +2545,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "QBD6D38"
+        "id": "Q196"
     },
     {
         "question": "某製造企業規劃於設備端建置邊緣運算(Edge Computing)架構,並以No-Code/Low-Code平台開發即時監控應用。測試顯示,系統在雲端環境執行順暢,但部署至邊緣裝置後出現回應延遲與效能下降。依此情境判斷,下列何者最合理解釋該現象?",
@@ -2558,7 +2558,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q45BB71"
+        "id": "Q197"
     },
     {
         "question": "某製造業公司建置機器學習模型,用於預測產品是否為瑕疵品。實際生產資料中,瑕疵品比例極低,大多數樣本皆為正常品。模型測試時發現,即使模型多數預測為正常品,仍可獲得很高的整體準確率。在此情境下,若希望更有效衡量模型對瑕疵品的辨識能力,下列何者較適合作為主要評估指標?",
@@ -2571,7 +2571,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q5467A8"
+        "id": "Q198"
     },
     {
         "question": "某製造業團隊建立瑕疵偵測模型時,使用單張約20MB的高解析度工業影像作為訓練資料,並將所有影像儲存於NAS(Network Attached Storage)中。訓練時透過PyTorch搭配CNN模型於GPU上進行,工程師觀察到GPU使用率僅約20%至30%,整體訓練時間耗費數日。根據上述情境,造成GPU利用率偏低的最可能原因為何?",
@@ -2584,7 +2584,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q0A90A7"
+        "id": "Q199"
     },
     {
         "question": "某製造業工廠規劃導入AI監控系統,持續分析設備感測數據(如溫度、震動與壓力)。系統需能在缺乏完整異常標註資料的情況下,辨識與一般運作型態顯著不同的狀態,並發出預警。在此需求下,下列何種技術較為適合?",
@@ -2597,7 +2597,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "QB6A541"
+        "id": "Q200"
     },
     {
         "question": "某設計公司導入生成式AI(Generative AI)工具,用於自動產生產品概念圖與風格草圖。為了讓系統能依據既有圖像資料產生具有變化且風格一致的新圖像,模型必須具備學習資料特性並生成新樣本的能力。下列哪一種模型技術或方法最符合上述需求?",
@@ -2610,7 +2610,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "Q06C1C9"
+        "id": "Q201"
     },
     {
         "question": "某設計團隊計畫在短時間內完成一款行動應用程式,必須同時達到高度個人化體驗、快速生成介面與行銷內容自動產出等需求。若結合 No Code/Low Code平台與生成式AI技術,以下哪一種整合策略最能符合目標?",
@@ -2623,7 +2623,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q7A686C"
+        "id": "Q202"
     },
     {
         "question": "某跨國電商企業導入生成式AI,協助處理顧客服務請求,並根據顧客歷史訂單提供個人化建議。資安與法遵部門擔心AI在回覆時可能洩漏顧客個資,若要在導入初期優先避免觸法風險,下列哪一項措施最符合要求?",
@@ -2636,7 +2636,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "QFAEE08"
+        "id": "Q203"
     },
     {
         "question": "某農場收集了大量作物葉片影像,但只有30%的影像有病害類別標註,其餘70%的影像沒有任何標籤。農場希望充分利用所有資料來訓練病害識別模型。這種情況最適合使用哪一種學習方法?",
@@ -2649,7 +2649,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q9FCD0F"
+        "id": "Q204"
     },
     {
         "question": "某農業合作社希望建立一套自動化工作流程,當農民透過手機APP回報田間病蟲害照片時,系統能自動通知相關專家、建立案件紀錄並排程現場訪查。該合作社IT資訊人力有限,僅有一位具備基礎程式概念的人員。下列哪一種開發方式最適合此需求?",
@@ -2662,7 +2662,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q4B0F9F"
+        "id": "Q205"
     },
     {
         "question": "某連鎖零售企業使用生成式AI協助規劃門市補貨策略。決策時需同時考量多項彼此相關的因素,例如:庫存水位、促銷活動、區域銷售差異與物流限制。專案團隊發現,AI雖能逐步說明推論過程,但對於多條件之間的相互影響掌握不足,導致建議結果偶有偏差。若希望透過提示工程(Prompt Engineering)改善此問題,下列哪一種策略最為適合?",
@@ -2675,7 +2675,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QB64C33"
+        "id": "Q206"
     },
     {
         "question": "某醫療機構計畫導入生成式AI協助撰寫病歷摘要。在技術測試階段,為確保系統能安全應用於臨床,最應優先關注下列哪一項指標?",
@@ -2688,7 +2688,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QDD32ED"
+        "id": "Q207"
     },
     {
         "question": "某醫療院所希望改善行政效率,規劃讓各科室人員可自行建立行政回報與內部申請表單,並導入AI功能以自動判讀與分類填寫內容(如問題類型或需求性質),同時需兼顧流程調整彈性與降低系統開發維運負擔。下列哪一種技術組合最適合?",
@@ -2701,7 +2701,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q341D42"
+        "id": "Q208"
     },
     {
         "question": "某醫院使用機器學習模型篩檢癌症患者。模型預測結果會決定哪些病人需要進一步檢查。院方非常重視盡量找出所有可能的癌症患者,即希望降低漏診(Missed Diagnosis)風險,即便這可能增加一些誤判。下列哪一個評估指標最能反映模型找出癌症患者的能力?",
@@ -2714,7 +2714,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "QA43B38"
+        "id": "Q209"
     },
     {
         "question": "某醫院導入了一套智慧系統,由三個模組構成:語音辨識(ASR) → 語言模型生成(LLM)→查詢醫療資料庫API。近期發現部分查詢結果錯誤,例如醫師詢問「術後復健流程」時,系統卻誤判為要查詢「術前注意事項」,因此查詢到錯誤的文件。經檢查已排除語音辨識的錯誤,下列何者最可能是造成查詢錯誤的來源?",
@@ -2727,7 +2727,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q2638EF"
+        "id": "Q210"
     },
     {
         "question": "某醫院希望開發一個系統,根據患者的年齡、血壓與BMI等資訊,預測其罹患糖尿病的機率(0~1),並依據預測值是否超過0.5做出風險警示。下列哪一種模型最適合用於此分類任務?",
@@ -2740,7 +2740,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "QDCD25C"
+        "id": "Q211"
     },
     {
         "question": "某醫院正在規劃一個AI專案,目的是協助醫師從胸腔X光影像中判斷是否存在肺炎徵兆,團隊卻誤將生成式 AI模型運用於影像診斷。下列哪一項最可能成為主要風險?",
@@ -2753,7 +2753,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q3B54C2"
+        "id": "Q212"
     },
     {
         "question": "某醫院研究團隊蒐集了大量病患的「收縮壓」數據,經檢驗後顯示此數值大致呈現常態分布。在進行後續模型分析前,研究人員希望妥善處理可能存在的極端血壓數值。下列哪一種做法最為合適?",
@@ -2766,7 +2766,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q6DEC54"
+        "id": "Q213"
     },
     {
         "question": "某醫院研究特定心血管疾病的成因,收集了50名病患與150名正常人的年齡、血壓、血型等三項屬性變數。此研究適合使用下列哪一種機器學習模型來建立?",
@@ -2779,7 +2779,7 @@
         "answer": 1,
         "difficulty": "難",
         "topic": "機器學習概念",
-        "id": "Q4BBF6F"
+        "id": "Q214"
     },
     {
         "question": "某醫院計畫開發住院日數預測模型,以協助病房調度。多數病人的住院日數集中在3-7天,但仍有少數重症患者因治療需求而住院日數明顯偏長。醫院希望採用一種合適的評估方式,既能兼顧大部分病人的預測準確度,也能確保對重症個案的預測維持穩健。下列哪一種方法最符合此需求?",
@@ -2792,7 +2792,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q7D959F"
+        "id": "Q215"
     },
     {
         "question": "某金融服務公司規劃導入生成式AI,在評估模型部署方式時,基於內部控制與治理要求,企業考慮將大型語言模型建置於公司可管理環境,而非直接採用外部雲端服務。下列何者最能合理說明此部署決策的潛在優勢?",
@@ -2805,7 +2805,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q3768C8"
+        "id": "Q216"
     },
     {
         "question": "某金融機構導入檢索增強生成(Retrieval-Augmented Generation, RAG)模型,用於客服文件查詢與自動回覆。由於大型模型運算成本過高,若考慮引入知識蒸餾(Knowledge Distillation, KD)技術,下列何者為帶來的主要效益?",
@@ -2818,7 +2818,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QA3C610"
+        "id": "Q217"
     },
     {
         "question": "某金融機構已部署的AI模型遭客戶抱怨有不公平情形,經數據分析發現不同族群之間的模型預測結果存在顯著差異。根據金融監督管理委員會發布之《金融業運用人工智慧(AI)指引》,此情形下最適當的處置方式為何?",
@@ -2831,7 +2831,7 @@
         "answer": 2,
         "difficulty": "難",
         "topic": "人工智慧概念",
-        "id": "Q1F290E"
+        "id": "Q218"
     },
     {
         "question": "某金融監理機構規劃導入生成式AI以協助內部人員分析申報文件與監理報告,系統需處理大量涉及企業敏感資料與未公開資訊。主管機關明確要求「資料安全與法規遵循必須優先於導入速度與成本考量」。在此條件下,下列哪一種策略最為適當?",
@@ -2844,7 +2844,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q3C191A"
+        "id": "Q219"
     },
     {
         "question": "某金融科技公司在利用歷史交易資料建立風險控管模型時,嘗試推估整體詐騙交易比例。近期發現,樣本間存在明顯的時間序列相關性,導致模型在實際偵測新交易時誤判率升高。若希望同時改善詐騙比例推估的準確性並提升模型的穩健性,下列哪一種做法最為合適?",
@@ -2857,7 +2857,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q016BB7"
+        "id": "Q220"
     },
     {
         "question": "某金融科技公司正開發一套違約風險預測系統,需大量處理不同客戶的財務特徵資料。考量到資料特徵數量眾多,且希望提升預測的穩定性與泛化能力,下列哪一種鑑別式AI模型最適合?",
@@ -2870,7 +2870,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q80FB8D"
+        "id": "Q221"
     },
     {
         "question": "某銀行導入生成式AI放貸審核系統,用於分析申貸人條件並生成初步審核意見。測試過程中發現,模型對不同族群的核准率存在顯著差異,可能引發演算法偏見問題。為降低此風險,下列哪一項措施最合適?",
@@ -2883,7 +2883,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "QFA5839"
+        "id": "Q222"
     },
     {
         "question": "某銀行建立AI詐欺交易偵測模型。歷史交易資料中,詐欺樣本比例極低,導致模型訓練時偏向預測為「正常交易」。資料科學團隊評估採用SMOTE (Synthetic Minority Over-sampling Technique)改善訓練資料分佈。下列何者最符合SMOTE 技術的主要功能?",
@@ -2896,7 +2896,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "Q428C4E"
+        "id": "Q223"
     },
     {
         "question": "某開發團隊在建置企業內部知識檢索系統時,選擇採用多向量檢索器(Multi-vector Retriever),下列何者為協助提升系統查詢的完整性與精準度的主要方式?",
@@ -2909,7 +2909,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QF1ACD3"
+        "id": "Q224"
     },
     {
         "question": "某雲端服務公司計畫將大型語言模型部署於線上系統,並以批次推論(Batch Inference)方式處理每日上百萬筆用戶請求。專案團隊在評估可能遇到的挑戰時,下列哪一項通常不會被視為批次推論階段的主要難題?",
@@ -2922,7 +2922,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "QC440B5"
+        "id": "Q225"
     },
     {
         "question": "某零售企業在建置機器學習模型預測顧客購買機率時,資料同時包含大量稀疏類別特徵與數值型特徵。團隊希望模型既能學習過去已出現的特徵組合規律,也能對未出現的特徵組合做出合理預測。下列哪一種模型架構最適合此類需求?",
@@ -2935,7 +2935,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "QD896BE"
+        "id": "Q226"
     },
     {
         "question": "某零售企業導入生成式AI商品推薦系統。測試結果顯示,在購物行為、偏好設定與價格區間相同的情況下,不同客戶族群收到的推薦商品類型仍出現明顯差異,且差異方向不易以既有行銷策略解釋。若在模型架構與推論設定皆未調整情形下,專案目標是優先降低可能的模型偏差風險,下列何者最合理?",
@@ -2948,7 +2948,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "QEF503E"
+        "id": "Q227"
     },
     {
         "question": "某零售企業規劃提升門市數據應用能力,目標包括:門市主管可自行調整分析畫面與檢視指標呈現,以及由行銷部門建立銷售預測模型,以支援補貨與促銷規劃。企業在選型時以工具的主要功能定位與典型用途作為評估依據。依此需求判斷,下列哪一項AI工具使用規劃最合理?",
@@ -2961,7 +2961,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q8B2180"
+        "id": "Q228"
     },
     {
         "question": "某零售業者建立顧客行為預測模型,資料集中包含「年消費金額」、「平均單筆交易金額」及「會員年資」等數值型特徵。資料分析顯示,部分金額特徵呈現高度偏態分布,少數樣本的數值顯著高於多數觀測值。為降低極端值對模型學習穩定性的影響,下列哪一種特徵工程方法最適合?",
@@ -2974,7 +2974,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "QD6F32D"
+        "id": "Q229"
     },
     {
         "question": "某電信公司建立機器學習模型預測用戶流失風險。資料中包含多個類別型特徵(Categorical Features),例如「資費方案類型」與「客戶地區」。為使模型能有效使用這些特徵,下列何者最直接用於將類別型特徵轉換為模型可處理的數值格式?",
@@ -2987,7 +2987,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q0EE87C"
+        "id": "Q230"
     },
     {
         "question": "某電商公司導入Agentic AI 來處理客服工作。測試發現Agent 在回答產品 FAQ 時經常出錯,且無法幫客戶修改訂單。這種情況最可能是因為缺少下列哪兩項工具或技術?",
@@ -3000,7 +3000,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q247375"
+        "id": "Q231"
     },
     {
         "question": "某電商公司想預測用戶是否會購買特定商品,資料中包含多種用戶屬性與行為特徵。分析師希望選出對購買結果最有預測價值的特徵,以提升模型效能。下列哪一種描述最符合監督式特徵選擇(Supervised Feature Selection)的概念?",
@@ -3013,7 +3013,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q417D01"
+        "id": "Q232"
     },
     {
         "question": "某電商平台導入生成式AI客服助理,用於自動回覆顧客詢問。營運需求包含:需即時反映每日更新的促銷活動與商品資訊,同時維持品牌一致的回覆語氣,且企業希望避免因模型重新訓練所造成的成本增加與系統不穩定。在此情境下,下列哪一種技術策略最合理?",
@@ -3026,7 +3026,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q74A394"
+        "id": "Q233"
     },
     {
         "question": "某電商平台工程師需在已排序的價格清單中,快速定位指定價格是否存在,給定排序後陣列: $arr=[3,8,14,19,21,27,33,45,52]$。若搜尋目標值為27,且採用標準二分搜尋(Binary Search)流程(每次比較後排除中位數),請問最多需要比較幾次即可找到目標?",
@@ -3039,7 +3039,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "QAACF45"
+        "id": "Q234"
     },
     {
         "question": "某電商平台希望生成的商品描述在風格與用詞上保持一致性,但不需要新增專業知識。下列哪種方法最適合?",
@@ -3052,7 +3052,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q5CA6D6"
+        "id": "Q235"
     },
     {
         "question": "某電商平台希望預測商品的退貨機率,以協助降低營運風險。若模型使用的輸入資料包含「商品售價」、「顧客年齡」、「運送天數」,而模型的輸出為是否退貨(是/否)。請問在此模型中,「是否退貨」應歸類為下列哪一類變數?",
@@ -3065,7 +3065,7 @@
         "answer": 2,
         "difficulty": "易",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "QD44B08"
+        "id": "Q236"
     },
     {
         "question": "某電商資料團隊要協助行銷部門規劃再行銷策略。目前取得資料包含使用者點擊、購買紀錄、流量來源與轉換率。若資料團隊希望先進行探索性資料分析(EDA),下列哪一項最符合EDA的做法?",
@@ -3078,7 +3078,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q90E844"
+        "id": "Q237"
     },
     {
         "question": "某電子製造公司建置AI視覺檢測系統,用於辨識PCB 電路板製程缺陷。系統在影像判讀任務上表現穩定,但其模型設計與訓練目標皆侷限於特定應用範圍,無法直接遷移至其他營運決策任務。依人工智慧能力範疇分類,下列何者最符合該系統特性?",
@@ -3091,7 +3091,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q39F1CD"
+        "id": "Q238"
     },
     {
         "question": "某顧問公司導入生成式AI,協助團隊快速檢索並摘要長篇的法規文件。為了改善檢索結果常出現不相關或過於分散內容的問題,下列何者為團隊決定對文件進行文本切分(Chunking)的主要目的?",
@@ -3104,7 +3104,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QE5F8A4"
+        "id": "Q239"
     },
     {
         "question": "根據2025年9月行政院通過之《人工智慧基本法》草案,政府推動人工智慧之「創新實驗環境」制度,主要參考歐盟的何種制度?",
@@ -3117,7 +3117,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q7B46B6"
+        "id": "Q240"
     },
     {
         "question": "根據《金融機構運用人工智慧技術作業規範》,金融機構於使用人工智慧提供金融服務並直接與消費者互動時,下列何者非必要揭露之資訊?",
@@ -3130,7 +3130,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q71847E"
+        "id": "Q241"
     },
     {
         "question": "根據《金融機構運用人工智慧技術作業規範》,金融機構須建立內部治理架構,並指定專責單位或人員負責推動及管理人工智慧事務,下列何者並非規範所明訂須落實的治理措施?",
@@ -3143,7 +3143,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q495EDB"
+        "id": "Q242"
     },
     {
         "question": "深度學習模型中,下列哪一項通常用來降低過擬合(Overfitting)問題?",
@@ -3156,7 +3156,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "QEFFE9F"
+        "id": "Q243"
     },
     {
         "question": "深度學習模型中,下列哪一項通常用來降低過擬合問題?",
@@ -3169,7 +3169,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "QD34EA9"
+        "id": "Q244"
     },
     {
         "question": "為提升生成式AI系統回應的語境一致性,常會結合哪類模型技術?",
@@ -3182,7 +3182,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "QF0C696"
+        "id": "Q245"
     },
     {
         "question": "神經網路與傳統機器學習模型的主要區別是什麼?",
@@ -3195,7 +3195,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q16E2D8"
+        "id": "Q246"
     },
     {
         "question": "線性迴歸模型最適合解決哪種類型的問題?",
@@ -3208,7 +3208,7 @@
         "answer": 2,
         "difficulty": "易",
         "topic": "機器學習概念",
-        "id": "QD859B6"
+        "id": "Q247"
     },
     {
         "question": "能使用 DALL-E-2生成各式逼真的圖片,最關鍵的應用技術為何?",
@@ -3221,7 +3221,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "QA8DEFC"
+        "id": "Q248"
     },
     {
         "question": "若企業使用第三方AI API(如 OpenAI、Claude、Gemini等)協助處理內部資料,為避免敏感資訊遭模型記憶或進一步分析,應優先採取下列哪一種作法?",
@@ -3234,7 +3234,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q82D2AC"
+        "id": "Q249"
     },
     {
         "question": "若企業將資料安全管理外包給第三方服務供應商,屬於哪種風險應對策略?",
@@ -3247,7 +3247,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q8B1281"
+        "id": "Q250"
     },
     {
         "question": "若希望檢視某一連續型數據的分布情形(如集中程度、偏態或是否呈現多峰),下列哪一種應用情境最適合使用直方圖(Histogram) 來進行分析?",
@@ -3260,7 +3260,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "QFB6F5A"
+        "id": "Q251"
     },
     {
         "question": "若要設計一個能夠辨識並過濾垃圾郵件的系統,應該選擇下列哪一種機器學習演算法以實現最佳效果?",
@@ -3273,7 +3273,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "QE53F95"
+        "id": "Q252"
     },
     {
         "question": "請問下列何者不是常見的特徵選取技術或方法?",
@@ -3286,7 +3286,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q47D752"
+        "id": "Q253"
     },
     {
         "question": "貝氏分類器(Naive Bayes Classifier)常被應用於文字分類、垃圾郵件過濾等場景。依據模型特性,它最適合歸類於下列哪一類?",
@@ -3299,7 +3299,7 @@
         "answer": 2,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "QE12390"
+        "id": "Q254"
     },
     {
         "question": "資料科學團隊在模型訓練前,需對數值特徵進行正規化(Normalization)或標準化(Standardization)。為確保模型評估結果具真實性並避免資料洩漏(Data Leakage),下列何者為最適當的作法?",
@@ -3312,7 +3312,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q819796"
+        "id": "Q255"
     },
     {
         "question": "銀行想建立聊天機器人,可透過下列哪一種領域技術來達成?",
@@ -3325,7 +3325,7 @@
         "answer": 2,
         "difficulty": "易",
         "topic": "No code / Low code 概念",
-        "id": "Q5B8908"
+        "id": "Q256"
     },
     {
         "question": "關於 No Code / Low Code 平台,下列敘述何者較正確?",
@@ -3338,7 +3338,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q93AAB5"
+        "id": "Q257"
     },
     {
         "question": "關於 Q-Learning 與 Deep Q-Learning,下列敘述何者最正確?",
@@ -3351,7 +3351,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "QCF0A6C"
+        "id": "Q258"
     },
     {
         "question": "關於2025年OpenAI 提供的AgentKit,下列何者最能描述其主要用途?",
@@ -3364,7 +3364,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q570670"
+        "id": "Q259"
     },
     {
         "question": "關於AI 下列敘述何者正確?",
@@ -3377,7 +3377,7 @@
         "answer": 2,
         "difficulty": "易",
         "topic": "資料處理與分析概念",
-        "id": "QB76ABB"
+        "id": "Q260"
     },
     {
         "question": "關於ChatGPT、Anthropic Claude、GitHub Copilot等AI程式碼輔助工具的運作原理,下列敘述何者正確?",
@@ -3390,7 +3390,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q8CCACA"
+        "id": "Q261"
     },
     {
         "question": "關於ETL(Extract-Transform-Load),下列敘述何者為正確?",
@@ -3403,7 +3403,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "QBCC636"
+        "id": "Q262"
     },
     {
         "question": "關於GitHub Copilot,下列敘述何者正確?",
@@ -3416,7 +3416,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用",
-        "id": "Q7107A0"
+        "id": "Q263"
     },
     {
         "question": "關於K平均法(K-means),下列敘述何者「不」正確?",
@@ -3429,7 +3429,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q08B466"
+        "id": "Q264"
     },
     {
         "question": "關於K平均法(K-means)·下列敘述何者「不」正確?",
@@ -3442,7 +3442,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q4E6EAB"
+        "id": "Q265"
     },
     {
         "question": "關於No-Code AI工具,下列敘述何者最為準確?",
@@ -3455,7 +3455,7 @@
         "answer": 3,
         "difficulty": "易",
         "topic": "No code / Low code 概念",
-        "id": "Q2F5A5B"
+        "id": "Q266"
     },
     {
         "question": "關於「負責任的AI」,下列敘述何者較為正確?",
@@ -3468,7 +3468,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "人工智慧概念",
-        "id": "Q0F734A"
+        "id": "Q267"
     },
     {
         "question": "關於敘述性統計指標,下列敘述何者最為正確?",
@@ -3481,7 +3481,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "QA44B85"
+        "id": "Q268"
     },
     {
         "question": "關於機器學習不同的學習模式,下列敘述何者錯誤?\n1. 監督式學習(Supervised Learning)透過已標註資料學習輸入與目標之間的對應關係,常見任務包含分類與數值預測\n2. 非監督式學習(Unsupervised Learning)雖不需標註資料,但通常需預先定義每筆資料的正確輸出類別以利模型收斂\n3. 半監督式學習(Semi-supervised Learning)在訓練過程中僅利用未標註資料進行特徵學習,並不涉及標註資料\n4. 自監督式學習(Self-supervised Learning)的訓練方式與監督式學習相同,皆需人工逐筆提供標註資料。\n5. 強化式學習(Reinforcement Learning)透過與環境互動並依據回饋訊號調整策略,以優化決策行為\n6. 自監督式學習(Self-supervised Learning)通常利用資料本身產生訓練目標,以降低對人工標註資料的依賴",
@@ -3494,7 +3494,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "Q93687C"
+        "id": "Q269"
     },
     {
         "question": "關於生成式 AI 與 No Code / Low Code 平台的應用,下列何者最不適合?",
@@ -3507,7 +3507,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "QE4D3C2"
+        "id": "Q270"
     },
     {
         "question": "關於生成式AI,下列A~E敘述哪些正確? A.生成的內容不會帶有偏見 B.具有高度準確性,不會有虛假信息 C.生成內容的準確性,建議需要經過人類審核 D.每次生成的內容都可能不同 E.生成式AI具有高度安全性,不會導致數據外流",
@@ -3520,7 +3520,7 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃",
-        "id": "Q653FD8"
+        "id": "Q271"
     },
     {
         "question": "關於生成式AI的基本原理,下列敘述何者較正確?",
@@ -3533,7 +3533,7 @@
         "answer": 1,
         "difficulty": "易",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "Q82F596"
+        "id": "Q272"
     },
     {
         "question": "關於監督式學習(Supervised Learning)與非監督式學習(Unsupervised Learning)的目標,下列敘述何者錯誤?\n1. 非監督式學習的核心在於發掘資料內在結構,例如分群、關聯規則與降維,而不依賴外部標籤\n2. 監督式學習的典型應用為分類與迴歸,通常不適合應用於異常偵測任務。\n3. 非監督式學習若搭配少量標註資料,即會完全轉化為監督式學習\n4. 監督式學習仰賴已標註的資料集,透過最小化輸出與真實標籤之間的差距,學習輸入與目標之間的對應函數\n5. 所有監督式學習任務都必須要有大量完整標註資料,否則無法進行任何有效的模型訓練\n6. 非監督式學習不需要目標變數,僅透過輸入資料本身的特徵分布進行模式學習",
@@ -3546,7 +3546,7 @@
         "answer": 4,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "QEBFFCE"
+        "id": "Q273"
     },
     {
         "question": "關於目前生成式AI的主要應用,不包括下列哪一項?",
@@ -3559,7 +3559,7 @@
         "answer": 3,
         "difficulty": "易",
         "topic": "No code / Low code 概念",
-        "id": "QC1889E"
+        "id": "Q274"
     },
     {
         "question": "關於自然語言處理(NLP)核心技術,下列敘述何者不正確?",
@@ -3572,7 +3572,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "No code / Low code 概念",
-        "id": "Q7CA535"
+        "id": "Q275"
     },
     {
         "question": "關於變分自編碼器(Variational Autoencoder,VAE)的運作流程,下列何者敘述最為正確?",
@@ -3585,7 +3585,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI",
-        "id": "QC880A3"
+        "id": "Q276"
     },
     {
         "question": "關於資料正則化(Regularization)L1、L2方法,下列敘述何者正確?",
@@ -3598,7 +3598,7 @@
         "answer": 3,
         "difficulty": "中",
         "topic": "資料處理與分析概念",
-        "id": "Q095ECA"
+        "id": "Q277"
     },
     {
         "question": "隨著企業加速導入AI,No-Code/Low-Code平台逐漸成為模型開發與產品化的常見工具。相較於傳統自行撰寫程式的建模流程,下列何者最能正確描述此類平台在模型訓練機制上的典型特性?",
@@ -3611,6 +3611,6 @@
         "answer": 1,
         "difficulty": "中",
         "topic": "機器學習概念",
-        "id": "QF58E99"
+        "id": "Q278"
     }
 ]

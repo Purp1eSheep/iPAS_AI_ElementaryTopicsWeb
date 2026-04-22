@@ -6,7 +6,7 @@
     <title>Quiz</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* CSS 變數維持不變，保持主題系統運作 */
+    /* CSS 變數維持不變，保持主題系統運作 */
         :root {
             --bg: #0f1117; --surface: #1a1d27; --surface2: #23263a;
             --border: #2d3148; --accent: #7c6dfa; --accent-soft: rgba(124,109,250,.15);
@@ -130,7 +130,21 @@
         /* 結果區 */
         .score-ring { margin: 28px 0 32px; gap: 6px; }
         .score-number { font-size: 3.5rem; font-weight: 800; line-height: 1; }
-        .rainbow-text { background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 400% 400%; animation: rainbow 3s ease infinite; }
+        .rainbow-text { 
+        background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722); 
+        
+        /* 針對舊版 WebKit 瀏覽器 */
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent; 
+        
+        /* 加上標準屬性以消除警告 */
+        background-clip: text; 
+        color: transparent; 
+        
+        background-size: 400% 400%; 
+        animation: rainbow 3s ease infinite; 
+        }
+        
         @keyframes rainbow { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 
         .result-item { background: var(--surface2); border-radius: 10px; padding: 14px 18px; border-left: 4px solid var(--border); margin-bottom: 10px; font-size: .9rem; }
@@ -186,7 +200,7 @@
             <div class="mb-3">
                 <div class="challenge-title">功能設定</div>
                 <div id="audio-toggle-card" class="quiz-card flex-between">
-                    <div class="name">🔊 答錯播放音效</div>
+                    <div class="name">🔥 BrainRot mode</div>
                     <div id="audio-status" class="meta"></div>
                 </div>
             </div>
@@ -334,7 +348,7 @@
             <textarea id="ai-prompt-text" style="width:100%; height:200px; background:transparent; border:none; color:var(--text); resize:none; outline:none;" readonly></textarea>
         </div>
         <div class="flex-gap mt-3" style="justify-content:flex-end;">
-            <button class="btn btn-ghost" id="copy-ai-prompt">複製提示詞</button>
+            <button class="btn btn-ghost" id="copy-ai-prompt">複製</button>
             <button class="btn btn-primary" id="close-ai-btn">關閉</button>
         </div>
     </div>
@@ -384,7 +398,12 @@ const State = {
     currentSelection: new Set(),
     isComprehensive: false,
     audioEnabled: false,
-    audioObj: null,
+    audio: {
+        correct: new Audio('sfx/answer-correct.mp3'),
+        wrong: new Audio('sfx/fah.mp3'),
+        cheer: new Audio('sfx/kids_cheering.mp3'),
+        sad: new Audio('sfx/spongebob-sad-song.mp3')
+    },
     charts: { progress: null, risk: null },
     redirectTimer: null
 };
@@ -411,6 +430,28 @@ const Storage = {
 const Utils = {
     formatText: text => text ? text.replace(/ ([A-Da-d]\.)/g, '\n$1') : "",
     shuffle: arr => [...arr].sort(() => Math.random() - 0.5),
+    weightedShuffle: (arr, stats) => {
+        return [...arr].map(q => {
+            const s = stats[q.id] || { t: 0, w: 0 };
+            const accuracy = s.t > 0 ? (s.t - s.w) / s.t : 0;
+            let weight = 10; // 預設權重 (其他題目)
+
+            if (s.t === 0) {
+                weight = 100; // 1. 沒答過的題目
+            } else if (s.t > 15 && accuracy > 0.85) {
+                weight = 1;   // 答題次數與正確率夠高的題目 (機率極小)
+            } else if (accuracy > 0.8) {
+                weight = 50;  // 2. 錯誤率過低的題目
+            } else if (s.t < 5) {
+                weight = 30;  // 3. 答題次數較低的題目
+            }
+            
+            // 使用 Efraimidis and Spirakis 演算法進行加權隨機抽樣
+            return { q, sortKey: Math.pow(Math.random(), 1 / weight) };
+        })
+        .sort((a, b) => b.sortKey - a.sortKey)
+        .map(item => item.q);
+    },
     normalizeIndex: ans => Array.isArray(ans) ? ans.map(a => typeof a === 'number' ? a - 1 : a) : (typeof ans === 'number' ? ans - 1 : ans)
 };
 
@@ -445,7 +486,12 @@ function initEvents() {
     // 畫面導航
     document.getElementById('browse-btn').onclick = () => { initBrowser(); switchScreen('browser'); };
     document.getElementById('browser-back-btn').onclick = () => switchScreen('select');
-    document.getElementById('back-btn').onclick = () => { clearTimeout(State.redirectTimer); switchScreen('select'); renderQuizList(); };
+    document.getElementById('back-btn').onclick = () => { 
+        clearTimeout(State.redirectTimer); 
+        stopResultAudio();
+        switchScreen('select'); 
+        renderQuizList(); 
+    };
     
     // 綁定學習分析看板
     document.getElementById('analysis-btn').onclick = () => { renderDashboard(); document.getElementById('analysis-modal').classList.add('active'); };
@@ -561,19 +607,31 @@ function renderQuizList() {
 function startQuizFlow() {
     const challenge = DOM.quizList.querySelector('.challenge-card.selected');
     const checked = Array.from(DOM.quizList.querySelectorAll('.topic-checkbox:checked')).map(cb => cb.value);
+    const stats = Storage.get(Storage.KEYS.STATS, {});
     
-    let filtered = [];
     if (challenge) {
         State.isComprehensive = true;
-        filtered = challenge.dataset.type === 'comp' ? State.globalQuestions : State.globalQuestions.filter(q => Storage.get(Storage.KEYS.WRONG, []).includes(q.id));
+        if (challenge.dataset.type === 'comp') {
+            // 綜合測驗：從全部題目中按權重隨機抽取 40 題
+            State.activeQuestions = Utils.weightedShuffle(State.globalQuestions, stats).slice(0, 40);
+        } else {
+            // 錯題強化：顯示所有錯題並打亂
+            const filtered = State.globalQuestions.filter(q => Storage.get(Storage.KEYS.WRONG, []).includes(q.id));
+            State.activeQuestions = Utils.shuffle(filtered);
+        }
     } else {
         State.isComprehensive = checked.length > 1;
-        filtered = State.globalQuestions.filter(q => checked.includes(q.topic));
+        const filtered = State.globalQuestions.filter(q => checked.includes(q.topic));
+        // 主題測驗：按權重排序
+        State.activeQuestions = Utils.weightedShuffle(filtered, stats);
+        // 如果跨多個主題且題目過多，限制在 50 題以內
+        if (State.isComprehensive && State.activeQuestions.length > 50) {
+            State.activeQuestions = State.activeQuestions.slice(0, 50);
+        }
     }
 
-    if (!filtered.length) return;
+    if (!State.activeQuestions.length) return;
     
-    State.activeQuestions = Utils.shuffle(filtered);
     State.answers = new Array(State.activeQuestions.length).fill(null);
     State.currentIdx = 0;
     Storage.remove(Storage.KEYS.PROG);
@@ -658,10 +716,15 @@ function submitAnswer() {
     updateStats(q.id, isCorrect);
     if (isCorrect) {
         removeWrong(q.id);
-        setTimeout(() => handleNextClick(), 900); // Auto next
+        if (State.audioEnabled) playAudio('correct');
+        DOM.nextBtn.disabled = true;
+        setTimeout(() => {
+            handleNextClick();
+            DOM.nextBtn.disabled = false;
+        }, 900);
     } else {
         saveWrong(q.id);
-        if (State.audioEnabled) playErrorAudio();
+        if (State.audioEnabled) playAudio('wrong');
         addAIBtn(q);
         updateNextBtnUI();
     }
@@ -671,7 +734,7 @@ function submitAnswer() {
 }
 
 function addAIBtn(q) {
-    DOM.expWrap.innerHTML = `<button class="btn btn-ghost w-100 mt-3" style="border-color:var(--wrong)" onclick='openAIPrompt(${JSON.stringify(q).replace(/'/g, "&#39;")})'>🤖 AI 詳解</button>`;
+    DOM.expWrap.innerHTML = `<button class="btn btn-ghost w-100 mt-3 ai-btn" style="border-color:var(--wrong)" data-id="${q.id}">🤖 AI 詳解</button>`;
 }
 
 // --- 8. Result & Stats Logic ---
@@ -686,6 +749,15 @@ function showResult() {
     rateEl.textContent = `答對率：${rate}%`;
     rateEl.style.color = rate >= 80 ? 'var(--correct)' : 'var(--accent)';
 
+    // 播放結算音效
+    if (State.audioEnabled) {
+        if (rate >= 80) {
+            playAudio('cheer');
+        } else {
+            playAudio('sad');
+        }
+    }
+
     // Render Lists
     const resultList = document.getElementById('result-list');
     const keys = ['A','B','C','D','E','F'];
@@ -698,12 +770,32 @@ function showResult() {
             <div>${a.question}</div>
             <div class="flex-between mt-3 font-weight-bold" style="color: ${a.isCorrect ? 'var(--correct)' : 'var(--wrong)'}">
                 ${a.isCorrect ? '✓ 答對' : `✗ 答錯 ─ 正解：${a.correct.map(c=>keys[c]).join('、')}`}
-                ${!a.isCorrect ? `<button class="btn btn-ghost" style="padding:4px 8px; font-size:.7rem" onclick='openAIPrompt(${JSON.stringify(a).replace(/'/g, "&#39;")})'>AI</button>` : ''}
+                ${!a.isCorrect ? `<button class="btn btn-ghost ai-btn" style="padding:4px 8px; font-size:.7rem" data-id="${a.id}">AI</button>` : ''}
             </div>
         </div>`;
     
     resultList.innerHTML = validAns.filter(a=>!a.isCorrect).map(renderItem).join('') + 
         (correctCount > 0 ? `<div class="list-section mt-3"><div class="list-section-header" onclick="this.parentElement.classList.toggle('active')">顯示答對 (${correctCount})</div><div class="list-section-content">${validAns.filter(a=>a.isCorrect).map(renderItem).join('')}</div></div>` : '');
+
+    // 結果清單的 AI 按鈕事件
+    resultList.onclick = (e) => {
+        const aiBtn = e.target.closest('.ai-btn');
+        if (aiBtn) {
+            const id = aiBtn.dataset.id;
+            const q = State.globalQuestions.find(item => item.id === id);
+            window.openAIPrompt(q);
+        }
+    };
+    
+    // Quiz 頁面的 AI 按鈕事件
+    DOM.expWrap.onclick = (e) => {
+        const aiBtn = e.target.closest('.ai-btn');
+        if (aiBtn) {
+            const id = aiBtn.dataset.id;
+            const q = State.activeQuestions.find(item => item.id === id);
+            window.openAIPrompt(q);
+        }
+    };
 }
 
 // --- 9. LocalStorage Helpers ---
@@ -758,9 +850,7 @@ function initSettings() {
         State.audioEnabled = !State.audioEnabled;
         Storage.set(Storage.KEYS.AUDIO, State.audioEnabled);
         document.getElementById('audio-status').textContent = State.audioEnabled ? '開啟' : '關閉';
-        if (State.audioEnabled && !State.audioObj) State.audioObj = new Audio('sfx/fah.mp3');
     };
-    if (State.audioEnabled) State.audioObj = new Audio('sfx/fah.mp3');
 
     document.getElementById('settings-btn').onclick = () => document.getElementById('top-bar').classList.toggle('settings-open');
     document.getElementById('settings-back-btn').onclick = () => document.getElementById('top-bar').classList.remove('settings-open');
@@ -779,8 +869,20 @@ function initSettings() {
     bindClear('clear-stats-btn-dash', Storage.KEYS.STATS, '清除統計？');
 }
 
+function playAudio(key) {
+    if (State.audioEnabled && State.audio[key]) {
+        State.audio[key].currentTime = 0;
+        State.audio[key].play().catch(() => {});
+    }
+}
+
+function stopResultAudio() {
+    if (State.audio.cheer) { State.audio.cheer.pause(); State.audio.cheer.currentTime = 0; }
+    if (State.audio.sad) { State.audio.sad.pause(); State.audio.sad.currentTime = 0; }
+}
+
 function playErrorAudio() {
-    if (State.audioObj) { State.audioObj.currentTime = 0; State.audioObj.play().catch(()=>{}); }
+    playAudio('wrong');
 }
 
 // --- 11. 題庫瀏覽器邏輯 ---
@@ -798,12 +900,18 @@ function initBrowser() {
         // 收藏按鈕的事件委派
         document.getElementById('browser-list').onclick = (e) => {
             const btn = e.target.closest('.bookmark-btn');
+            const aiBtn = e.target.closest('.ai-btn');
+            
             if (btn) {
                 const id = btn.dataset.id;
                 let bookmarks = Storage.get(Storage.KEYS.BOOKMARKS, []);
                 bookmarks = bookmarks.includes(id) ? bookmarks.filter(b => b !== id) : [...bookmarks, id];
                 Storage.set(Storage.KEYS.BOOKMARKS, bookmarks);
                 renderBrowserList();
+            } else if (aiBtn) {
+                const id = aiBtn.dataset.id;
+                const q = State.globalQuestions.find(item => item.id === id);
+                window.openAIPrompt(q);
             }
         };
         State.browserEventsBound = true;
@@ -858,7 +966,7 @@ function renderBrowserList() {
                 <div class="flex-between" style="align-items:flex-end;">
                     <div class="flex-gap" style="font-size:0.75rem; color:var(--muted);"><span>🏷️ ${q.topic}</span><span>📊 ${q.difficulty}</span></div>
                     <div class="flex-gap">
-                        <button class="btn-link" style="border:1.5px solid var(--accent); color:var(--accent); padding:4px 12px; border-radius:6px; font-size:0.75rem;" onclick='openAIPrompt(${JSON.stringify(q).replace(/'/g, "&#39;")})'>🤖 AI 詳解</button>
+                        <button class="btn-link ai-btn" data-id="${q.id}" style="border:1.5px solid var(--accent); color:var(--accent); padding:4px 12px; border-radius:6px; font-size:0.75rem;">🤖 AI 詳解</button>
                         <button class="btn-link bookmark-btn" data-id="${q.id}" style="border:1.5px solid ${isBookmarked ? 'var(--accent)' : 'var(--border)'}; color:${isBookmarked ? 'var(--accent)' : 'var(--muted)'}; background:${isBookmarked ? 'var(--accent-soft)' : 'none'}; padding:4px 12px; border-radius:6px; font-size:0.75rem;">
                             ${isBookmarked ? '★ 取消' : '☆ 收藏'}
                         </button>

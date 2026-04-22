@@ -94,9 +94,8 @@ def merge_questions():
     final_questions = list(unique_questions.values())
     final_questions.sort(key=lambda x: x['question'])
 
-    for q in final_questions:
-        hash_id = hashlib.sha256(q['question'].encode('utf-8')).hexdigest()[:6].upper()
-        q['id'] = f"Q{hash_id}"
+    for i, q in enumerate(final_questions):
+        q['id'] = f"Q{i+1:03d}"
 
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(final_questions, f, indent=4, ensure_ascii=False)
