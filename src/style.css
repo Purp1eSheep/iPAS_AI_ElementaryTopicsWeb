@@ -111,6 +111,31 @@ body {
 .flex-between { display: flex; justify-content: space-between; align-items: center; }
 .flex-gap { display: flex; gap: 8px; flex-wrap: wrap; }
 .flex-col { display: flex; flex-direction: column; gap: 10px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.grid-quiz-ctrls { display: grid; grid-template-columns: 80px 1fr 1fr; gap: 10px; }
+
+/* 左撇子模式：翻轉同行按鈕順序 */
+[data-lefthand="true"] .grid-2, 
+[data-lefthand="true"] .grid-3, 
+[data-lefthand="true"] .grid-quiz-ctrls,
+[data-lefthand="true"] .flex-gap {
+    direction: rtl;
+}
+
+/* 確保翻轉後文字內容仍維持原本的方向 */
+[data-lefthand="true"] .grid-2 > *, 
+[data-lefthand="true"] .grid-3 > *, 
+[data-lefthand="true"] .grid-quiz-ctrls > *,
+[data-lefthand="true"] .flex-gap > * {
+    direction: ltr;
+}
+
+/* 針對測驗控制器的非對稱布局翻轉 */
+[data-lefthand="true"] .grid-quiz-ctrls {
+    grid-template-columns: 1fr 1fr 80px;
+}
+
 .text-center { text-align: center; }
 .mt-3 { margin-top: 12px; } .mb-3 { margin-bottom: 12px; }
 .w-100 { width: 100%; }
@@ -169,14 +194,31 @@ p { color: var(--muted); font-size: .95rem; line-height: 1.6; }
 .challenge-title { font-size: 0.85rem; color: var(--accent); font-weight: 700; margin-bottom: 8px; padding-left: 4px; text-transform: uppercase; }
 
 /* 按鈕樣式 */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 10px; border: none; font-size: .95rem; font-weight: 600; cursor: pointer; transition: opacity var(--transition), transform var(--transition); white-space: nowrap; flex-shrink: 0; }
-.btn:active:not(:disabled) { transform: scale(.97); }
+.btn { 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 8px; 
+    height: 42px; /* 統一高度 */
+    padding: 0 16px; 
+    border-radius: 10px; 
+    border: none; 
+    font-size: .92rem; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: opacity var(--transition), transform var(--transition); 
+    white-space: nowrap; 
+    flex-shrink: 0; 
+}
 .btn-primary { background: var(--accent); color: #fff; width: 100%; }
 .btn-primary:hover:not(:disabled) { opacity: .88; }
 .btn:disabled { opacity: .4; cursor: not-allowed; }
 .btn-ghost { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
 .btn-ghost:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
 .btn-danger { color: var(--wrong) !important; border-color: var(--wrong) !important; }
+
+/* 針對 grid 中的按鈕確保寬度 100% */
+.grid-2 .btn, .grid-3 .btn { width: 100%; }
 
 /* 答題區 */
 .progress-wrap { flex: 1; height: 6px; background: var(--surface2); border-radius: 99px; overflow: hidden; }
@@ -197,8 +239,15 @@ p { color: var(--muted); font-size: .95rem; line-height: 1.6; }
 .option.wrong .option-key { background: var(--wrong); color: #fff; }
 
 /* 結果區 */
-.score-ring { margin: 28px 0 32px; gap: 6px; }
-.score-number { font-size: 3.5rem; font-weight: 800; line-height: 1; }
+.score-ring { 
+    margin: 28px 0 32px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 4px; 
+}
+.score-number { font-size: 3.5rem; font-weight: 800; line-height: 1; margin-bottom: 8px; }
+#score-percent { margin-bottom: 4px; }
 .rainbow-text { 
 background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722); 
 
@@ -313,4 +362,23 @@ label {
 @keyframes toast-out {
     from { opacity: 1; transform: translateY(0); }
     to { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Footer 樣式 */
+footer {
+    margin-top: 24px;
+    padding-top: 16px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+footer a:hover {
+    text-decoration: underline;
 }

@@ -25,6 +25,7 @@ export const DOM = {
 
 // --- 2. Application State ---
 export const State = {
+    OPTION_LABELS: ['A', 'B', 'C', 'D', 'E', 'F'],
     quizSets: [],
     globalQuestions: [],
     activeQuestions: [],
@@ -33,6 +34,7 @@ export const State = {
     currentSelection: new Set(),
     isComprehensive: false,
     audioEnabled: false,
+    leftHanded: false,
     audio: {
         correct: new Audio('assets/sfx/right.mp3'),
         wrong: new Audio('assets/sfx/wrong.mp3'),

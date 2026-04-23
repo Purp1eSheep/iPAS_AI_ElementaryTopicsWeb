@@ -39,16 +39,24 @@
             </div>
             <div class="mb-3">
                 <div class="challenge-title">功能設定</div>
-                <div id="audio-toggle-card" class="quiz-card flex-between">
-                    <div class="name">🔥 BrainRot mode</div>
-                    <div id="audio-status" class="meta"></div>
+                <div class="grid-2 mb-3">
+                    <div id="audio-toggle-card" class="quiz-card">
+                        <div class="name">🔥 BrainRot</div>
+                        <div id="audio-status" class="meta"></div>
+                    </div>
+                    <div id="lefthand-toggle-card" class="quiz-card">
+                        <div class="name">✋ 左撇子模式</div>
+                        <div id="lefthand-status" class="meta">已關閉</div>
+                    </div>
                 </div>
             </div>
-            <div class="flex-col mb-3">
+            <div class="mb-3">
                 <div class="challenge-title">資料管理</div>
-                <button id="clear-stats-btn" class="btn btn-ghost btn-danger">📊 清除統計數據</button>
-                <button id="clear-history-btn" class="btn btn-ghost btn-danger">❌ 清除錯題標記</button>
-                <button id="clear-all-btn" class="btn btn-ghost btn-danger">🔥 清除所有資料</button>
+                <div class="grid-2">
+                    <button id="clear-stats-btn" class="btn btn-ghost btn-danger">📊 清除統計</button>
+                    <button id="clear-history-btn" class="btn btn-ghost btn-danger">❌ 清除錯題</button>
+                    <button id="clear-all-btn" class="btn btn-ghost btn-danger" style="grid-column: span 2;">🔥 清除所有資料</button>
+                </div>
             </div>
             <button id="settings-back-btn" class="btn btn-primary mt-3">返回</button>
         </div>
@@ -71,9 +79,9 @@
 
         <div id="quiz-list" class="flex-col mb-3"><p class="text-center">載入中…</p></div>
         
-        <div class="flex-gap mb-3">
-            <button id="browse-btn" class="btn btn-ghost w-100">🔍 瀏覽全部題庫</button>
-            <button id="analysis-btn" class="btn btn-ghost w-100">📊 學習分析看板</button>
+        <div class="grid-2 mb-3">
+            <button id="browse-btn" class="btn btn-ghost">🔍 瀏覽題庫</button>
+            <button id="analysis-btn" class="btn btn-ghost">📊 學習分析</button>
         </div>
         <button id="start-btn" class="btn btn-primary" disabled>開始作答 →</button>
     </section>
@@ -85,12 +93,12 @@
                 <button id="browser-back-btn" class="btn btn-ghost" style="padding: 8px 16px;">返回</button>
             </div>
             <div class="filter-panel">
-                <input type="text" id="search-input" placeholder="搜尋關鍵字..." style="grid-column:span 2;">
-                <select id="topic-filter"><option value="">所有主題</option></select>
+                <input type="text" id="search-input" placeholder="搜尋..." style="grid-column: span 1; height: 42px;">
+                <select id="topic-filter" style="height: 42px;"><option value="">所有主題</option></select>
                 
-                <div style="grid-column:span 2;" class="flex-gap">
-                    <label><input type="checkbox" id="only-bookmarked"> ⭐ 只看收藏</label>
-                    <label><input type="checkbox" id="only-risky"> ⚠️ 只看易錯題</label>
+                <div style="grid-column: span 2;" class="grid-2">
+                    <label style="background:var(--surface); padding:0 12px; border-radius:8px; border:1px solid var(--border); height:42px;"><input type="checkbox" id="only-bookmarked"> ⭐ 收藏</label>
+                    <label style="background:var(--surface); padding:0 12px; border-radius:8px; border:1px solid var(--border); height:42px;"><input type="checkbox" id="only-risky"> ⚠️ 易錯</label>
                 </div>
             </div>
             <div id="browser-list" class="browser-list"></div>
@@ -109,10 +117,10 @@
             </div>
             <h2 id="question-text"></h2>
             <div id="options" class="options"></div>
-            <div class="flex-gap">
-                <button id="exit-btn" class="btn btn-ghost btn-danger" style="flex: 0 0 80px;">退出</button>
-                <button id="prev-btn" class="btn btn-ghost w-100">上一題</button>
-                <button id="next-btn" class="btn btn-primary w-100">下一題</button>
+            <div class="grid-quiz-ctrls">
+                <button id="exit-btn" class="btn btn-ghost btn-danger">退出</button>
+                <button id="prev-btn" class="btn btn-ghost">上一題</button>
+                <button id="next-btn" class="btn btn-primary">下一題</button>
             </div>
             <div id="explanation-container" class="mt-3"></div>
         </div>
@@ -123,7 +131,7 @@
         <div class="score-ring text-center">
             <div id="score-number" class="score-number">—</div>
             <div id="score-percent" style="font-size:1.2rem; font-weight:700;"></div>
-            <div style="color:var(--muted); font-size:.9rem;">答對題數</div>
+            <div id="easter-egg-67" class="mt-3 hidden" style="font-weight: 800; color: var(--accent); line-height: 1.2; font-size: 0.9rem;"></div>
         </div>
         <div id="result-message" class="text-center" style="font-size:1.4rem; font-weight:700; color:var(--wrong); margin-bottom:20px;"></div>
         <div class="text-center mb-3"><button id="cancel-redirect-btn" class="btn btn-danger hidden">我不要當兵</button></div>
@@ -174,9 +182,9 @@
             <div class="challenge-title">📤 歷史錯題分析 (給 AI)</div>
             <button id="prepare-export-btn" class="btn btn-primary w-100">生成錯題分析資料</button>
         </div>
-        <div class="flex-gap mt-3">
-            <button id="clear-stats-btn-dash" class="btn btn-ghost btn-danger w-100">🔥 清除數據</button>
-            <button id="analysis-close-btn" class="btn btn-primary w-100">關閉</button>
+        <div class="grid-2 mt-3">
+            <button id="clear-stats-btn-dash" class="btn btn-ghost btn-danger">🔥 清除數據</button>
+            <button id="analysis-close-btn" class="btn btn-primary">關閉</button>
         </div>
     </div>
 </div>
@@ -189,12 +197,12 @@
         </div>
         <p class="mb-3">您可以直接複製下方文字給 AI 進行分析，或下載結構化檔案。</p>
         <div style="background:var(--surface2); padding:15px; border-radius:8px; border:1px solid var(--border); margin-bottom: 20px;">
-            <textarea id="export-preview-text" style="width:100%; height:300px; background:transparent; border:none; color:var(--text); resize:none; outline:none; font-family: monospace; font-size: 0.9rem;" readonly></textarea>
+            <textarea id="export-preview-text" style="width:100%; height:200px; background:transparent; border:none; color:var(--text); resize:none; outline:none; font-family: monospace; font-size: 0.9rem;" readonly></textarea>
         </div>
-        <div class="flex-gap">
-            <button id="copy-export-btn" class="btn btn-ghost w-100">📋 複製文字</button>
-            <button id="download-json-btn" class="btn btn-primary w-100">📥 下載 JSON</button>
-            <button id="download-csv-btn" class="btn btn-primary w-100">📥 下載 CSV</button>
+        <div class="grid-3">
+            <button id="copy-export-btn" class="btn btn-ghost">📋 複製</button>
+            <button id="download-json-btn" class="btn btn-primary">📥 JSON</button>
+            <button id="download-csv-btn" class="btn btn-primary">📥 CSV</button>
         </div>
     </div>
 </div>
@@ -208,7 +216,7 @@
         <div style="background:var(--surface2); padding:15px; border-radius:8px; border:1px solid var(--border);">
             <textarea id="ai-prompt-text" style="width:100%; height:200px; background:transparent; border:none; color:var(--text); resize:none; outline:none;" readonly></textarea>
         </div>
-        <div class="flex-gap mt-3" style="justify-content:flex-end;">
+        <div class="grid-2 mt-3">
             <button class="btn btn-ghost" id="copy-ai-prompt">複製</button>
             <button class="btn btn-primary" id="close-ai-btn">關閉</button>
         </div>
@@ -221,12 +229,16 @@
     <div class="modal-content" style="max-width: 400px; text-align: center;">
         <h2 id="confirm-title" style="margin-bottom: 12px;">確認</h2>
         <p id="confirm-msg" style="margin-bottom: 24px; color: var(--text);"></p>
-        <div class="flex-gap">
+        <div class="flex-col">
+            <button id="confirm-yes-btn" class="btn btn-primary w-100">確定</button>
             <button id="confirm-cancel-btn" class="btn btn-ghost w-100">取消</button>
-            <button id="confirm-yes-btn" class="btn btn-primary w-100" style="background: var(--wrong);">確定</button>
         </div>
     </div>
 </div>
+
+<footer>
+    <p>題目來源：經濟部 iPAS AI 應用規劃師(初級) | © 原出處機關所有 | <a href="https://ipd.nat.gov.tw/ipas/certification/AIAP/news" target="_blank">官方網站</a></p>
+</footer>
 
 <script type="module" src="src/main.js"></script>
 </body>
