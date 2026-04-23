@@ -34,10 +34,10 @@ export const State = {
     isComprehensive: false,
     audioEnabled: false,
     audio: {
-        correct: new Audio('assets/sfx/answer-correct.mp3'),
-        wrong: new Audio('assets/sfx/fah.mp3'),
-        cheer: new Audio('assets/sfx/kids_cheering.mp3'),
-        sad: new Audio('assets/sfx/spongebob-sad-song.mp3')
+        correct: new Audio('assets/sfx/right.mp3'),
+        wrong: new Audio('assets/sfx/wrong.mp3'),
+        cheer: new Audio('assets/sfx/pass.mp3'),
+        sad: new Audio('assets/sfx/notPass.mp3')
     },
     charts: { progress: null, risk: null },
     redirectTimer: null

@@ -210,7 +210,7 @@ ${optText}
 ${correctOptions}
 ${userSelectInfo}
 【解析需求】
-1. **正確答案解析**：請詳細說明為什麼「${correctOptions}」才是正確的，其背後的 AI 理論、技術細節或逻辑依據為何。
+1. **正確答案解析**：請詳細說明為什麼「${correctOptions}」才是正確的，其背後的 AI 理論、技術細節或邏輯依據為何。
 2. **錯誤陷阱分析**：${userSelectInfo ? `重點分析為什麼使用者選的「${userSelectInfo.split('\n')[2]}」是錯誤的。請指出該選項的觀念錯誤之處，以及它與正確答案的本質區別。` : "請分析其他錯誤選項常見的干擾點或觀念陷阱。"}
 3. **觀念釐清**：用一句話總結如何區分正確與錯誤選項的關鍵特徵。
 
@@ -346,13 +346,28 @@ function checkProgress() {
 }
 
 function initSettings() {
+    const themeDescriptions = {
+        dark: '🌌 預設深色模式，保護眼睛。',
+        light: '你有病？亮色模式會閃瞎啊！',
+        charcoal: '🖤 炭黑柔和：專業深灰背景，色彩飽和但不刺眼。',
+        twilight: '🌆 暮光沈穩：紮實深藍灰，長時間閱讀首選。',
+        'slate-purple': '🔮 石板灰紫：優雅低調的暗紫色系塊。',
+        nord: '🧊 北歐寒霜：乾淨低飽和的灰藍。'
+    };
+
+
     const theme = Storage.get(Storage.KEYS.THEME, 'dark');
     document.documentElement.setAttribute('data-theme', theme);
+    const descEl = document.getElementById('theme-description');
+    if (descEl) descEl.textContent = themeDescriptions[theme] || '';
+
     document.querySelectorAll('.theme-option').forEach(el => {
         el.classList.toggle('active', el.dataset.theme === theme);
         el.onclick = () => {
-            document.documentElement.setAttribute('data-theme', el.dataset.theme);
-            Storage.set(Storage.KEYS.THEME, el.dataset.theme);
+            const selectedTheme = el.dataset.theme;
+            document.documentElement.setAttribute('data-theme', selectedTheme);
+            Storage.set(Storage.KEYS.THEME, selectedTheme);
+            if (descEl) descEl.textContent = themeDescriptions[selectedTheme] || '';
             document.querySelectorAll('.theme-option').forEach(o => o.classList.toggle('active', o === el));
         };
     });
