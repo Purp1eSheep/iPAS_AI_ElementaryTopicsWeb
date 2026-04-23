@@ -9,7 +9,6 @@
             "只能製作靜態網站"
         ],
         "answer": 2,
-        "difficulty": "易",
         "topic": "No code / Low code 概念"
     },
     {
@@ -22,7 +21,6 @@
             "工具都具有完全相同的功能和性能"
         ],
         "answer": 3,
-        "difficulty": "易",
         "topic": "No code / Low code 概念"
     },
     {
@@ -35,7 +33,6 @@
             "平台的市場評價"
         ],
         "answer": 2,
-        "difficulty": "易",
         "topic": "No code / Low code 概念"
     },
     {
@@ -48,7 +45,6 @@
             "自動化生成法律判決"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -61,7 +57,6 @@
             "No Code 平台可以無限客製化"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -74,7 +69,6 @@
             "預算和時間極度有限"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -87,7 +81,6 @@
             "可能有未經IT部門管理的應用程式擴散"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -100,7 +93,6 @@
             "無法應用於任何數據處理場景,因整合難度過高"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "資料處理與分析概念"
     },
     {
@@ -113,7 +105,6 @@
             "模型在Low Code 平台中已被自動程式碼生成全面取代,實際價值有限"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -126,7 +117,6 @@
             "依靠使用者回饋與正式上線後的監控資料,作為修正依據"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -139,7 +129,6 @@
             "在No Code平台中完全依賴生成式AI自動產生所有應用功能與流程,不經人工設計或驗證"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -152,7 +141,6 @@
             "AI Host → MCP Server → MCP Client → 資料查詢 → 結果回傳"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -165,7 +153,6 @@
             "Client Agent 與Remote Agent 同時處理任務並同步處理結果"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -178,7 +165,6 @@
             "完全依靠LLM一次性推斷最優完整路徑"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -191,7 +177,6 @@
             "任務規劃器(Task Planner)+溫度參數(Temperature)設定"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -204,7 +189,6 @@
             "採用規則式替換方法,替換回覆詞彙以符合不同風格要求"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -217,7 +201,6 @@
             "模型因無法正確辨識報告中的頁碼與標題層級,才出現樣板化的結果"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -230,7 +213,6 @@
             "將所有語音內容儲存為完整紀錄,提供事後人工摘要比對用"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -243,7 +225,6 @@
             "增加訓練資料中模擬的金融危機與市場異常案例,以提升 AI 在特殊情境下的表現能力"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -256,7 +237,6 @@
             "具備根據歷史案例生成合規解釋的能力,協助新進員工快速理解法規在實務上的應用"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -269,7 +249,6 @@
             "提供進階特徵工程能力,優化高維度數據的處理效率"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -282,7 +261,6 @@
             "系統回應時間的穩定性,以支援醫療場域中可能的即時需求"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -295,7 +273,6 @@
             "AI產生回答時用詞的多樣性與表達創意程度"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -308,7 +285,6 @@
             "後端資料庫因欄位定義或結構調整,導致特徵提取流程與原始設計不一致"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -321,7 +297,6 @@
             "僅能依賴特定 API 供應商才能使用,無法在自建模型中實現"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -334,7 +309,6 @@
             "RAG透過統一協議,提升回答相關性"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -347,7 +321,6 @@
             "完整重建並追蹤 AI 模型的全部推理過程"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -360,7 +333,6 @@
             "作為代理在執行過程中的參考框架,用於組織決策步驟並支援任務推理"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -373,7 +345,6 @@
             "是否整合流程觸發與跨系統通知功能"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -386,7 +357,6 @@
             "分析單次互動回覆的反應速度表現"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -399,7 +369,6 @@
             "平台透過自動化設定機制,可顯著降低治理與合規管理需求"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -412,7 +381,6 @@
             "邊緣裝置通常受限於運算能力與可用資源"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -425,7 +393,6 @@
             "使小型模型學習大型模型行為,以降低推論成本"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -438,7 +405,6 @@
             "僅導入 AutoML,以兼顧介面調整與模型訓練"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -451,7 +417,6 @@
             "RAG屬標準化通訊協議;MCP屬資料檢索技術"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -464,7 +429,6 @@
             "讓模型在生成回覆時具備更高的創意發揮空間"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -477,7 +441,6 @@
             "能利用對話歷史、任務狀態調整行為與決策"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -490,7 +453,6 @@
             "定義代理(Agent)可參考的任務分解與決策路徑結構"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -503,7 +465,6 @@
             "以高一致性為優先的法規文件自動摘要"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -516,7 +477,6 @@
             "支援 Agents的建構、工具整合與任務流程開發"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -529,7 +489,6 @@
             "兩者都是生成式 AI"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -542,7 +501,6 @@
             "除直接成本外,並考量訓練、系統整合與資安合規等相關支出"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -555,7 +513,6 @@
             "使用Excel 巨集搭配人工作業處理檢測結果"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -568,7 +525,6 @@
             "直接購買現成的農業管理軟體,不進行客製化"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -581,7 +537,6 @@
             "試算表工具 × 手動資料標記分析"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -594,7 +549,6 @@
             "系統整合與自動化能力尚未完善"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -607,7 +561,6 @@
             "評估系統整合可行性與技術限制"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -620,7 +573,6 @@
             "強化語音模型→優化系統效能優化語言模型與知識補充→ 調整生成參數"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -633,7 +585,6 @@
             "上線後再透過使用者回饋與報表監控系統行為,進行修正"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     }
 ]

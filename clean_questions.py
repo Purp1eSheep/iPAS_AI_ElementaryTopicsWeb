@@ -5,14 +5,12 @@ import glob
 def clean_json_files(directory):
     files = glob.glob(os.path.join(directory, "*.json"))
     
-    standard_fields = ["id", "question", "options", "answer", "difficulty", "topic"]
+    standard_fields = ["id", "question", "options", "answer", "topic"]
     mapping = {
         "題目": "question",
         "q": "question",
         "選項": "options",
-        "答案": "answer",
-        "難易度": "difficulty",
-        "level": "difficulty"
+        "答案": "answer"
     }
 
     for file_path in files:

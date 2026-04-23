@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <style>
     /* CSS 變數維持不變，保持主題系統運作 */
         :root {
@@ -247,7 +248,7 @@
             <div class="filter-panel">
                 <input type="text" id="search-input" placeholder="搜尋關鍵字..." style="grid-column:span 2;">
                 <select id="topic-filter"><option value="">所有主題</option></select>
-                <select id="diff-filter"><option value="">所有難度</option><option value="易">易</option><option value="中">中</option><option value="難">難</option></select>
+                
                 <div style="grid-column:span 2;" class="flex-gap">
                     <label><input type="checkbox" id="only-bookmarked"> ⭐ 只看收藏</label>
                     <label><input type="checkbox" id="only-risky"> ⚠️ 只看易錯題</label>
@@ -269,13 +270,12 @@
             </div>
             <h2 id="question-text"></h2>
             <div id="options" class="options"></div>
-            <div id="explanation-container" class="mb-3"></div>
-            
             <div class="flex-gap">
                 <button id="exit-btn" class="btn btn-ghost btn-danger" style="flex: 0 0 80px;">退出</button>
                 <button id="prev-btn" class="btn btn-ghost w-100">上一題</button>
                 <button id="next-btn" class="btn btn-primary w-100">下一題</button>
             </div>
+            <div id="explanation-container" class="mt-3"></div>
         </div>
     </section>
 
@@ -331,6 +331,13 @@
             </div>
         </div>
         <div id="no-data-msg" class="text-center mt-3 hidden">尚未有紀錄，快開始吧！</div>
+        <div class="flex-col mt-3">
+            <div class="challenge-title">📤 匯出所有歷史錯題 (給 AI 分析)</div>
+            <div class="flex-gap">
+                <button id="export-all-json-btn" class="btn btn-ghost w-100">JSON 格式</button>
+                <button id="export-all-csv-btn" class="btn btn-ghost w-100">CSV 格式</button>
+            </div>
+        </div>
         <div class="flex-gap mt-3">
             <button id="clear-stats-btn-dash" class="btn btn-ghost btn-danger w-100">🔥 清除數據</button>
             <button id="analysis-close-btn" class="btn btn-primary w-100">關閉</button>
@@ -428,7 +435,11 @@ const Storage = {
 
 // --- 4. Utilities ---
 const Utils = {
-    formatText: text => text ? text.replace(/ ([A-Da-d]\.)/g, '\n$1') : "",
+    formatText: text => {
+        if (!text) return "";
+        let formatted = text.replace(/ ([A-Da-d]\.)/g, '\n$1');
+        return formatted.replace(/(並非|不是)/g, '<u>$1</u>');
+    },
     shuffle: arr => [...arr].sort(() => Math.random() - 0.5),
     weightedShuffle: (arr, stats) => {
         return [...arr].map(q => {
@@ -452,7 +463,16 @@ const Utils = {
         .sort((a, b) => b.sortKey - a.sortKey)
         .map(item => item.q);
     },
-    normalizeIndex: ans => Array.isArray(ans) ? ans.map(a => typeof a === 'number' ? a - 1 : a) : (typeof ans === 'number' ? ans - 1 : ans)
+    normalizeIndex: ans => Array.isArray(ans) ? ans.map(a => typeof a === 'number' ? a - 1 : a) : (typeof ans === 'number' ? ans - 1 : ans),
+    downloadFile: (content, fileName, mimeType) => {
+        const blob = new Blob([content], { type: mimeType });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        a.click();
+        URL.revokeObjectURL(url);
+    }
 };
 
 // --- 5. Core Initialization ---
@@ -461,22 +481,28 @@ async function init() {
     initEvents(); // 一次性綁定所有靜態事件
     
     try {
-        const [manifestRes, qRes] = await Promise.all([
+        const [manifestRes, csvRes] = await Promise.all([
             fetch('data/manifest.json'),
-            fetch('data/all_questions.json')
+            fetch('data/all_questions.csv')
         ]);
         State.quizSets = await manifestRes.json();
         
-        // 載入時即完成資料正規化 (Normalize Data)
-        const rawQs = await qRes.json();
-        State.globalQuestions = rawQs.map(q => ({
+        const csvText = await csvRes.text();
+        const results = Papa.parse(csvText, {
+            header: true,
+            skipEmptyLines: true
+        });
+
+        State.globalQuestions = results.data.map(q => ({
             ...q,
-            answer: Utils.normalizeIndex(q.answer) 
+            options: JSON.parse(q.options),
+            answer: Utils.normalizeIndex(JSON.parse(q.answer))
         }));
 
         renderQuizList();
         checkProgress();
     } catch (e) {
+        console.error(e);
         DOM.quizList.innerHTML = `<p class="text-center" style="color:var(--wrong)">資料載入失敗</p>`;
     }
 }
@@ -498,6 +524,35 @@ function initEvents() {
     document.getElementById('close-analysis').onclick = () => document.getElementById('analysis-modal').classList.remove('active');
     document.getElementById('analysis-close-btn').onclick = () => document.getElementById('analysis-modal').classList.remove('active');
     document.getElementById('dashboard-unit-filter').onchange = () => renderDashboard();
+
+    // 匯出功能實作
+    const performExport = (questions, format, prefix) => {
+        if (!questions.length) return alert('沒有題目可以匯出');
+        const fileName = `${prefix}_${new Date().toISOString().slice(0, 10)}.${format}`;
+        if (format === 'json') {
+            Utils.downloadFile(JSON.stringify(questions, null, 2), fileName, 'application/json');
+        } else {
+            const header = ['id', 'topic', 'question', 'options', 'answer'];
+            const rows = questions.map(q => [
+                q.id, q.topic, q.question, 
+                q.options.map((opt, i) => `${['A','B','C','D','E','F'][i]}. ${opt}`).join(' | '),
+                Array.isArray(q.answer) ? q.answer.map(i => ['A','B','C','D','E','F'][i]).join(',') : ['A','B','C','D','E','F'][q.answer]
+            ]);
+            const csvContent = "\uFEFF" + [header, ...rows].map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(',')).join('\n');
+            Utils.downloadFile(csvContent, fileName, 'text/csv;charset=utf-8;');
+        }
+    };
+
+    document.getElementById('export-all-json-btn').onclick = () => {
+        const wrongIds = Storage.get(Storage.KEYS.WRONG, []);
+        const questions = State.globalQuestions.filter(q => wrongIds.includes(q.id));
+        performExport(questions, 'json', 'all_wrong');
+    };
+    document.getElementById('export-all-csv-btn').onclick = () => {
+        const wrongIds = Storage.get(Storage.KEYS.WRONG, []);
+        const questions = State.globalQuestions.filter(q => wrongIds.includes(q.id));
+        performExport(questions, 'csv', 'all_wrong');
+    };
     
     // Quiz 控制
     DOM.exitBtn = document.getElementById('exit-btn');
@@ -565,15 +620,50 @@ function initEvents() {
             setTimeout(() => btn.textContent = orig, 2000);
         });
     };
+
+    // Quiz 頁面的 AI 按鈕事件
+    DOM.expWrap.onclick = (e) => {
+        const aiBtn = e.target.closest('.ai-btn');
+        if (aiBtn) {
+            const id = aiBtn.dataset.id;
+            const q = State.activeQuestions.find(item => item.id === id);
+            const ansRecord = State.answers[State.currentIdx];
+            window.openAIPrompt(q, ansRecord ? ansRecord.selected : null);
+        }
+    };
     
     // 全域涵蓋AI呼叫綁定 (For elements generated via innerHTML)
-    window.openAIPrompt = (q) => {
+    window.openAIPrompt = (q, userSelected) => {
         if (!q) return;
         const keys = ['A','B','C','D','E','F'];
         const ansIndices = Array.isArray(q.answer) ? q.answer : [q.answer];
+        const correctOptions = ansIndices.map(i => `${keys[i]}. ${q.options[i]}`).join('、');
         const optText = q.options.map((o, i) => `${keys[i]}. ${o}`).join('\n');
         
-        DOM.aiPromptText.value = `你是一個專業老師，請幫忙詳細解釋以下選擇題，分析關鍵資訊並說明為何正確答案是對的。\n\n題目：${q.question}\n\n選項：\n${optText}\n\n請以繁體中文回答。`;
+        let userSelectInfo = "";
+        if (userSelected && userSelected.length > 0) {
+            const userText = userSelected.map(i => `${keys[i]}. ${q.options[i]}`).join('、');
+            userSelectInfo = `\n【使用者選的錯誤答案】\n${userText}\n`;
+        }
+        
+        DOM.aiPromptText.value = `你是一位專業的人工智慧 (AI) 講師，擅長釐清學生的觀念誤區。
+請針對以下這題 iPAS AI 專業認證的考題進行詳細解析：
+
+【題目】
+${q.question}
+
+【選項】
+${optText}
+
+【正確答案】
+${correctOptions}
+${userSelectInfo}
+【解析需求】
+1. **正確答案解析**：請詳細說明為什麼「${correctOptions}」才是正確的，其背後的 AI 理論、技術細節或逻辑依據為何。
+2. **錯誤陷阱分析**：${userSelectInfo ? `重點分析為什麼使用者選的「${userSelectInfo.split('\n')[2]}」是錯誤的。請指出該選項的觀念錯誤之處，以及它與正確答案的本質區別。` : "請分析其他錯誤選項常見的干擾點或觀念陷阱。"}
+3. **觀念釐清**：用一句話總結如何區分正確與錯誤選項的關鍵特徵。
+
+請以繁體中文回答，條列式呈現，語氣專業、精簡且直擊重點。`;
         DOM.aiModal.classList.add('active');
     };
 }
@@ -647,11 +737,11 @@ function renderQuestion() {
     DOM.progress.style.width = `${(State.currentIdx / State.activeQuestions.length) * 100}%`;
     DOM.counter.textContent = State.isComprehensive ? `第 ${State.currentIdx + 1} 題` : `${State.currentIdx + 1} / ${State.activeQuestions.length}`;
     
-    const meta = [q.id, q.level].filter(Boolean).join(' | ');
+    const meta = q.id;
     document.getElementById('type-badge').textContent = meta;
     document.getElementById('type-badge').className = `badge badge-primary ${!meta ? 'hidden' : ''}`;
     document.getElementById('topic-badge').textContent = q.topic;
-    DOM.qText.textContent = Utils.formatText(q.question);
+    DOM.qText.innerHTML = Utils.formatText(q.question);
     DOM.expWrap.innerHTML = '';
     
     const isAns = State.answers[State.currentIdx] !== null;
@@ -666,7 +756,7 @@ function renderQuestion() {
             if (ansData.selected.includes(i) && !ansData.correct.includes(i)) cls += ' wrong';
             if (ansData.selected.includes(i) && ansData.correct.includes(i)) cls += ' selected';
         }
-        return `<div class="${cls}" data-i="${i}"><span class="option-key">${keys[i]}</span><span class="option-text">${opt}</span></div>`;
+        return `<div class="${cls}" data-i="${i}"><span class="option-key">${keys[i]}</span><span class="option-text">${Utils.formatText(opt)}</span></div>`;
     }).join('');
 
     if (isAns && !ansData.isCorrect) addAIBtn(q);
@@ -767,7 +857,7 @@ function showResult() {
             <div class="flex-between" style="color:var(--muted); font-size:.8rem; margin-bottom:4px;">
                 <span>第 ${a.origIdx + 1} 題</span><span style="color:var(--accent)">${a.topic}</span>
             </div>
-            <div>${a.question}</div>
+            <div>${Utils.formatText(a.question)}</div>
             <div class="flex-between mt-3 font-weight-bold" style="color: ${a.isCorrect ? 'var(--correct)' : 'var(--wrong)'}">
                 ${a.isCorrect ? '✓ 答對' : `✗ 答錯 ─ 正解：${a.correct.map(c=>keys[c]).join('、')}`}
                 ${!a.isCorrect ? `<button class="btn btn-ghost ai-btn" style="padding:4px 8px; font-size:.7rem" data-id="${a.id}">AI</button>` : ''}
@@ -782,18 +872,13 @@ function showResult() {
         const aiBtn = e.target.closest('.ai-btn');
         if (aiBtn) {
             const id = aiBtn.dataset.id;
-            const q = State.globalQuestions.find(item => item.id === id);
-            window.openAIPrompt(q);
-        }
-    };
-    
-    // Quiz 頁面的 AI 按鈕事件
-    DOM.expWrap.onclick = (e) => {
-        const aiBtn = e.target.closest('.ai-btn');
-        if (aiBtn) {
-            const id = aiBtn.dataset.id;
-            const q = State.activeQuestions.find(item => item.id === id);
-            window.openAIPrompt(q);
+            const ansRecord = State.answers.find(a => a && a.id === id);
+            if (ansRecord) {
+                window.openAIPrompt(ansRecord, ansRecord.selected);
+            } else {
+                const q = State.globalQuestions.find(item => item.id === id);
+                window.openAIPrompt(q);
+            }
         }
     };
 }
@@ -893,7 +978,7 @@ function initBrowser() {
     
     // 只綁定一次篩選器事件
     if (!State.browserEventsBound) {
-        ['search-input', 'topic-filter', 'diff-filter', 'only-bookmarked', 'only-risky'].forEach(id => {
+        ['search-input', 'topic-filter', 'only-bookmarked', 'only-risky'].forEach(id => {
             document.getElementById(id).addEventListener('input', renderBrowserList);
         });
         
@@ -924,7 +1009,6 @@ function renderBrowserList() {
     const bookmarks = Storage.get(Storage.KEYS.BOOKMARKS, []);
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
     const targetTopic = document.getElementById('topic-filter').value;
-    const targetDiff = document.getElementById('diff-filter').value;
     const onlyBookmarked = document.getElementById('only-bookmarked').checked;
     const onlyRisky = document.getElementById('only-risky').checked;
     const listEl = document.getElementById('browser-list');
@@ -934,7 +1018,6 @@ function renderBrowserList() {
         const rate = s.t > 0 ? (s.w / s.t) : 0;
         if (searchTerm && !q.question.toLowerCase().includes(searchTerm)) return false;
         if (targetTopic && q.topic !== targetTopic) return false;
-        if (targetDiff && q.difficulty !== targetDiff) return false;
         if (onlyBookmarked && !bookmarks.includes(q.id)) return false;
         if (onlyRisky && rate <= 0.5) return false;
         return true;
@@ -950,7 +1033,7 @@ function renderBrowserList() {
         const s = stats[q.id] || { t: 0, w: 0 };
         const isBookmarked = bookmarks.includes(q.id);
         const correctIndices = Array.isArray(q.answer) ? q.answer : [q.answer];
-        const correctText = correctIndices.map(idx => `${keys[idx]}. ${q.options[idx]}`).join('、');
+        const correctText = correctIndices.map(idx => `${keys[idx]}. ${Utils.formatText(q.options[idx])}`).join('、');
 
         return `
             <div class="question-card">
@@ -964,7 +1047,7 @@ function renderBrowserList() {
                 <div style="font-size:0.95rem; font-weight:600; margin-bottom:12px; line-height:1.5; white-space:pre-wrap;">${Utils.formatText(q.question)}</div>
                 <div style="font-size:0.85rem; color:var(--correct); background:var(--correct-soft); padding:8px 12px; border-radius:6px; margin-bottom:12px; border-left:3px solid var(--correct);">正確答案：${correctText}</div>
                 <div class="flex-between" style="align-items:flex-end;">
-                    <div class="flex-gap" style="font-size:0.75rem; color:var(--muted);"><span>🏷️ ${q.topic}</span><span>📊 ${q.difficulty}</span></div>
+                    <div class="flex-gap" style="font-size:0.75rem; color:var(--muted);"><span>🏷️ ${q.topic}</span></div>
                     <div class="flex-gap">
                         <button class="btn-link ai-btn" data-id="${q.id}" style="border:1.5px solid var(--accent); color:var(--accent); padding:4px 12px; border-radius:6px; font-size:0.75rem;">🤖 AI 詳解</button>
                         <button class="btn-link bookmark-btn" data-id="${q.id}" style="border:1.5px solid ${isBookmarked ? 'var(--accent)' : 'var(--border)'}; color:${isBookmarked ? 'var(--accent)' : 'var(--muted)'}; background:${isBookmarked ? 'var(--accent-soft)' : 'none'}; padding:4px 12px; border-radius:6px; font-size:0.75rem;">

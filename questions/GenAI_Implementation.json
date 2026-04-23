@@ -9,7 +9,6 @@
             "增加部門之間的交流機會,以促進跨部門合作"
         ],
         "answer": 3,
-        "difficulty": "易",
         "topic": "No code / Low code 概念"
     },
     {
@@ -22,7 +21,6 @@
             "減少AI 模型參數數量"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -35,7 +33,6 @@
             "權限控管與合規要求"
         ],
         "answer": 4,
-        "difficulty": "易",
         "topic": "No code / Low code 概念"
     },
     {
@@ -48,7 +45,6 @@
             "風險規避"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -61,7 +57,6 @@
             "員工培訓成本增加"
         ],
         "answer": 1,
-        "difficulty": "易",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -74,7 +69,6 @@
             "小或低風險"
         ],
         "answer": 1,
-        "difficulty": "難",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -87,7 +81,6 @@
             "單模態大語言模型"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -100,7 +93,6 @@
             "提高品牌曝光度並增強客戶關係管理"
         ],
         "answer": 2,
-        "difficulty": "易",
         "topic": "No code / Low code 概念"
     },
     {
@@ -113,7 +105,6 @@
             "BCA"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -126,7 +117,6 @@
             "注意力機制(Attention Mechanism)"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -139,7 +129,6 @@
             "延遲測試(Latency Testing)"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -152,7 +141,6 @@
             "對於低風險AI系統皆可免除透明性與問責機制之要求"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -165,7 +153,6 @@
             "接收國家之個人資料保護法規尚未完善,可能損害當事人權益"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -178,7 +165,6 @@
             "將輸入資料轉換為向量嵌入後,再傳輸至語言模型進行處理"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -191,7 +177,6 @@
             "明確定義導入目標與關鍵績效指標,作為後續設計依據"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -204,7 +189,6 @@
             "聯邦學習(Federated Learning)"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -217,7 +201,6 @@
             "模型可能生成與實際影像不符的診斷結論,導致誤判並引發醫療與法律風險"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -230,7 +213,6 @@
             "投入資源自訓並私有化部署LLM,並同步建立自動化風控機制"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -243,7 +225,6 @@
             "設定AI的角色與回覆範圍,讓其專注於客服相關內容,避免回答其他敏感議題"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -256,7 +237,6 @@
             "減少訓練樣本數量,降低偏見被放大的可能性"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -269,7 +249,6 @@
             "提高推薦結果的隨機性以增加多樣性"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -282,7 +261,6 @@
             "平台對外開放的實時來源驗證介面"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -295,7 +273,6 @@
             "限制開發者修改AI生成之程式碼架構,以維持一致性"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -308,7 +285,6 @@
             "使用 SynthID 技術在每一幀(frame)影片中嵌入不可見的數位浮水印"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -321,7 +297,6 @@
             "僅提供必要資料或數據欄位與去識別化策略減少模型接觸可識別個資"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -334,7 +309,6 @@
             "降低 prompt設計複雜度並取代訓練流程"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -347,7 +321,6 @@
             "調整模型決策閾值(Decision Threshold)以降低預測差異"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -360,7 +333,6 @@
             "先驗證模型效益,再逐步補強合規與資安架構"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -373,7 +345,6 @@
             "異常分析報告的視覺化呈現與介面易讀性"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -386,7 +357,6 @@
             "僅允許高階主管操作系統,透過人員篩選控制生成結果"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     }
 ]

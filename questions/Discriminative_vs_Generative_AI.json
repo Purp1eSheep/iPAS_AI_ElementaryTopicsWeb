@@ -9,7 +9,6 @@
             "GAN不能生成高品質的數據"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -22,7 +21,6 @@
             "隨機森林技術"
         ],
         "answer": 3,
-        "difficulty": "易",
         "topic": "機器學習概念"
     },
     {
@@ -35,7 +33,6 @@
             "生成式AI通過自動化的方式清洗數據,提升數據分析的準確性"
         ],
         "answer": 1,
-        "difficulty": "易",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -48,7 +45,6 @@
             "Autoregressive Models (AR Model)"
         ],
         "answer": 3,
-        "difficulty": "難",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -61,7 +57,6 @@
             "擴散模型(Diffusion Model)"
         ],
         "answer": 1,
-        "difficulty": "易",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -74,7 +69,6 @@
             "基因演算法(Genetic Algorithm)"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -87,7 +81,6 @@
             "編碼器利用最大邊際機率對資料進行異常點偵測"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -100,7 +93,6 @@
             "互動性"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -113,7 +105,6 @@
             "根據注意力分數動態跳過處理部分輸入 Token,以減少每次前向傳播的計算"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -126,7 +117,6 @@
             "自注意力層的計算和其記憶體使用,因為注意力矩陣的大小隨序列長度呈平方級增長"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -139,7 +129,6 @@
             "以交叉驗證(Cross-validation)方式重新分割資料集,使各折資料類別比例一致"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -152,7 +141,6 @@
             "ReLU函數(Rectified Linear Unit Function)"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -165,7 +153,6 @@
             "貝氏網路(Bayesian Network)"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -178,7 +165,6 @@
             "自動標註摘要的關鍵字與主題標籤"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -191,7 +177,6 @@
             "圖卷積網路(Graph Convolutional Network, GCN)"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -204,7 +189,6 @@
             "擴散模型(Diffusion Model)"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -217,7 +201,6 @@
             "使用生成對抗網路(Generative Adversarial Network, GAN)直接預測異常標籤"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -230,7 +213,6 @@
             "Batching 在低併發(Concurrency)請求下,仍能明顯提升系統效能"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -243,7 +225,6 @@
             "透過將注意力結果暫存於高速快取記憶體,以避免重複計算造成延遲"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "鑑別式 AI 與生成式 AI"
     }
 ]

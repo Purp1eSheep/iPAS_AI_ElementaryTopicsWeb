@@ -9,7 +9,6 @@
             "強化學習(Reinforcement Learning)"
         ],
         "answer": 4,
-        "difficulty": "易",
         "topic": "機器學習概念"
     },
     {
@@ -22,7 +21,6 @@
             "增加正則化項"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -35,7 +33,6 @@
             "可以處理類別型資料"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -48,7 +45,6 @@
             "遊戲策略學習"
         ],
         "answer": 2,
-        "difficulty": "易",
         "topic": "機器學習概念"
     },
     {
@@ -61,7 +57,6 @@
             "測試模型的容錯能力"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -74,7 +69,6 @@
             "神經網路不需要大量數據支持"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -87,7 +81,6 @@
             "增加正則化項"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -100,7 +93,6 @@
             "強化學習(Reinforcement Learning)"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -113,7 +105,6 @@
             "可以處理類別型資料"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -126,7 +117,6 @@
             "K-means 聚類(K-means Clustering)"
         ],
         "answer": 1,
-        "difficulty": "難",
         "topic": "機器學習概念"
     },
     {
@@ -139,7 +129,6 @@
             "隨機森林(Random Forest)"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "資料處理與分析概念"
     },
     {
@@ -152,7 +141,6 @@
             "直接將該筆金額替換為資料中位數,以降低其對分析結果的影響"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -165,7 +153,6 @@
             "使用監督式學習,以已知購買結果作為標籤進行訓練"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "資料處理與分析概念"
     },
     {
@@ -178,7 +165,6 @@
             "將離群值全數轉換為中位數,避免影響平均計算"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "人工智慧概念"
     },
     {
@@ -191,7 +177,6 @@
             "假陽性率(False Positive Rate)即將正常事件誤判為異常的比例"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -204,7 +189,6 @@
             "以ETL技術移除空值欄位並改儲為JSON格式"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "資料處理與分析概念"
     },
     {
@@ -217,7 +201,6 @@
             "正則化係數(Regularization Coefficient)"
         ],
         "answer": 2,
-        "difficulty": "易",
         "topic": "鑑別式 AI 與生成式 AI"
     },
     {
@@ -230,7 +213,6 @@
             "L1會轉換損失函數為非凸形"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -243,7 +225,6 @@
             "根據歷史股價預測未來股市的走勢"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -256,7 +237,6 @@
             "在股票市場資料中,輸入歷史股價序列,嘗試將未來可能走勢劃分成若干「上升型、盤整型、下降型」群組,無需使用任何標籤 - 非監督式學習(Unsupervised Learning)"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -269,7 +249,6 @@
             "類別A或B,視距離遠近加權而定"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -282,7 +261,6 @@
             "RNN只能用於分類任務,不能應用於時間序列預測"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -295,7 +273,6 @@
             "遷移學習(Transfer Learning)"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -308,7 +285,6 @@
             "Deep Q-Learning 無法搭配經驗回放(Experience Replay),因為會導致樣本順序被打亂"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -321,7 +297,6 @@
             "KL散度(Kullback-Leibler Divergence)"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -334,7 +309,6 @@
             "K平均演算法(K-means)"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -347,7 +321,6 @@
             "隨機森林(Random Forest)"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -360,7 +333,6 @@
             "模型過度適應微調的資料分佈,逐漸遺忘先前預訓練所獲得的廣泛知識,在原有任務或廣泛領域上表現變差"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -373,7 +345,6 @@
             "用於生成大量擬真數據來替代訓練集"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -386,7 +357,6 @@
             "在模型評估時,針對相鄰時間區段進行誤差合併,以便用整體估計方式修正詐騙比例"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -399,7 +369,6 @@
             "對目標變數或特徵進行標準化"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -412,7 +381,6 @@
             "1->4->3->2"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -425,7 +393,6 @@
             "模型主要學習輸入特徵與既定目標標記之間的對應關係"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -438,7 +405,6 @@
             "寬深模型(Wide and Deep)"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -451,7 +417,6 @@
             "以未標註語料為主進行長週期表示學習訓練,以提升模型基礎語言建模能力"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -464,7 +429,6 @@
             "比較不同模型架構在測試資料上的泛化能力差異"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -477,7 +441,6 @@
             "非監督式學習的關聯規則挖掘"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -490,7 +453,6 @@
             "長短期記憶網路(Long Short-Term Memory, LSTM),改善RNN的長期記憶問題"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -503,7 +465,6 @@
             "在股價資料分析中,將歷史價格變動模式劃分為若干趨勢型態,且未使用人工標註———非監督式學習(Unsupervised Learning)"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -516,7 +477,6 @@
             "2、3、4"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -529,7 +489,6 @@
             "簡化模型結構,以降低模型過度擬合的可能性"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -542,7 +501,6 @@
             "依據車隊 GPS路徑點的連續軌跡,預測下一段可能行駛路線"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -555,7 +513,6 @@
             "多數僅適用於特定大數據框架(如Spark)的訓練流程"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -568,7 +525,6 @@
             "資料匿名化(Data Anonymization)"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "機器學習概念"
     },
     {
@@ -581,7 +537,6 @@
             "系統資料結構調整,造成特徵欄位錯置"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "機器學習概念"
     }
 ]

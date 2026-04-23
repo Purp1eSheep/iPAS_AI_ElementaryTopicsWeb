@@ -1,11 +1,11 @@
 import json
 import os
-import hashlib
+import csv
 
 def merge_questions():
     raw_dir = 'questions'
     output_dir = 'data'
-    output_file = os.path.join(output_dir, 'all_questions.json')
+    output_file = os.path.join(output_dir, 'all_questions.csv')
     manifest_path = os.path.join(output_dir, 'manifest.json')
     
     # 定義科目名稱
@@ -52,7 +52,6 @@ def merge_questions():
                     
                     q_options = q.get("options")
                     q_answer = q.get("answer")
-                    q_difficulty = q.get("difficulty")
                     
                     # 取得目前 topic
                     raw_topic = q.get("topic", "").strip()
@@ -79,7 +78,6 @@ def merge_questions():
                         "question": q_text,
                         "options": q_options,
                         "answer": q_answer,
-                        "difficulty": q_difficulty,
                         "topic": full_topic
                     })
         except Exception as e:
@@ -97,8 +95,21 @@ def merge_questions():
     for i, q in enumerate(final_questions):
         q['id'] = f"Q{i+1:03d}"
 
-    with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(final_questions, f, indent=4, ensure_ascii=False)
+    # 輸出為 CSV
+    with open(output_file, 'w', encoding='utf-8-sig', newline='') as f:
+        fieldnames = ['id', 'question', 'options', 'answer', 'topic']
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        for q in final_questions:
+            # 將 list 轉換為 JSON 字串以存儲在 CSV 單元格中
+            row = {
+                'id': q['id'],
+                'question': q['question'],
+                'options': json.dumps(q['options'], ensure_ascii=False),
+                'answer': json.dumps(q['answer'], ensure_ascii=False),
+                'topic': q['topic']
+            }
+            writer.writerow(row)
     
     # 建立結構化的 manifest.json
     manifest_structure = {

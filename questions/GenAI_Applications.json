@@ -9,7 +9,6 @@
             "網路安全技術"
         ],
         "answer": 2,
-        "difficulty": "易",
         "topic": "No code / Low code 概念"
     },
     {
@@ -22,7 +21,6 @@
             "虛擬現實圖像"
         ],
         "answer": 4,
-        "difficulty": "易",
         "topic": "No code / Low code 概念"
     },
     {
@@ -35,7 +33,6 @@
             "生成文本"
         ],
         "answer": 3,
-        "difficulty": "易",
         "topic": "No code / Low code 概念"
     },
     {
@@ -48,7 +45,6 @@
             "創建更好的分類演算法"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -61,7 +57,6 @@
             "自然語言處理(NLP)和生成式回應模組"
         ],
         "answer": 4,
-        "difficulty": "易",
         "topic": "No code / Low code 概念"
     },
     {
@@ -74,7 +69,6 @@
             "排除所有生成的資料"
         ],
         "answer": 2,
-        "difficulty": "易",
         "topic": "No code / Low code 概念"
     },
     {
@@ -87,7 +81,6 @@
             "限制使用者自訂生成內容"
         ],
         "answer": 4,
-        "difficulty": "易",
         "topic": "No code / Low code 概念"
     },
     {
@@ -100,7 +93,6 @@
             "僅鼓勵學生利用AI完成課堂作業"
         ],
         "answer": 3,
-        "difficulty": "易",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -113,7 +105,6 @@
             "機器翻譯技術自動翻譯文本,促進多語言支援和全球溝通"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -126,7 +117,6 @@
             "自然語言處理(NLP)"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -139,7 +129,6 @@
             "使用者輸入一個簡單的問題,AI給出一個非常複雜的答案"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -152,7 +141,6 @@
             "生成式AI在圖像生成方面的發展主要集中於圖像風格轉換,無涉及其他類型的視覺內容生成"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -165,7 +153,6 @@
             "A、C、D、E"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -178,7 +165,6 @@
             "圖像標註"
         ],
         "answer": 1,
-        "difficulty": "易",
         "topic": "No code / Low code 概念"
     },
     {
@@ -191,7 +177,6 @@
             "請用一句話簡要回答問題"
         ],
         "answer": 3,
-        "difficulty": "易",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -204,7 +189,6 @@
             "a -> b -> c -> d"
         ],
         "answer": 3,
-        "difficulty": "難",
         "topic": "No code / Low code 概念"
     },
     {
@@ -217,7 +201,6 @@
             "使用者輸入一個簡單的問題,AI給出一個非常複雜的答案"
         ],
         "answer": 3,
-        "difficulty": "易",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -230,7 +213,6 @@
             "模型產生幻覺內容,虛構與真實資訊混雜出現"
         ],
         "answer": 4,
-        "difficulty": "易",
         "topic": "生成式 AI 導入評估規劃"
     },
     {
@@ -243,7 +225,6 @@
             "維持預設溫度不變,讓模型依照原始設定自由生成"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "No code / Low code 概念"
     },
     {
@@ -256,7 +237,6 @@
             "TTQA"
         ],
         "answer": 4,
-        "difficulty": "難",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -269,7 +249,6 @@
             "增加參數量不影響記憶體使用,只會影響計算速度"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -282,7 +261,6 @@
             "完全依賴樣本標準差來估計母體參數,忽略分布形態"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -295,7 +273,6 @@
             "Graph Prompting 僅能處理線性路徑,限制多分支探索"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -308,7 +285,6 @@
             "回饋機制通常僅針對局部片段,難以全面評估最終輸出品質"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -321,7 +297,6 @@
             "優化 Fine-tuning 正確率"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -334,7 +309,6 @@
             "自動判斷並只選擇正確的資訊"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -347,7 +321,6 @@
             "以上皆是"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -360,7 +333,6 @@
             "GitHub Copilot 由 OpenAI的Codex模型提供技術支援,可即時在開發者編輯程式碼時給出整行或整個函式建議"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -373,7 +345,6 @@
             "多個代理重複做同樣的任務,造成效率低落"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -386,7 +357,6 @@
             "保留語氣相關 Fine-tuning,僅透過檢索系統更新文件內容,不頻繁改動模型"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -399,7 +369,6 @@
             "提升檢索系統品質,確保取得的政策內容正確且最新"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -412,7 +381,6 @@
             "LLM 未經醫療領域微調,難以正確理解專業性詞彙"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -425,7 +393,6 @@
             "3->1->2->4"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -438,7 +405,6 @@
             "要求模型從表格中擷取所有城市的最高氣溫"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -451,7 +417,6 @@
             "專注於文字序列上下文的建模,只提升文字間的連貫性"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -464,7 +429,6 @@
             "使用全連接神經網路對生成結果後期篩選"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -477,7 +441,6 @@
             "「請以正式的語氣回覆顧客的提問」"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -490,7 +453,6 @@
             "擴充與更新航班與票務資料來源,以提升模型的知識正確性與覆蓋率"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -503,7 +465,6 @@
             "情境一與情境二都適合TOT"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -516,7 +477,6 @@
             "Graph Prompting 能捕捉非線性結構與上下文關聯,適合處理網絡化資訊"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -529,7 +489,6 @@
             "範例資訊過於稀缺,模型缺乏應對不同輸入情境的能力"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -542,7 +501,6 @@
             "模型越大,Benchmark結果可能提升,但幅度取決於訓練數據品質與資源配置"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -555,7 +513,6 @@
             "C-Eval"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -568,7 +525,6 @@
             "使模型在生成回覆時更具創造性與多樣化"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -581,7 +537,6 @@
             "透過調整生成階段的溫度參數,使模型在回覆時更穩定一致"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -594,7 +549,6 @@
             "文本分類(Text Classification),針對輸入文本判斷情感、主題或標籤"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -607,7 +561,6 @@
             "低秩適配(Low-Rank Adaptation)"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -620,7 +573,6 @@
             "生成對抗網路(Generative Adversarial Network, GAN)"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -633,7 +585,6 @@
             "模型推理能力不足以完成分類任務"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -646,7 +597,6 @@
             "直接提供原始表格內容以保留完整資訊"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -659,7 +609,6 @@
             "使用FTP 協議傳輸請求與回應,以減少服務通訊負擔"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -672,7 +621,6 @@
             "ChatGPT 內建完整的編譯器,可在輸出程式碼前自動編譯並更正所有語法與邏輯錯誤"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -685,7 +633,6 @@
             "每月節省成本25,000元,系統整合成本約8個月回收"
         ],
         "answer": 1,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -698,7 +645,6 @@
             "直接使用ChatGPT的基礎模型進行分析"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -711,7 +657,6 @@
             "模型推理過程中的Token 使用量統計"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -724,7 +669,6 @@
             "僅適用於自然語言處理任務,對其他模態效果有限"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -737,7 +681,6 @@
             "使用少樣本學習(Few-shot Learning),在提示詞中提供3-5個病害案例"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -750,7 +693,6 @@
             "Encoder-Decoder 架構僅適用於翻譯任務,Decoder-only 架構較適合對話任務"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -763,7 +705,6 @@
             "Zero-shot Prompting,避免範例影響模型判斷"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -776,7 +717,6 @@
             "持續進行增量Fine-tuning,以確保活動資訊同步更新"
         ],
         "answer": 3,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -789,7 +729,6 @@
             "可避免模型輸出偏差與幻覺(Hallucination)問題"
         ],
         "answer": 2,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     },
     {
@@ -802,7 +741,6 @@
             "「請逐步說明你的判斷依據與推理過程,最後再給出結論。」"
         ],
         "answer": 4,
-        "difficulty": "中",
         "topic": "生成式 AI 應用領域與工具使用"
     }
 ]
