@@ -56,4 +56,4 @@ def clean_json_files(directory):
         print(f"Cleaned {file_path}")
 
 if __name__ == "__main__":
-    clean_json_files("/home/purplesheep/Documents/repos/iPAS_AI_ElementaryTopicsWeb/questions/")
+    clean_json_files("questions/")

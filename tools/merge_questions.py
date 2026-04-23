@@ -4,7 +4,7 @@ import csv
 
 def merge_questions():
     raw_dir = 'questions'
-    output_dir = 'data'
+    output_dir = 'assets/data'
     output_file = os.path.join(output_dir, 'all_questions.csv')
     manifest_path = os.path.join(output_dir, 'manifest.json')
     

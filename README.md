@@ -6,6 +6,7 @@
 - 我: 逼事沒幹下指令
 - Claude: New Version, yes Daddy.
 - Gemini: 被我放棄, trash. 因為 Claude 額度用完所以負責 Debug
+- Gemini Cli: 九成功能，超神
 
 特別感謝：
 - NTUT: 謝學校提供網路
