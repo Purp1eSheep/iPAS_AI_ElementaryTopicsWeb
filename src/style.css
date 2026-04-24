@@ -382,3 +382,23 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/* 響應式優化 */
+@media (max-width: 600px) {
+    body { padding: 12px 10px; }
+    .card { padding: 20px 16px; }
+    #app { margin-top: 20px; }
+    
+    #resume-banner {
+        justify-content: center !important;
+        text-align: center;
+    }
+    #resume-banner .flex-gap {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .grid-2, .grid-3 { gap: 8px; }
+    h1 { font-size: 1.4rem; }
+    h2 { font-size: 1.15rem; }
+}
