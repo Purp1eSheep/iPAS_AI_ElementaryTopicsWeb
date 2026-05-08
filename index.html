@@ -49,6 +49,12 @@
                         <div id="lefthand-status" class="meta">已關閉</div>
                     </div>
                 </div>
+                <div class="challenge-title">測題題數</div>
+                <div class="theme-grid" id="count-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="theme-option" data-count="10">10 題</div>
+                    <div class="theme-option" data-count="20">20 題</div>
+                    <div class="theme-option" data-count="40">40 題</div>
+                </div>
             </div>
             <div class="mb-3">
                 <div class="challenge-title">資料管理</div>
@@ -79,7 +85,8 @@
 
         <div id="quiz-list" class="flex-col mb-3"><p class="text-center">載入中…</p></div>
         
-        <div class="grid-2 mb-3">
+        <div class="grid-3 mb-3">
+            <a href="study.html" class="btn btn-ghost" style="text-decoration:none;">📖 考前講義</a>
             <button id="browse-btn" class="btn btn-ghost">🔍 瀏覽題庫</button>
             <button id="analysis-btn" class="btn btn-ghost">📊 學習分析</button>
         </div>

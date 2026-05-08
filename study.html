@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPAS AI 考前全攻略 (科目一 & 科目二) - 數位學習手冊</title>
+    <link rel="stylesheet" href="src/study.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 側邊導航欄 -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>AI 考點手冊</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-category">科目一：基礎理論</li>
+                <li><a href="#ai-concepts" class="active">1-1 人工智慧概念</a></li>
+                <li><a href="#data-processing">1-2 資料處理與分析</a></li>
+                <li><a href="#machine-learning">1-3 機器學習理論</a></li>
+                <li><a href="#gen-vs-disc">1-4 鑑別式 vs 生成式 AI</a></li>
+                
+                <li class="nav-category">科目二：實務規劃</li>
+                <li><a href="#nocode-lowcode">2-1 No-Code / Low-Code</a></li>
+                <li><a href="#gen-apps">2-2 生成式 AI 應用與工具</a></li>
+                <li><a href="#gen-impl">2-3 生成式 AI 導入與規劃</a></li>
+                
+                <li class="nav-category">導航</li>
+                <li><a href="index.html" style="color:var(--primary-color); font-weight:bold;">← 返回測驗</a></li>
+            </ul>
+        </nav>
+
+        <!-- 主內容區 -->
+        <main class="content">
+            <header class="mobile-nav">
+                <button id="menu-toggle">☰ 選單</button>
+                <span>iPAS AI 講義</span>
+            </header>
+
+            <article id="doc-content">
+                <h1>🚀 iPAS AI 應用規劃師 - 考前全攻略</h1>
+                
+                <!-- 科目一 -->
+                <section class="subject-header">
+                    <h2 style="color:var(--primary-color); border-bottom:4px solid var(--primary-color);">科目一：人工智慧基礎理論</h2>
+                </section>
+
+                <section id="ai-concepts">
+                    <h3>1-1 人工智慧概念</h3>
+                    <ul>
+                        <li><strong>負責任的 AI：</strong> 開發者對系統行為負責。</li>
+                        <li><strong>監督機制 (Supervision)：</strong> 
+                            <ul>
+                                <li><strong>人在迴圈內 (HITL)：</strong> 每步皆須人類批准（高風險、高準確要求）。</li>
+                                <li><strong>人在迴圈上 (HOTL)：</strong> 人類日常監督，必要時干預。</li>
+                                <li><strong>人在迴圈外 (HOOTL)：</strong> 系統完全自主決策，人類不即時干預。</li>
+                            </ul>
+                        </li>
+                        <li><strong>法規：</strong> 2025年《人工智慧基本法》參考歐盟 <strong>監理沙盒 (Regulatory Sandbox)</strong>。</li>
+                        <li><strong>能力與電腦視覺 (CV)：</strong>
+                            <ul>
+                                <li><strong>弱 AI (Narrow AI)：</strong> 專精單一任務 (如語音辨識、瑕疵檢測)，目前主流。其模型設計侷限於特定領域，無法直接遷移。</li>
+                                <li><strong>強 AI (General AI / AGI)：</strong> 具備人類水準理解力、跨領域學習與推理能力 (目前尚在理論階段)。</li>
+                                <li><strong>超級 AI (ASI)：</strong> 智力在各方面（含科學創新、通識與社交能力）都大幅超越最聰明人類大腦。</li>
+                                <li><strong>影像分類：</strong> 判斷影像類別（如：是否有煙霧）。</li>
+                                <li><strong>物件偵測：</strong> 找出位置並用<strong>方框 (Bounding Box)</strong> 標示（如：標出煙霧位置）。</li>
+                                <li><strong>影像分割：</strong> 精確標示像素級邊緣（如：精確標示煙霧的輪廓）。</li>
+                            </ul>
+                        </li>
+                        <li><strong>可解釋 AI (XAI)：</strong>
+                            <ul>
+                                <li><strong>後處理 (Post-hoc)：</strong> 如 <strong>LIME</strong>，專門解釋黑盒模型中「單一局部預測」的決策過程。</li>
+                                <li><strong>SHAP (沙普利加性解釋)：</strong> 基於賽局理論，能精確提供「在單一預測結果中，各輸入特徵對最終輸出所產生的<strong>貢獻分配</strong>」。</li>
+                                <li><strong>顯著性圖 (Saliency Map)：</strong> 常用於影像模型，標示出對預測結果影響最大的<strong>像素區域</strong>。</li>
+                                <li><strong>反事實解釋：</strong> 分析「若改變某特徵，結果會如何變化」。</li>
+                            </ul>
+                        </li>
+                        <li><strong>模型評估與維運：</strong>
+                            <ul>
+                                <li><strong>指標選擇：</strong> 目標為「不能漏掉異常」（如疾病篩檢、停機偵測）時，應看重 <strong>召回率 (Recall)</strong>。</li>
+                                <li><strong>資料偏移 (Data Drift)：</strong> 上線後準確率下降通常是因為使用者行為或統計特徵隨時間改變，而非模型架構損壞。</li>
+                            </ul>
+                        </li>
+                        <li><strong>金融 AI 指引：</strong> 若模型偏誤，啟動 <strong>人工覆核</strong>。揭露條款通常<strong>排除「模型原始碼」</strong>。</li>
+                        <li><strong>維運實務挑戰：</strong> 
+                            <ul>
+                                <li><strong>RAG 系統：</strong> 應採用<strong>增量更新 (Incremental)</strong> 避免停機。</li>
+                                <li><strong>批次推論 (Batch Inference)：</strong> 挑戰在於 GPU 資源、吞吐量與延遲管理，而非訓練資料標註品質。</li>
+                                <li><strong>GPU 利用率瓶頸：</strong> 若 GPU 運算慢但負載低，通常是 <strong>I/O 瓶頸</strong>（硬碟搬移至 GPU 太慢）。</li>
+                                <li><strong>物聯網應用：</strong> 智慧城市監測（如 PM2.5、設備狀態）主要依賴 <strong>感知器網路 (Sensor Network)</strong>。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="data-processing">
+                    <h3>1-2 資料處理與分析概念</h3>
+                    <ul>
+                        <li><strong>大數據特性 (5V)：</strong> Volume (量)、Velocity (速)、Variety (多樣性)、Veracity (真實性)、<strong>Value (價值：最終目的)</strong>。</li>
+                        <li><strong>資料型態：</strong>
+                            <ul>
+                                <li><strong>結構化：</strong> 資料庫紀錄，易於計算。</li>
+                                <li><strong>半結構化：</strong> JSON、XML 標註資料。</li>
+                                <li><strong>非結構化：</strong> 錄音、影像、文字對話，<strong>占比最高且處理難度最大</strong>。</li>
+                            </ul>
+                        </li>
+                        <li><strong>資料工程：</strong>
+                            <ul>
+                                <li><strong>ETL 流程：</strong> <strong>E</strong> (擷取) -> <strong>T</strong> (轉換：清洗、格式統一、處理冗餘) -> <strong>L</strong> (載入)。</li>
+                                <li><strong>ELT：</strong> 先載入雲端數據湖再轉換，適合大數據處理。</li>
+                            </ul>
+                        </li>
+                        <li><strong>分析類型：</strong>
+                            <ul>
+                                <li><strong>探索性分析 (EDA)：</strong> 繪製圖表尋找潛在關係。</li>
+                                <li><strong>預測性分析 (Predictive)：</strong> 推算未來趨勢。</li>
+                            </ul>
+                        </li>
+                        <li><strong>資料品質：</strong> <strong>冗餘 (Redundant)</strong> 指語意重複；<strong>重複 (Duplicate)</strong> 指紀錄完全一致。缺失值可刪除或填補平均值。</li>
+                        <li><strong>敘述性統計指標：</strong> 
+                            <ul>
+                                <li><strong>平均數：</strong> 易受極端值（離群值）影響。</li>
+                                <li><strong>中位數：</strong> 對離群值具穩健性。</li>
+                                <li><strong>標準差/變異數：</strong> 越大代表波動越大、品質越不穩定。</li>
+                            </ul>
+                        </li>
+                        <li><strong>視覺化與轉換：</strong>
+                            <ul>
+                                <li><strong>直方圖 (Histogram)：</strong> 觀察連續資料的分佈、偏態與多峰性。</li>
+                                <li><strong>散佈圖 (Scatter Plot)：</strong> 觀察兩個數值變數間的<strong>相關性</strong>（如身高與體重）。</li>
+                                <li><strong>對數轉換 (Log Transform)：</strong> 處理<strong>高度偏態</strong>資料，使其接近常態分佈。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="machine-learning">
+                    <h3>1-3 機器學習理論</h3>
+                    <ul>
+                        <li><strong>學習模式：</strong>
+                            <ul>
+                                <li><strong>監督式：</strong> 垃圾郵件過濾、房價預測 (需標籤)。常用演算法如：決策樹、隨機森林、<strong>貝氏分類器 (Naive Bayes)</strong> (極適合文字分類與郵件過濾)。</li>
+                                <li><strong>非監督式：</strong> 在無標籤下探索隱含模式，如客戶分群 (Cluster)、降維 (PCA)。適合用於「缺乏完整異常標註」的設備狀態檢測。</li>
+                                <li><strong>半監督式：</strong> 結合少量標註與大量未標註資料。</li>
+                                <li><strong>自監督式：</strong> 利用資料本身的結構產生目標（如 Masked LM），大幅<strong>降低對人工標註的依賴</strong>。</li>
+                                <li><strong>強化學習 (RL)：</strong> 透過環境獎勵/懲罰優化策略。適用於<strong>圍棋、自駕車、自動交易系統</strong>。</li>
+                                <li><strong>RLHF (人類反饋強化學習)：</strong> 當大型語言模型 (LLM) 需優化回覆偏好並遵循規範時，導入人類回饋以確保行為符合期望。</li>
+                                <li><strong>遷移學習 (Transfer Learning)：</strong> 利用既有預訓練模型微調，適用於標註樣本稀少且成本高昂的任務。</li>
+                            </ul>
+                        </li>
+                        <li><strong>重要概念：</strong>
+                            <ul>
+                                <li><strong>偏差與變異權衡 (Bias-Variance Tradeoff)：</strong> 在模型欠擬合 (Bias) 與過擬合 (Variance) 之間取得平衡。</li>
+                                <li><strong>資料去偏 (Data Debiasing)：</strong> 透過調整或擴充訓練語料，平衡不同群體比例，減少模型偏見。</li>
+                            </ul>
+                        </li>
+                        <li><strong>過擬合 (Overfitting) 解決方案：</strong>
+                            <ul>
+                                <li><strong>增加數據量</strong>、使用 <strong>交叉驗證</strong>。</li>
+                                <li><strong>正則化 (Regularization)：</strong> 
+                                    <ul>
+                                        <li><strong>L1 (Lasso)：</strong> 產生<strong>稀疏解</strong> (強迫不重要特徵權重歸零)，具特徵選擇功能。</li>
+                                        <li><strong>L2 (Ridge)：</strong> 縮小權重但不歸零，使模型更平滑。</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Dropout</strong> (隨機失活節點)、<strong>資料增強</strong> (旋轉翻轉)。</li>
+                            </ul>
+                        </li>
+                        <li><strong>核心演算法：</strong>
+                            <ul>
+                                <li><strong>K-means (分群)：</strong> 依賴距離計算，<strong>易受雜訊與離群值 (Outlier) 影響</strong>，且<strong>無法直接處理類別型資料</strong>。</li>
+                                <li><strong>KNN (分類)：</strong> 基於鄰近樣本的多數決 (Majority Vote)。</li>
+                                <li><strong>邏輯迴歸 (Logistic)：</strong> 預測機率 (0~1)，適用於二分類 (如罹病風險)。</li>
+                                <li><strong>隨機森林 (Random Forest)：</strong> 處理多特徵、提升穩健性與泛化能力。</li>
+                                <li><strong>PCA (主成分分析)：</strong> 降維技術。將特徵轉換為新變數，主要目的是「減少輸入特徵維度以提升運算效率」，同時保留最大的資料變異資訊量。</li>
+                            </ul>
+                        </li>
+                        <li><strong>神經網路架構：</strong>
+                            <ul>
+                                <li><strong>CNN：</strong> 擅長處理具「網格空間結構」資料，捕捉局部特徵 (影像辨識、物件偵測及分割)。</li>
+                                <li><strong>RNN/LSTM：</strong> 專注於具「時間相依性」的序列資料。RNN 常發生 <strong>梯度消失</strong> 難以保留早期資訊；<strong>LSTM</strong> 為解決此問題而生。</li>
+                                <li><strong>Transformer：</strong> 透過 <strong>自注意力機制 (Self-Attention)</strong> 平行運算並捕捉全局關聯，解決 RNN 無法處理長文本的痛點，是當今大型語言模型的底層基石。</li>
+                                <li><strong>寬深模型 (Wide & Deep)：</strong> 同時記憶特徵組合規律並具備泛化預測能力。</li>
+                                <li><strong>啟動函數：</strong> 
+                                    <ul>
+                                        <li><strong>ReLU：</strong> 可改善<strong>梯度消失</strong>問題，提升訓練穩定性。</li>
+                                        <li><strong>Sigmoid：</strong> 用於二分類或門控機制（如 LSTM 的忘記門）。</li>
+                                    </ul>
+                                </li>
+                                <li><strong>損失函數：</strong> <strong>MSE</strong> (迴歸/房價預測)；<strong>交叉熵</strong> (分類)。</li>
+                            </ul>
+                        </li>
+                        <li><strong>資料處理與特徵工程：</strong> 
+                            <ul>
+                                <li><strong>One-hot Encoding：</strong> 用於無序類別（如地區、交通工具）。</li>
+                                <li><strong>Ordinal Encoding：</strong> 用於有序類別（如會員等級、滿意度）。</li>
+                                <li><strong>數值標準化/正規化：</strong> 梯度下降模型必做，防止權重因數值範圍不同而偏斜。</li>
+                                <li><strong>SMOTE：</strong> 針對類別極端不平衡（如詐騙偵測），在特徵空間中<strong>合成 (Synthetic)</strong> 新的少數類樣本。</li>
+                                <li><strong>PEFT (如 LoRA)：</strong> 僅更新極少量參數進行微調。</li>
+                            </ul>
+                        </li>
+                        <li><strong>搜尋演算法：</strong>
+                            <ul>
+                                <li><strong>二分搜尋 (Binary Search)：</strong> 適用於<strong>已排序</strong>陣列，每次排除一半數據，效率為 $O(\log n)$。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="gen-vs-disc">
+                    <h3>1-4 鑑別式 vs 生成式 AI</h3>
+                    <ul>
+                        <li><strong>核心原理：</strong> 
+                            <ul>
+                                <li><strong>鑑別式 (Discriminative)：</strong> 學習邊界，專注於分類與預測。</li>
+                                <li><strong>生成式 (Generative)：</strong> 學習資料分佈，創造相似的新結果。</li>
+                            </ul>
+                        </li>
+                        <li><strong>生成模型三大支柱與自迴歸：</strong>
+                            <ul>
+                                <li><strong>GAN (生成對抗網路)：</strong> 透過「生成器」產出假資料，並由「判別器」分辨真偽，兩者相互博弈訓練，適合生成高度逼真的人臉或假影像。</li>
+                                <li><strong>VAE (變分自編碼器)：</strong> 透過 <strong>潛在空間 (Latent Space)</strong> 重建資料，用於風格一致的新樣本生成或異常偵測。</li>
+                                <li><strong>Diffusion (擴散模型)：</strong> 透過逐步在資料中「加入雜訊」再訓練模型「去除雜訊」來還原並生成全新資料，視覺品質最高、細節穩定 (如 Midjourney、Sora)。</li>
+                                <li><strong>AR (自迴歸模型)：</strong> 根據前一個字預測下一個字，GPT 系列、文本生成基礎。</li>
+                            </ul>
+                        </li>
+                        <li><strong>Transformer 與 LLM 效能優化：</strong>
+                            <ul>
+                                <li><strong>計算瓶頸：</strong> 自注意力機制需求隨序列長度呈 <strong>平方級 ($O(n^2)$)</strong> 增長。</li>
+                                <li><strong>Flash Attention：</strong> 優化 IO 存取，提升速度、資源效率並減少記憶體佔用。</li>
+                                <li><strong>剪枝 (Pruning)：</strong> 移除影響較小的權重參數，實現模型輕量化並提升效率。</li>
+                                <li><strong>批次處理 (Batching)：</strong> 提升 <strong>GPU 使用率</strong> 與 <strong>吞吐量 (Throughput)</strong>，但可能增加單筆請求的 <strong>延遲 (Latency)</strong>。</li>
+                                <li><strong>KV Cache：</strong> 用於加速推理，避免重複計算已生成的 token，但會增加記憶體壓力。</li>
+                            </ul>
+                        </li>
+                        <li><strong>輸出層：</strong> <strong>Softmax 函數</strong> 將輸出轉為<strong>機率分佈</strong> (總和為 1)，常用於多分類推薦系統。</li>
+                    </ul>
+                </section>
+
+                <hr class="study-hr">
+
+                <!-- 科目二 -->
+                <section class="subject-header">
+                    <h2 style="color:var(--primary-color); border-bottom:4px solid var(--primary-color);">科目二：人工智慧應用實務</h2>
+                </section>
+
+                <section id="nocode-lowcode">
+                    <h3>2-1 No Code / Low Code 與 Agentic AI 概念</h3>
+                    <ul>
+                        <li><strong>平台特性：</strong> No-Code 適合快速建立應用；Low-Code 具強整合性與自訂性。</li>
+                        <li><strong>維運風險：</strong> <strong>影子 IT (Shadow IT)</strong> 指未經管理的人員自行建立應用；<strong>數據漂移 (Data Drift)</strong> 指統計特徵隨時間改變。</li>
+                        <li><strong>Agentic AI 核心：</strong>
+                            <ul>
+                                <li><strong>高度自主性：</strong> 不僅能推斷答案，還能在 <strong>解決方案圖譜 (Solution Graph)</strong> 上，自主利用 <strong>廣度優先 (BFS)、深度優先 (DFS) 或最佳優先 (Best-first)</strong> 等演算法進行探索，尋找最佳解決路徑。</li>
+                                <li><strong>MCP 協議：</strong> <strong>AI Host -> MCP Client -> MCP Server</strong> 標準化連結外部工具。</li>
+                                <li><strong>A2A：</strong> Client Agent 發起，Remote Agent 執行回傳。</li>
+                                <li><strong>組件：</strong> FAQ 用 向量檢索；動作執行用 API 調用。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="gen-apps">
+                    <h3>2-2 生成式 AI 應用領域與工具使用</h3>
+                    <ul>
+                        <li><strong>核心概念：</strong>
+                            <ul>
+                                <li><strong>多模態模型 (Multimodal)：</strong> 能同時處理與生成 <strong>文字、圖片、影片</strong> 等多種媒介內容。</li>
+                            </ul>
+                        </li>
+                        <li><strong>提示工程 (Prompt Engineering) 進階策略：</strong>
+                            <ul>
+                                <li><strong>Zero-shot / Few-shot：</strong> 零樣本或提供範例。風險：範例不足會導致 <strong>領域偏移 (Domain Shift)</strong>。</li>
+                                <li><strong>Chain-of-Thought (CoT)：</strong> 要求「逐步說明推理過程」，提升數學與邏輯準確性。</li>
+                                <li><strong>Tree of Thoughts (ToT)：</strong> 探索多路徑並比較方案，適合複雜決策任務。</li>
+                                <li><strong>Graph Prompting：</strong> 用於捕捉非線性、網絡化資訊或多條件關聯分析。</li>
+                            </ul>
+                        </li>
+                        <li><strong>檢索增強生成 (RAG) 實務：</strong>
+                            <ul>
+                                <li><strong>核心目的：</strong> 檢索外部資料庫以獲取最新資訊，降低 <strong>幻覺 (Hallucination)</strong>。</li>
+                                <li><strong>文本切分 (Chunking)：</strong> 將文件切為小片段以 <strong>提高檢索相關性</strong> 並減少噪音。</li>
+                                <li><strong>RAG vs. Fine-tuning：</strong> <strong>微調</strong> 用於調整風格、語氣或學習格式；<strong>RAG</strong> 用於動態更新知識。</li>
+                            </ul>
+                        </li>
+                        <li><strong>參數與評測：</strong>
+                            <ul>
+                                <li><strong>溫度 (Temperature)：</strong> <strong>低溫 (0.1-0.3)</strong> 輸出穩定、可預測；<strong>高溫 (1.0+)</strong> 增加創意。</li>
+                                <li><strong>基準測試 (Benchmarks)：</strong> <strong>TTQA</strong> (台灣本土知識)；<strong>MMLU</strong> (多領域理解)。</li>
+                            </ul>
+                        </li>
+                        <li><strong>安全性與內容溯源：</strong>
+                            <ul>
+                                <li><strong>SynthID：</strong> Google 開發，在影像每一幀嵌入 <strong>「不可見」數位浮水印</strong>。</li>
+                                <li><strong>C2PA (Content Credentials)：</strong> 在元數據中嵌入來源證明，追蹤內容是否由 AI 生成。</li>
+                                <li><strong>安全性：</strong> 防範 <strong>提示攻擊 (Prompt Injection)</strong>。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="gen-impl">
+                    <h3>2-3 生成式 AI 導入與規劃</h3>
+                    <ul>
+                        <li><strong>導入生命週期與架構：</strong> 
+                            <ul>
+                                <li><strong>標準流程：</strong> 1.需求確認/目標定義 -> 2.PoC 驗證 -> 3.<strong>上線部署 (Deployment)</strong> -> 4.<strong>監控與優化 (Monitoring)</strong> -> 5.<strong>價值擴散 (Value Scaling)</strong>。</li>
+                                <li><strong>MVP 與安全性：</strong> 快速開發 (如 Vibe Coding) 後，<strong>正式上線前必須經過重構與安全測試</strong>。</li>
+                                <li><strong>高可用性：</strong> 採用 <strong>負載平衡 (Load Balancing)</strong> 確保架構穩定。</li>
+                            </ul>
+                        </li>
+                        <li><strong>成本與投資報酬 (ROI)：</strong> 
+                            <ul>
+                                <li><strong>Token 經濟學：</strong> 考量 API 費率與輸入/輸出 Token 數。AI API 成本（如 960 元）對比人工（如 30,000 元）具高 ROI。</li>
+                            </ul>
+                        </li>
+                        <li><strong>風險管理與法規：</strong>
+                            <ul>
+                                <li><strong>歐盟 AIA 風險分級：</strong>
+                                    <ul>
+                                        <li><strong>不可接受風險：</strong> 絕對禁止。如 <strong>社會信用評分</strong>、遠程生物辨識執法。</li>
+                                        <li><strong>高風險：</strong> 嚴格監管。如 <strong>醫學影像診斷</strong>、<strong>放貸審核</strong>。</li>
+                                        <li><strong>有限/低風險：</strong> 需符合透明性要求（標註為 AI 生成）。</li>
+                                    </ul>
+                                </li>
+                                <li><strong>風險應對策略：</strong> 外包安全管理屬 <strong>風險轉移 (Risk Transfer)</strong>。</li>
+                                <li><strong>偏差檢測 (Bias Detection)：</strong> 屬於檢測措施；重新加權資料屬於緩解措施。</li>
+                            </ul>
+                        </li>
+                        <li><strong>台灣 AI 評測指標 (數位發展部 adi)：</strong> 
+                            <ul>
+                                <li><strong>四大核心：</strong> 1.當責性、2.可靠性、3.隱私及資安、4.透明性 (互動性非核心維度)。</li>
+                            </ul>
+                        </li>
+                        <li><strong>資安與隱私技術：</strong> 
+                            <ul>
+                                <li><strong>Zero Trust (零信任架構)：</strong> 確保數據使用安全性。</li>
+                                <li><strong>Zero-Retention (零保留)：</strong> 避免第三方 API 記憶敏感資訊。</li>
+                                <li><strong>同態加密 (Homomorphic Encryption)：</strong> 讓資料在<strong>加密狀態</strong>下仍能進行模型運算，保障高度隱私。</li>
+                                <li><strong>資料原則：</strong> 優先採取 <strong>「資料最小化」</strong> 與 <strong>「去識別化」</strong>。</li>
+                                <li><strong>聯邦學習 (Federated Learning)：</strong> 在隱私前提下整合跨部門敏感資料進行訓練。</li>
+                            </ul>
+                        </li>
+                        <li><strong>優化技術與挑戰：</strong> 
+                            <ul>
+                                <li><strong>Reinforcement Fine-tuning (RFT)：</strong> 透過 <strong>獎勵訊號</strong> 調整回應行為偏好。</li>
+                                <li><strong>災難性遺忘 (Catastrophic Forgetting)：</strong> 在微調時過度適應新資料，導致模型忘記原本學到的廣泛知識。</li>
+                            </ul>
+                        </li>
+                        <li><strong>基礎設施：</strong> 私有化部署符合數據主權；需 GPU 資源與彈性儲存空間。</li>
+                    </ul>
+                </section>
+            </article>
+        </main>
+    </div>
+    <script src="src/study.js"></script>
+</body>
+</html>

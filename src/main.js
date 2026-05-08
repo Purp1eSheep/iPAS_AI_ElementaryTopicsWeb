@@ -296,7 +296,7 @@ function executeStartQuiz() {
     if (challenge) {
         State.isComprehensive = true;
         if (challenge.dataset.type === 'comp') {
-            State.activeQuestions = Utils.weightedShuffle(State.globalQuestions, stats).slice(0, 40);
+            State.activeQuestions = Utils.weightedShuffle(State.globalQuestions, stats).slice(0, State.quizCount);
         } else {
             const filtered = State.globalQuestions.filter(q => Storage.get(Storage.KEYS.WRONG, []).includes(q.id));
             State.activeQuestions = Utils.shuffle(filtered);
@@ -305,9 +305,10 @@ function executeStartQuiz() {
         State.isComprehensive = checked.length > 1;
         const filtered = State.globalQuestions.filter(q => checked.includes(q.topic));
         State.activeQuestions = Utils.weightedShuffle(filtered, stats);
-        if (State.isComprehensive && State.activeQuestions.length > 50) {
-            State.activeQuestions = State.activeQuestions.slice(0, 50);
-        }
+    }
+
+    if (State.activeQuestions.length > State.quizCount) {
+        State.activeQuestions = State.activeQuestions.slice(0, State.quizCount);
     }
 
     if (!State.activeQuestions.length) return;
@@ -493,6 +494,18 @@ function initSettings() {
         document.documentElement.setAttribute('data-lefthand', State.leftHanded);
         document.getElementById('lefthand-status').textContent = State.leftHanded ? '已開啟' : '已關閉';
     };
+
+    // 測題題數設定
+    State.quizCount = Storage.get(Storage.KEYS.QUIZ_COUNT, 40);
+    document.querySelectorAll('#count-grid .theme-option').forEach(el => {
+        el.classList.toggle('active', parseInt(el.dataset.count) === State.quizCount);
+        el.onclick = () => {
+            State.quizCount = parseInt(el.dataset.count);
+            Storage.set(Storage.KEYS.QUIZ_COUNT, State.quizCount);
+            document.querySelectorAll('#count-grid .theme-option').forEach(o => o.classList.toggle('active', o === el));
+            UI.renderQuizList(); // 重新渲染列表以更新 "隨機 X 題" 文字
+        };
+    });
 
     document.getElementById('settings-btn').onclick = () => document.getElementById('top-bar').classList.toggle('settings-open');
     document.getElementById('settings-back-btn').onclick = () => document.getElementById('top-bar').classList.remove('settings-open');

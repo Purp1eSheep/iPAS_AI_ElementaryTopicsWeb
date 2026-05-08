@@ -33,6 +33,7 @@ export const State = {
     answers: [],
     currentSelection: new Set(),
     isComprehensive: false,
+    quizCount: 40,
     audioEnabled: false,
     leftHanded: false,
     audio: {

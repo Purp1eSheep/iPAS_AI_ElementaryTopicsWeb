@@ -10,7 +10,7 @@ export const UIQuiz = {
                 <div class="challenge-title">挑戰</div>
                 <div class="grid-2">
                     <div class="quiz-card challenge-card" data-type="comp">
-                        <div class="name">🔥 綜合測驗</div><div class="meta">隨機 40 題</div>
+                        <div class="name">🔥 綜合測驗</div><div class="meta">隨機 ${State.quizCount} 題</div>
                     </div>
                     ${wrongIds.length ? `
                     <div class="quiz-card challenge-card" data-type="wrong" style="border-color:var(--wrong); background:var(--wrong-soft);">
