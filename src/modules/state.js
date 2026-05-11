@@ -18,6 +18,11 @@ export const DOM = {
     expWrap: document.getElementById('explanation-container'),
     nextBtn: document.getElementById('next-btn'),
     prevBtn: document.getElementById('prev-btn'),
+    // Question List Panel
+    qListPanel: document.getElementById('q-list-panel'),
+    qListBtn: document.getElementById('q-list-btn'),
+    qListClose: document.getElementById('q-list-close'),
+    qListGrid: document.getElementById('q-list-grid'),
     // Modals
     aiModal: document.getElementById('ai-modal'),
     aiPromptText: document.getElementById('ai-prompt-text')

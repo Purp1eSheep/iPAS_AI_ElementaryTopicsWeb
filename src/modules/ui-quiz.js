@@ -5,13 +5,16 @@ import { Utils } from './utils.js';
 export const UIQuiz = {
     renderQuizList: () => {
         const wrongIds = Storage.get(Storage.KEYS.WRONG, []);
+        const counts = [10, 20, 40];
         let html = `
             <div class="mb-3">
-                <div class="challenge-title">挑戰</div>
-                <div class="grid-2">
-                    <div class="quiz-card challenge-card" data-type="comp">
-                        <div class="name">🔥 綜合測驗</div><div class="meta">隨機 ${State.quizCount} 題</div>
+                <div class="flex-between">
+                    <div class="challenge-title">挑戰</div>
+                    <div class="count-selector-inline">
+                        ${counts.map(c => `<span class="count-opt ${State.quizCount === c ? 'active' : ''}" data-count="${c}">${c}題</span>`).join('')}
                     </div>
+                </div>
+                <div class="grid-2">
                     ${wrongIds.length ? `
                     <div class="quiz-card challenge-card" data-type="wrong" style="border-color:var(--wrong); background:var(--wrong-soft);">
                         <div class="name">❌ 錯題強化</div><div class="meta">${wrongIds.length} 題</div>
@@ -19,6 +22,9 @@ export const UIQuiz = {
                     <div class="quiz-card" style="opacity:0.5; cursor:default; display:flex; align-items:center; justify-content:center; border-style:dashed;">
                         <div class="meta">暫無錯題</div>
                     </div>`}
+                    <div class="quiz-card challenge-card ${State.isComprehensive ? 'selected' : ''}" data-type="comp">
+                        <div class="name">🔥 綜合測驗</div><div class="meta">隨機 ${State.quizCount} 題</div>
+                    </div>
                 </div>
             </div>
         `;
@@ -62,6 +68,30 @@ export const UIQuiz = {
         
         DOM.prevBtn.disabled = State.currentIdx === 0;
         UIQuiz.updateNextBtnUI();
+        UIQuiz.updateQuestionListActive();
+    },
+
+    renderQuestionList: () => {
+        DOM.qListGrid.innerHTML = State.activeQuestions.map((_, i) => {
+            const isAns = State.answers[i] !== null;
+            const isWrong = isAns && !State.answers[i].isCorrect;
+            let cls = 'q-list-item';
+            if (i === State.currentIdx) cls += ' active';
+            if (isAns) cls += ' answered';
+            if (isWrong) cls += ' wrong';
+            return `<div class="${cls}" data-i="${i}">${i + 1}</div>`;
+        }).join('');
+    },
+
+    updateQuestionListActive: () => {
+        const items = DOM.qListGrid.querySelectorAll('.q-list-item');
+        items.forEach((el, i) => {
+            const isAns = State.answers[i] !== null;
+            const isWrong = isAns && !State.answers[i].isCorrect;
+            el.classList.toggle('active', i === State.currentIdx);
+            el.classList.toggle('answered', isAns);
+            el.classList.toggle('wrong', isWrong);
+        });
     },
 
     updateNextBtnUI: () => {

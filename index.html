@@ -116,7 +116,12 @@
         <div class="card">
             <div class="flex-between mb-3">
                 <div class="progress-wrap"><div id="progress-bar" class="progress-bar" style="width:0%"></div></div>
-                <span id="q-counter" style="font-size:.82rem; color:var(--muted); white-space:nowrap; margin-left:12px;"></span>
+                <div class="flex-gap" style="align-items: center; margin-left: 12px;">
+                    <span id="q-counter" style="font-size:.82rem; color:var(--muted); white-space:nowrap;"></span>
+                    <button id="q-list-btn" class="btn-link" style="padding: 4px;" title="題目列表">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                    </button>
+                </div>
             </div>
             <div>
                 <span id="type-badge" class="badge badge-primary"></span>
@@ -228,6 +233,14 @@
             <button class="btn btn-primary" id="close-ai-btn">關閉</button>
         </div>
     </div>
+</div>
+
+<div id="q-list-panel" class="q-list-panel">
+    <div class="flex-between mb-3">
+        <h2 style="margin:0;">題目列表</h2>
+        <button id="q-list-close" class="close-modal">&times;</button>
+    </div>
+    <div id="q-list-grid" class="q-list-grid"></div>
 </div>
 
 <div id="toast-container" style="position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 9999; pointer-events: none; display: flex; flex-direction: column; gap: 10px; align-items: center;"></div>

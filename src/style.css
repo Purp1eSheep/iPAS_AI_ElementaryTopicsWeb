@@ -193,6 +193,30 @@ p { color: var(--muted); font-size: .95rem; line-height: 1.6; }
 .quiz-card .meta { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
 .challenge-title { font-size: 0.85rem; color: var(--accent); font-weight: 700; margin-bottom: 8px; padding-left: 4px; text-transform: uppercase; }
 
+.count-selector-inline {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+.count-opt {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.count-opt:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.count-opt.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
 /* 按鈕樣式 */
 .btn { 
     display: inline-flex; 
@@ -268,6 +292,65 @@ animation: rainbow 3s ease infinite;
 .result-item { background: var(--surface2); border-radius: 10px; padding: 14px 18px; border-left: 4px solid var(--border); margin-bottom: 10px; font-size: .9rem; }
 .result-item.ok { border-color: var(--correct); }
 .result-item.fail { border-color: var(--wrong); }
+
+/* 題目列表側邊欄 */
+.q-list-panel {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 300px;
+    height: 100%;
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    z-index: 3000;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.2);
+}
+.q-list-panel.active {
+    right: 0;
+}
+.q-list-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    overflow-y: auto;
+    padding: 10px 4px;
+}
+.q-list-item {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--muted);
+}
+.q-list-item:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.q-list-item.active {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.q-list-item.answered {
+    background: var(--surface2);
+    border-color: var(--correct);
+    color: var(--correct);
+}
+.q-list-item.answered.wrong {
+    border-color: var(--wrong);
+    color: var(--wrong);
+}
 
 /* 模態框 (Modal) */
 .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); align-items: center; justify-content: center; backdrop-filter: blur(4px); }

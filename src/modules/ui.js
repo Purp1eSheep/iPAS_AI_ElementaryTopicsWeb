@@ -55,6 +55,8 @@ export const UI = {
     // Quiz Module Delegate
     renderQuizList: UIQuiz.renderQuizList,
     renderQuestion: UIQuiz.renderQuestion,
+    renderQuestionList: UIQuiz.renderQuestionList,
+    updateQuestionListActive: UIQuiz.updateQuestionListActive,
     updateNextBtnUI: UIQuiz.updateNextBtnUI,
     addAIBtn: UIQuiz.addAIBtn,
     showResult: (openAIPrompt) => UIQuiz.showResult(openAIPrompt, UI.switchScreen, UI.playAudio),

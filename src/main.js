@@ -138,6 +138,21 @@ function initEvents() {
     DOM.prevBtn.onclick = () => { if (State.currentIdx > 0) { State.currentIdx--; UI.renderQuestion(); saveProgress(); } };
     DOM.nextBtn.onclick = handleNextClick;
 
+    // 題目列表側邊欄控制
+    DOM.qListBtn.onclick = () => {
+        UI.renderQuestionList();
+        DOM.qListPanel.classList.toggle('active');
+    };
+    DOM.qListClose.onclick = () => DOM.qListPanel.classList.remove('active');
+    DOM.qListGrid.onclick = (e) => {
+        const item = e.target.closest('.q-list-item');
+        if (!item) return;
+        State.currentIdx = parseInt(item.dataset.i);
+        UI.renderQuestion();
+        saveProgress();
+        DOM.qListPanel.classList.remove('active');
+    };
+
     // 選項點擊 (Event Delegation)
     DOM.optionsWrap.onclick = (e) => {
         const optionEl = e.target.closest('.option');
@@ -164,6 +179,14 @@ function initEvents() {
     DOM.quizList.onclick = (e) => {
         const header = e.target.closest('.list-section-header');
         if (header) header.parentElement.classList.toggle('active');
+
+        const countOpt = e.target.closest('.count-opt');
+        if (countOpt) {
+            State.quizCount = parseInt(countOpt.dataset.count);
+            Storage.set(Storage.KEYS.QUIZ_COUNT, State.quizCount);
+            UI.renderQuizList();
+            return;
+        }
 
         const card = e.target.closest('.quiz-card');
         if (!card) return;
@@ -318,6 +341,7 @@ function executeStartQuiz() {
     
     UI.switchScreen('quiz');
     UI.renderQuestion();
+    UI.renderQuestionList();
     saveProgress();
 }
 
@@ -369,6 +393,7 @@ function submitAnswer() {
     });
 
     updateStats(q.id, isCorrect);
+    UI.updateQuestionListActive();
     if (isCorrect) {
         removeWrong(q.id);
         if (State.audioEnabled) UI.playAudio('correct');
@@ -429,6 +454,7 @@ function checkProgress() {
             banner.classList.add('hidden');
             UI.switchScreen('quiz'); 
             UI.renderQuestion();
+            UI.renderQuestionList();
             
             // 如果恢復後發現該題已有選擇但未送出，需要還原 UI 選擇狀態
             if (State.answers[State.currentIdx] === null && State.currentSelection.size > 0) {
