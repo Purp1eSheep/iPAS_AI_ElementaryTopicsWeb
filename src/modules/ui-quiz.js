@@ -115,6 +115,11 @@ export const UIQuiz = {
         const correctCount = validAns.filter(a => a.isCorrect).length;
         const rate = validAns.length ? Math.round((correctCount / validAns.length) * 100) : 0;
         
+        if (rate < 40) {
+            window.location.href = "https://rdrc.mnd.gov.tw/RdrcWeb";
+            return;
+        }
+
         const scoreNumEl = document.getElementById('score-number');
         scoreNumEl.textContent = `${correctCount} / ${validAns.length}`;
         
